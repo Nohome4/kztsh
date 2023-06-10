@@ -1,20 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { CONTACTS_ROUTES } from "../../utils/consts";
 const ContactsNavbar = (props) => {
   return (
     <div className={props.className}>
       <ul>
-        <li>
-          <Link className="Link">Руководство</Link>
-        </li>
-        <li>
-          <Link className="Link">Команда управления</Link>
-        </li>
-        <li>
-          <Link className="Link">
-            Отдел маркетинга и сбыта готовой продукции и внешних связей
-          </Link>
-        </li>
+        {CONTACTS_ROUTES.map((el) => (
+          <li>
+            <Link className="Link" to={el.path}>
+              {el.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

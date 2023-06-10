@@ -1,18 +1,17 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { PRODUCTS_ROUTES } from "../../utils/consts";
 const ProductsNavbar = () => {
   return (
     <div className="dropdown">
       <ul>
-        <li>
-          <Link className="Link">Каталог продукции</Link>
-        </li>
-        <li>
-          <Link className="Link">Прайс листы</Link>
-        </li>
-        <li>
-          <Link className="Link">Магазин</Link>
-        </li>
+        {PRODUCTS_ROUTES.map((el) => (
+          <li>
+            <Link className="Link" to={el.path}>
+              {el.name}
+            </Link>
+          </li>
+        ))}
       </ul>
     </div>
   );

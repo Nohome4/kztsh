@@ -1,28 +1,20 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
+import { INFO_ROUTES } from "../../utils/consts";
 const InfoNavbar = (props) => {
-
-    return (
-        <div className={props.className}>
-        <ul>
+  return (
+    <div className={props.className}>
+      <ul>
+        {INFO_ROUTES.map((el) => (
           <li>
-            <Link className='Link'>Доставка</Link>
+            <Link className="Link" to={el.path}>
+              {el.name}
+            </Link>
           </li>
-          <li>
-            <Link className='Link'>Противодействие коррупции</Link>
-          </li>
-          <li>
-            <Link className='Link'>Новости</Link>
-          </li>
-          <li>
-            <Link className='Link'>Обращения граждан</Link>
-          </li>
-          <li>
-            <Link className='Link'>Товаропроводящая сеть</Link>
-          </li>
-        </ul>
-      </div>
-    );
-}
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default InfoNavbar;

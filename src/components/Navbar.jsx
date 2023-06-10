@@ -4,7 +4,13 @@ import ProductsNavbar from "./navbars/ProductsNavbar";
 import AboutNavbar from "./navbars/AboutNavbar";
 import InfoNavbar from "./navbars/InfoNavbar";
 import ContactsNavbar from "./navbars/ContactsNavbar";
-
+import {
+  ABOUT_ROUTE,
+  CONTACTS_ROUTE,
+  INFO_ROUTE,
+  PRODUCTS_ROUTE,
+  SERVISES_ROUTE,
+} from "../utils/consts";
 const Navbar = (props) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [showDropdownProducts, setShowDropdownProducts] = useState(false);
@@ -30,7 +36,7 @@ const Navbar = (props) => {
     <nav className="main-navbar">
       <ul>
         <li onMouseEnter={handleDropdown} onMouseLeave={handleDropdown}>
-          <Link className="Link" to="/about">
+          <Link className="Link" to={ABOUT_ROUTE}>
             О заводе
           </Link>
           {showDropdown && <AboutNavbar />}
@@ -39,18 +45,18 @@ const Navbar = (props) => {
           onMouseEnter={handleDropdownProducts}
           onMouseLeave={handleDropdownProducts}
         >
-          <Link className="Link" to="/products">
+          <Link className="Link" to={PRODUCTS_ROUTE}>
             Продукция
           </Link>
           {showDropdownProducts && <ProductsNavbar />}
         </li>
         <li>
-          <Link className="Link" to="/services">
+          <Link className="Link" to={SERVISES_ROUTE}>
             Услуги
           </Link>
         </li>
         <li onMouseEnter={handleDropdownInfo} onMouseLeave={handleDropdownInfo}>
-          <Link className="Link" to="/info">
+          <Link className="Link" to={INFO_ROUTE}>
             Информация
           </Link>
           {showDropdownInfo && <InfoNavbar className={"dropdown"} />}
@@ -59,7 +65,7 @@ const Navbar = (props) => {
           onMouseEnter={handleDropdownContacts}
           onMouseLeave={handleDropdownContacts}
         >
-          <Link className="Link" to="/contacts">
+          <Link className="Link" to={CONTACTS_ROUTE}>
             Контакты
           </Link>
           {showDropdownContacts && <ContactsNavbar className={"dropdown"} />}
