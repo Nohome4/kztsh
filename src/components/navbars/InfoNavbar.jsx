@@ -6,7 +6,7 @@ const InfoNavbar = (props) => {
     <div className={props.className}>
       <ul>
         {INFO_ROUTES.map((el) => (
-          <li>
+          <li key={el.name}>
             <Link className="Link" to={el.path}>
               {el.name}
             </Link>

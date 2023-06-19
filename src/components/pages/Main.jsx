@@ -5,7 +5,6 @@ import FirstPage from "./FirstPage";
 
 import PhoneContact from "../PhoneContact";
 import Products from "../Products";
-import ButtonUp from "../../UI/ButtonUp";
 
 const Main = () => {
   const items = [
@@ -68,12 +67,9 @@ const Main = () => {
     <div>
       <div className="app">
         <PhoneContact />
-
         <FirstPage />
       </div>
       <Products items={items} />
-
-      <ButtonUp />
     </div>
   );
 };

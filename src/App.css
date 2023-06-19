@@ -126,7 +126,7 @@
 }
 
 /* ProductProductProductProductProductProductProductProductProductProductProductProductProductProductProductProductProductProductProduct */
-.product__list {
+.product-list {
   display: flex;
   width: 95%;
   flex-wrap: wrap;
@@ -135,6 +135,7 @@
 }
 .product {
   width: 30%;
+  box-sizing: border-box;
   height: 200px;
   margin: 50px -50px -10px 30px;
   position: relative;

@@ -7,7 +7,7 @@ const ProductsNavbar = () => {
       <ul>
         {PRODUCTS_ROUTES.map((el) => (
           <li>
-            <Link className="Link" to={el.path}>
+            <Link className="Link" to={el.path} key={el.name}>
               {el.name}
             </Link>
           </li>

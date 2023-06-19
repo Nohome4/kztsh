@@ -12,7 +12,7 @@ const Products = (props) => {
         длительном сроке службы и предоставляем гарантию на все товары.
       </p>
       <button>Весь каталог ›</button>
-      <div className="product__list">
+      <div className="product-list">
         {props.items.map((el) => (
           <Product key={el.id} item={el} />
         ))}
