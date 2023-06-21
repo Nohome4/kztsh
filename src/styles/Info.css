@@ -3,17 +3,16 @@
   padding: 0;
   box-sizing: border-box;
 }
-.about-container {
+.info-container {
   display: flex;
 }
-.about-content {
+.info-content {
   float: right;
   width: 70%;
 }
-.about-img {
+.info-img {
   float: right;
   width: 100%;
-  height: 50%;
   margin-right: 20px;
   margin-top: 30px;
 }
@@ -28,7 +27,7 @@ p {
   width: 100%;
   margin-top: 20px;
   float: right;
-  font-size: medium;
+  font-size: 16px;
   margin-right: 20px;
   margin-bottom: 20px;
 }

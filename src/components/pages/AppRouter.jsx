@@ -5,9 +5,9 @@ import { Routes, Route } from "react-router";
 import Footer from "../Footer";
 import ButtonUp from "../../UI/ButtonUp";
 const AppRouter = () => {
-  const isAuth = false;
+  const isAuth = true;
   return (
-    <div>
+    <div className="wrapper">
       <Header />
       <ButtonUp />
       <Routes>
@@ -19,7 +19,6 @@ const AppRouter = () => {
           <Route key={path} path={path} element={<Component />} exact />
         ))}
       </Routes>
-
       <Footer />
     </div>
   );

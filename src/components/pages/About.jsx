@@ -1,17 +1,15 @@
 import React from "react";
-
 import "../../styles/About.css";
-
 import MainReturnButton from "../../UI/MainReturnButton";
-
 import LeftMenu from "../../UI/LeftMenu";
+import { ABOUT_ROUTES } from "../../utils/consts";
 const About = () => {
   return (
     <div className="about">
       <h2>О заводе</h2>
       <MainReturnButton />
       <div className="about-container">
-        <LeftMenu />
+        <LeftMenu arr={ABOUT_ROUTES} />
         <div className="about-content">
           <img
             className="about-img"

@@ -5,43 +5,44 @@
 }
 .app {
   background-image: url("/public/images/backround-main.jpg");
-  background-size: no-repeat;
   background-size: cover;
-  height: 950px;
+  background-size: no-repeat;
 }
 /* header  header  header  header  header  header  header  header  header  header  header  header  header  header  header  header  header */
 
 .header {
   position: sticky;
   top: 0;
-  margin-top: 12px;
   display: flex;
   align-items: center;
-  width: 95%;
-  background-color: white;
+  justify-content: space-between;
+  width: 100%;
+  z-index: 100;
+  background-color: rgba(231, 229, 229, 0.9);
   border-radius: 4px;
-  height: 100px;
-  transform: translate(+2.5%);
+  height: 80px;
   z-index: 1;
   -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
 }
 .header-menu-btn {
-  width: 100px;
-  margin-right: 30px;
+  margin-left: 30px;
 }
 .header h3 {
-  margin-right: 200px;
+  width: 20%;
 }
 .header-logo {
-  width: 64px;
-  margin-right: 15px;
+  width: 50%;
+  margin-left: 50px;
 }
 .main-navbar {
   display: flex;
+  width: 60%;
   justify-content: center;
   align-items: stretch;
+  font-size: 16px;
+  font-weight: 600;
 }
 
 .main-navbar ul {
@@ -59,7 +60,7 @@
 .main-navbar .Link {
   display: block;
   padding: 10px;
-  color: #000;
+  color: #222;
   text-decoration: none;
 }
 
@@ -84,7 +85,7 @@
 }
 /* FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE FIRSTPAGE */
 .first-page {
-  margin-top: 150px;
+  margin-top: -80px;
   margin-left: 200px;
   color: white;
   text-shadow: rgb(8, 8, 8) 1px 0 1px;
@@ -96,6 +97,7 @@
   margin-top: 30px;
 }
 .first-page h1 {
+  padding-top: 200px;
   font-size: 52px;
 }
 .first-page h4 {
@@ -107,7 +109,7 @@
 .first-page button {
   display: inline-block;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 20px;
   text-decoration: none;
   padding: 10px 21px;
   background-color: rgba(28, 28, 28, 0);
@@ -164,16 +166,15 @@
   cursor: pointer;
 }
 .products h1 {
-  margin-left: 68px;
   margin-top: 20px;
   font-size: 44px;
   opacity: 0.9;
 }
 .products p {
-  margin-left: 68px;
-  width: 50%;
+  width: 70%;
   margin-top: 20px;
   color: grey;
+  float: left;
 }
 .product h3 {
   margin-top: 20px;
@@ -195,10 +196,11 @@
   margin-right: 30px;
   margin-top: -40px;
 }
+.description {
+  margin: 60px;
+}
 .products button {
   float: right;
-  margin-top: -80px;
-  margin-right: 50px;
   border: none;
   background-color: rgba(9, 84, 197, 0);
   font-size: 16px;
@@ -206,8 +208,6 @@
 }
 .products button:hover {
   float: right;
-  margin-top: -80px;
-  margin-right: 50px;
   border: none;
   color: #3695d9;
   background-color: rgba(9, 84, 197, 0);

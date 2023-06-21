@@ -1,7 +1,13 @@
 import React from "react";
 
+import DirectorsContacts from "../ContactsTable";
+
 const Admin = () => {
-  return <div>Страница администатора</div>;
+  return (
+    <div>
+      <DirectorsContacts />
+    </div>
+  );
 };
 
 export default Admin;

@@ -3,7 +3,6 @@ import "../../App.css";
 
 import FirstPage from "./FirstPage";
 
-import PhoneContact from "../PhoneContact";
 import Products from "../Products";
 
 const Main = () => {
@@ -66,7 +65,6 @@ const Main = () => {
   return (
     <div>
       <div className="app">
-        <PhoneContact />
         <FirstPage />
       </div>
       <Products items={items} />

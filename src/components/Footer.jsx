@@ -4,14 +4,14 @@ import "../styles/Footer.css";
 import InfoNavbar from "./navbars/InfoNavbar";
 import ContactsNavbar from "./navbars/ContactsNavbar";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
     <div className="footer">
       <div className="footer-wrapper">
         <div className="footer-contacts">
           <p>Тел/факс: +375 1775 2-44-00</p>
           <p>
-            Email:{" "}
+            Email:
             <Link className="footer-link" to="mailto:kztsh@mail.ru">
               kztsh@mail.ru
             </Link>
@@ -39,18 +39,18 @@ const Footer = (props) => {
           <iframe
             className="map"
             title="iframe"
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3Adc2bad87f9d9937066ab1f671bc02940f5b0ac3f83e0a2f454cfd7dc446c8af6&amp;source=constructor"
-            frameborder="0"
+            src="https://yandex.ru/map-widget/v1/?um=constructor%3A23e3a841babf02adb4d561e6ff4a10f7f4140ed7f6403ed700a4e9c3e011e882&amp;source=constructor"
+            width="392"
+            height="240"
           ></iframe>
         </div>
       </div>
-      <div className="footer-line"></div>
+
       <div className="footer-year">
         <hr />
         <p>
-          ОАО КЗТШ © 2008-2023 <br></br>{" "}
+          ОАО КЗТШ © 2008-2023 <br></br>
           <Link className="footer-link">
-            {" "}
             Условия использования материалов сайта
           </Link>
         </p>
