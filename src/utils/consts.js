@@ -234,3 +234,35 @@ export const marketingContacts = [
     phone: "+375 1775 24422",
   },
 ];
+export const directorPhotoContacts = [
+  {
+    name: "Бубелев Виталий Александрович",
+    img: "./images/management/bubelev.png",
+    job: "Директор",
+  },
+  {
+    name: "Шульц Денис Николаевич",
+    img: "./images/management/shults.png",
+    job: "Главный инженер",
+  },
+  {
+    name: "Бурков Дмитрий Валерьевич",
+    img: "./images/management/burkov.png",
+    job: "Заместитель директора по экономическим вопросам",
+  },
+  {
+    name: "Шидловский Валерий Леонидович",
+    img: "./images/management/shidlovskiy.png",
+    job: "Заместитель директора по коммерческим вопросам",
+  },
+  {
+    name: "Жовнерик Юрий Степанович",
+    img: "./images/management/zhovnerik.png",
+    job: "Заместитель директора по производству",
+  },
+  {
+    name: "Мурадов Анар Алиевич",
+    img: "./images/management/muradov.jpg",
+    job: "Заместитель директора завода по идеологической работе и социальным вопросам",
+  },
+];

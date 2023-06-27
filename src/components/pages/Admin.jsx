@@ -1,11 +1,10 @@
 import React from "react";
-
-import DirectorsContacts from "../ContactsTable";
+import DirectorsPhotoContacts from "../DirectorsPhotoContacts";
 
 const Admin = () => {
   return (
     <div>
-      <DirectorsContacts />
+      <DirectorsPhotoContacts />
     </div>
   );
 };
