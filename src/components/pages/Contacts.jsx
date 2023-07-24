@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import {
   CONTACTS_ROUTES,
@@ -21,6 +21,7 @@ const Contacts = () => {
           <DirectorsPhotoContacts />
           <DirectorsContacts contactsList={directorContacts} />
           <DirectorsContacts contactsList={marketingContacts} />
+          <p></p>
         </div>
       </div>
     </div>
