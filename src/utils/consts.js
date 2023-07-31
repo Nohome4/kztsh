@@ -46,14 +46,6 @@ export const ABOUT_ROUTES = [
     path: "/images",
   },
   {
-    name: "Отзывы",
-    path: "/reviews",
-  },
-  {
-    name: "Сотрудники",
-    path: "/people",
-  },
-  {
     name: "Вакансии",
     path: "/jobs",
   },
@@ -264,5 +256,72 @@ export const directorPhotoContacts = [
     name: "Мурадов Анар Алиевич",
     img: "./images/management/muradov.jpg",
     job: "Заместитель директора завода по идеологической работе и социальным вопросам",
+  },
+];
+export const jobs = [
+  {
+    name: "Кузнец-штамповщик",
+    description: "Возможно обучение",
+    salary: "1600",
+  },
+  {
+    name: "Резчик на пилах ножовках и станках",
+    description: "Возможно обучение",
+    salary: "1600",
+  },
+  {
+    name: "Слесарь-инструментальщик",
+    description: "Возможно обучение",
+    salary: "1300",
+  },
+  {
+    name: "Токарь",
+    description: "Возможно обучение",
+    salary: "1500",
+  },
+  {
+    name: "Электрогазосварщик",
+    description: "",
+    salary: "1500",
+  },
+  {
+    name: "Электромонтёр по ремонту и обслуживанию оборудования",
+    description: "",
+    salary: " 1500",
+  },
+  {
+    name: "Машинист крана",
+    description: "Обучаем за счет предприятия",
+    salary: "1200",
+  },
+  {
+    name: "Каменщик",
+    description: "",
+    salary: "1300",
+  },
+  {
+    name: "Бетонщик",
+    description: "",
+    salary: "1300",
+  },
+  {
+    name: "Кровельщик",
+    description: "",
+    salary: "1300",
+  },
+  {
+    name: "Машинист крана",
+    description: "Возможно обучение",
+    salary: "1300",
+  },
+  {
+    name: "Водитель автомобиля (водитель на автовышку)",
+    description: "Возможно обучение",
+    salary: "1100",
+  },
+  {
+    name: "Маляр",
+    description: "",
+    salary: "1500",
   },
 ];

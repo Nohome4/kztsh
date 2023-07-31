@@ -6,7 +6,7 @@
   border-radius: 4px;
   height: max-content;
   width: 20%;
-  margin-right: 100px;
+  margin-right: 50px;
   margin-left: 30px;
   margin-top: 30px;
   margin-bottom: 20px;
@@ -24,4 +24,12 @@
 
 .menu a:hover {
   color: rgb(9, 84, 197);
+}
+
+.a-active {
+  border-bottom: 1px solid #ccc;
+  display: block;
+  padding: 20px;
+  font-weight: bold;
+  text-decoration: none;
 }
