@@ -8,7 +8,7 @@ const AboutNavbar = () => {
       <ul>
         {ABOUT_ROUTES.map((el) => (
           <li>
-            <Link className="Link" to={el.path} key={el.name}>
+            <Link className="Link" to={el.path} key={el.path}>
               {el.name}
             </Link>
           </li>

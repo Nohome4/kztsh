@@ -6,7 +6,10 @@ import Info from "../components/pages/Info";
 import Jobs from "../components/pages/Jobs";
 import Main from "../components/pages/Main";
 import Partners from "../components/pages/Partners";
+import PriceList from "../components/pages/PriceList";
+import ProductsList from "../components/pages/ProductsList";
 import Reporting from "../components/pages/Reporting";
+import Requisites from "../components/pages/Requisites";
 import {
   ABOUT_ROUTE,
   ADMIN_ROUTE,
@@ -46,6 +49,18 @@ export const userRoutes = [
   {
     path: "/partners",
     Component: Partners,
+  },
+  {
+    path: "/requisites",
+    Component: Requisites,
+  },
+  {
+    path: "/price-list",
+    Component: PriceList,
+  },
+  {
+    path: "/product-list",
+    Component: ProductsList,
   },
 ];
 

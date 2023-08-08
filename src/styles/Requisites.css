@@ -1,0 +1,28 @@
+.requisites {
+  display: flex;
+  flex-direction: space-between;
+}
+.requisites-content {
+  width: 80%;
+  margin-right: 50px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  opacity: 0.8;
+}
+a {
+  color: rgb(9, 84, 197);
+}
+.pdf-image {
+  width: 50px;
+}
+.requisites-link {
+  display: flex;
+  text-align: center;
+  flex-direction: row;
+  width: max-content;
+  margin-top: 20px;
+}
+.requisites-link p {
+  margin-top: 20px;
+  margin-left: 10px;
+}

@@ -194,3 +194,18 @@ export const reporting2022 = [
     src: "../../pdf/Аудиторское заключение за 2022 год.pdf",
   },
 ];
+
+export const pricesLinks = [
+  {
+    name: "Прайс-лист",
+    src: "../../pdf/pdf-prices/price-list.pdf",
+  },
+  {
+    name: "Прайс-лист для физических лиц",
+    src: "../../pdf/pdf-prices/price-list-fizical.pdf",
+  },
+  {
+    name: "Прайс-лист на строительные материалы",
+    src: "../../pdf/pdf-prices/price-list-building.pdf",
+  },
+];

@@ -4,6 +4,7 @@ import { adminRoutes, userRoutes } from "../../store/routes";
 import { Routes, Route } from "react-router";
 import Footer from "../Footer";
 import ButtonUp from "../../UI/ButtonUp";
+
 const AppRouter = () => {
   const isAuth = true;
   return (

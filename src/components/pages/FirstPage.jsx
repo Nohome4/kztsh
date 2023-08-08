@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FirstPage = () => {
   return (
@@ -20,7 +21,9 @@ const FirstPage = () => {
           <p>Гарантия качества нашей продукции</p>
         </div>
       </div>
-      <button>О заводе</button>
+      <Link to="/about">
+        <button>О заводе</button>
+      </Link>
       <button>Каталог продукции</button>
     </div>
   );
