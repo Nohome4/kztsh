@@ -7,8 +7,8 @@ const AboutNavbar = () => {
     <div className="dropdown">
       <ul>
         {ABOUT_ROUTES.map((el) => (
-          <li>
-            <Link className="Link" to={el.path} key={el.path}>
+          <li key={el.path}>
+            <Link className="Link" to={el.path}>
               {el.name}
             </Link>
           </li>

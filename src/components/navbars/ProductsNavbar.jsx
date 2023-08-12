@@ -6,8 +6,8 @@ const ProductsNavbar = () => {
     <div className="dropdown">
       <ul>
         {PRODUCTS_ROUTES.map((el) => (
-          <li>
-            <Link className="Link" to={el.path} key={el.name}>
+          <li key={el.name}>
+            <Link className="Link" to={el.path}>
               {el.name}
             </Link>
           </li>

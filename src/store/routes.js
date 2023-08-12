@@ -1,6 +1,8 @@
 import About from "../components/pages/About";
 import Admin from "../components/pages/Admin";
+import Appeals from "../components/pages/Appeals";
 import Contacts from "../components/pages/Contacts";
+import Distribution from "../components/pages/Distribution";
 import Documents from "../components/pages/Documents";
 import Info from "../components/pages/Info";
 import Jobs from "../components/pages/Jobs";
@@ -61,6 +63,14 @@ export const userRoutes = [
   {
     path: "/product-list",
     Component: ProductsList,
+  },
+  {
+    path: "/appeals",
+    Component: Appeals,
+  },
+  {
+    path: "/distribution",
+    Component: Distribution,
   },
 ];
 

@@ -15,8 +15,8 @@ const MenuNavbar = () => {
         <div className="dropdown">
           <ul>
             {MAIN_ROUTES.map((el) => (
-              <li>
-                <Link className="Link" to={el.path} key={el.name}>
+              <li key={el.name}>
+                <Link className="Link" to={el.path}>
                   {el.name}
                 </Link>
               </li>
