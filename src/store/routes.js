@@ -1,5 +1,6 @@
 import About from "../components/pages/About";
 import Admin from "../components/pages/Admin";
+import AntiCorruption from "../components/pages/AntiCorruption";
 import Appeals from "../components/pages/Appeals";
 import Contacts from "../components/pages/Contacts";
 import Distribution from "../components/pages/Distribution";
@@ -71,6 +72,10 @@ export const userRoutes = [
   {
     path: "/distribution",
     Component: Distribution,
+  },
+  {
+    path: "/anti-corruption",
+    Component: AntiCorruption,
   },
 ];
 

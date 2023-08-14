@@ -19,7 +19,7 @@ const Requisites = () => {
             обратиться в бухгалтерию предприятия.
           </p>
           <div className="requisites-table">
-            <table>
+            <table className="table">
               <thead>
                 <tr>
                   <th>№</th>
