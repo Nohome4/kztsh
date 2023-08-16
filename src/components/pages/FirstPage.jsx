@@ -24,7 +24,9 @@ const FirstPage = () => {
       <Link to="/about">
         <button>О заводе</button>
       </Link>
-      <button>Каталог продукции</button>
+      <Link to="/products">
+        <button>Каталог продукции</button>
+      </Link>
     </div>
   );
 };

@@ -8,6 +8,9 @@ import Documents from "../components/pages/Documents";
 import Info from "../components/pages/Info";
 import Jobs from "../components/pages/Jobs";
 import Main from "../components/pages/Main";
+import Management from "../components/pages/Management";
+import ManagementTeam from "../components/pages/ManagementTeam";
+import MarketingTeam from "../components/pages/MarketingTeam";
 import Partners from "../components/pages/Partners";
 import PriceList from "../components/pages/PriceList";
 import ProductsList from "../components/pages/ProductsList";
@@ -34,7 +37,7 @@ export const userRoutes = [
     Component: Info,
   },
   {
-    path: "/management",
+    path: "/contacts",
     Component: Contacts,
   },
   {
@@ -76,6 +79,18 @@ export const userRoutes = [
   {
     path: "/anti-corruption",
     Component: AntiCorruption,
+  },
+  {
+    path: "/management",
+    Component: Management,
+  },
+  {
+    path: "/management-team",
+    Component: ManagementTeam,
+  },
+  {
+    path: "/marketing-team",
+    Component: MarketingTeam,
   },
 ];
 

@@ -19,7 +19,9 @@ const Contacts = () => {
         <LeftMenu arr={CONTACTS_ROUTES} />
         <div className="contacts-content">
           <DirectorsPhotoContacts />
+          <h3>Руководство завода:</h3>
           <DirectorsContacts contactsList={directorContacts} />
+          <h3>Отдел маркетинга:</h3>
           <DirectorsContacts contactsList={marketingContacts} />
           <p></p>
         </div>

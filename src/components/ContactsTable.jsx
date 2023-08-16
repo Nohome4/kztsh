@@ -1,8 +1,8 @@
 import React from "react";
-import "../styles/DirectorsContacts.css";
+
 const ContactsTable = (props) => {
   return (
-    <div className="directorContacts">
+    <div className="table">
       <table>
         <thead>
           <tr>

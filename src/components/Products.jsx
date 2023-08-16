@@ -1,6 +1,6 @@
 import React from "react";
 import Product from "./Product";
-
+import { Link } from "react-router-dom";
 const Products = (props) => {
   return (
     <div className="products">
@@ -12,7 +12,9 @@ const Products = (props) => {
           лидирующие позиции на рынке Беларуси. Мы уверены в надежности и
           длительном сроке службы и предоставляем гарантию на все товары.
         </p>
-        <button>Весь каталог ›</button>
+        <Link to="/products">
+          <button>Весь каталог ›</button>
+        </Link>
       </div>
       <div className="product-list">
         {props.items.map((el) => (
