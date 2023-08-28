@@ -3,6 +3,7 @@ import Admin from "../components/pages/Admin";
 import AntiCorruption from "../components/pages/AntiCorruption";
 import Appeals from "../components/pages/Appeals";
 import Contacts from "../components/pages/Contacts";
+import Delivery from "../components/pages/Delivery";
 import Distribution from "../components/pages/Distribution";
 import Documents from "../components/pages/Documents";
 import Info from "../components/pages/Info";
@@ -91,6 +92,10 @@ export const userRoutes = [
   {
     path: "/marketing-team",
     Component: MarketingTeam,
+  },
+  {
+    path: "/delivery",
+    Component: Delivery,
   },
 ];
 

@@ -8,9 +8,9 @@ const Header = () => {
     <div className="header">
       <MenuNavbar />
       <Link to={MAIN_ROUTE}>
-        <img className="header-logo" src="/images/kztsh-logo.jpg" alt="logo" />
+        <img className="header-logo" src="/images/logo.png" alt="logo" />
       </Link>
-      <h3>КЗТШ</h3>
+
       <Navbar />
     </div>
   );
