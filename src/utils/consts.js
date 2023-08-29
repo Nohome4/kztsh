@@ -683,6 +683,46 @@ export const sidewalkTile = [
     id: 4,
   },
 ];
+export const fittings = [
+  {
+    name: "ПЕТЛЯ ПН 1-85 ПО ГОСТ 5088-94",
+    description:
+      "Для створок оконных блоков и полотен дверных блоков без наплава.",
+    id: 1,
+  },
+  {
+    name: "ПЕТЛЯ ПН 1-110 ПО ГОСТ 5088-94",
+    description:
+      "Для створок оконных блоков и полотен дверных блоков без наплава.",
+    id: 2,
+  },
+  {
+    name: "ПЕТЛЯ ПН 1-130 ПО ГОСТ 5088-94",
+    description:
+      "Для створок оконных блоков и полотен дверных блоков без наплава.",
+    id: 3,
+  },
+  {
+    name: "ПЕТЛЯ ПС 280",
+    description: "",
+    id: 4,
+  },
+  {
+    name: "УГОЛОК У3",
+    description: "Полимерное покрытие",
+    id: 5,
+  },
+  {
+    name: "УГОЛОК У4",
+    description: "Полимерное покрытие",
+    id: 6,
+  },
+  {
+    name: "МЕБЕЛЬНАЯ ФУРНИТУРА",
+    description: "используется при изготовлении кресел для зрительных залов",
+    id: 7,
+  },
+];
 //
 export const items = [
   {
@@ -746,6 +786,7 @@ export const items = [
     count: "4",
     id: 9,
     image: "../images/products-images/furnityra.jpg",
+    categories: fittings,
   },
 ];
 export const itemsName = [
