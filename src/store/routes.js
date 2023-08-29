@@ -66,7 +66,7 @@ export const userRoutes = [
     Component: PriceList,
   },
   {
-    path: "/product-list",
+    path: "/products",
     Component: ProductsList,
   },
   {
