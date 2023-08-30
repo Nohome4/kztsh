@@ -16,7 +16,7 @@ const Products = (props) => {
           <button>Весь каталог ›</button>
         </Link>
       </div>
-      <div className="product-list">
+      <div className="product-main-list">
         {props.items.map((el) => (
           <Product key={el.id} item={el} />
         ))}
