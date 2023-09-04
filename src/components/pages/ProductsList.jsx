@@ -13,7 +13,11 @@ const ProductsList = () => {
         <LeftMenu arr={itemsLeftMenu} />
         <div className="product-content">
           {items.map((product) => (
-            <Link className="product-card" to={`/products/${product.id}`}>
+            <Link
+              key={product.id}
+              className="product-card"
+              to={`/products/${product.id}`}
+            >
               <div key={product.id}>
                 <img
                   className="icon-image"

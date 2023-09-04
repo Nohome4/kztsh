@@ -11,7 +11,9 @@ const BurgerMenu = () => {
         customBurgerIcon={<img src="/images/burger-icon.svg" alt="icon" />}
       >
         {MAIN_ROUTES.map((el) => (
-          <Link to={el.path}>{el.name}</Link>
+          <Link key={el.path} to={el.path}>
+            {el.name}
+          </Link>
         ))}
       </Menu>
     </div>

@@ -4,8 +4,10 @@ import { items, itemsLeftMenu } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/ProductPage.css";
+import { Link } from "react-router-dom";
 const ProductPage = () => {
   const { productId } = useParams();
+
   const product = items.find((product) => product.id === Number(productId));
   return (
     <div>
@@ -23,7 +25,9 @@ const ProductPage = () => {
                   alt="1"
                 />
                 <div className="product-page-card-text">
-                  <h3>{category.name}</h3>
+                  <Link to={`/products/${product.id}/${category.id}`}>
+                    {category.name}
+                  </Link>
                   <hr />
                   <p>{category.description}</p>
                 </div>
