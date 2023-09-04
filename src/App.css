@@ -157,9 +157,10 @@
 /* ProductProductProductProductProductProductProductProductProductProductProductProductProductProductProductProductProductProductProduct */
 .product-main-list {
   display: flex;
-  width: 100%;
+  width: 90%;
+  margin-left: 70px;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-bottom: 50px;
 }
 .product {
