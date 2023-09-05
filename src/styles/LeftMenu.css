@@ -34,3 +34,8 @@
   text-decoration: none;
   background-color: #e5e2e2;
 }
+@media screen and (max-width: 1200px) {
+  .menu {
+    display: none;
+  }
+}

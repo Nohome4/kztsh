@@ -14,6 +14,7 @@ const Products = (props) => {
         </p>
         <Link to="/products">
           <button>Весь каталог ›</button>
+          <span>›</span>
         </Link>
       </div>
       <div className="product-main-list">
