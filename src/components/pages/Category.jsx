@@ -15,6 +15,9 @@ const Category = () => {
     <div>
       <h1>{item.name}</h1>
       <p>{item.description}</p>
+      {item.images.map((el) => (
+        <img src={el} alt={item.name} />
+      ))}
     </div>
   );
 };

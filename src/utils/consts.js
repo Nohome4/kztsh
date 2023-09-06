@@ -417,77 +417,116 @@ export const forgings = [
     description:
       "Поковки коленчатых валов для 4-х и 6-ти цилиндровых двигателей.",
     id: 1,
+    images: [
+      "/images/products-images/products/pokovki/kolenchatyj-val-pokovka/IMG_0974.JPG",
+    ],
   },
 
   {
     name: "БАЛКА ОПОРЫ ДВИГАТЕЛЯ АВТОМОБИЛЯ МАЗ",
     description: "У этого товара к сожалению пока нет описания.",
     id: 2,
+    images: [
+      "/images/products-images/products/pokovki/balka-opory/IMG_0983.JPG",
+      "/images/products-images/products/pokovki/balka-opory/IMG_1351.JPG",
+    ],
   },
   {
     name: "БАЛКА ПЕРЕДНЕЙ ОСИ ДЛЯ АВТОМОБИЛЕЙ СЕМЕЙСТВА МАЗ, КРАЗ",
     description: "У этого товара к сожалению пока нет описания.",
     id: 3,
+    images: [
+      "/images/products-images/products/pokovki/balka/IMG_0977.JPG",
+      "/images/products-images/products/pokovki/balka/IMG_1352.JPG",
+      "/images/products-images/products/pokovki/balka/IMG_1353.JPG",
+      "/images/products-images/products/pokovki/balka/IMG_1354.JPG",
+    ],
   },
   {
     name: "ЧАШКА",
     description: 'Поковки деталей типа "Чашка"',
     id: 4,
+    images: ["/images/products-images/products/pokovki/cup/CUP.jpg"],
   },
   {
     name: "ЦАПФА МОСТА АВТОМОБИЛЯ МАЗ",
     description:
       "Цапфа (нем. Zapfen — тех. цапфа, шейка, шип, втулка, стержень) — часть вала или оси, на которой находится опора (подшипник).",
     id: 5,
+    images: [
+      "/images/products-images/products/pokovki/capfa/1.JPG",
+      "/images/products-images/products/pokovki/capfa/2.JPG",
+      "/images/products-images/products/pokovki/capfa/3.JPG",
+    ],
   },
   {
     name: "ШЕСТЕРНИ (ПОКОВКИ)",
     description: "У этого товара к сожалению пока нет описания.",
     id: 6,
+    images: [
+      "/images/products-images/products/pokovki/shesterni-pokovki/IMG_1041.JPG",
+      "/images/products-images/products/pokovki/shesterni-pokovki/IMG_1360.JPG",
+      "/images/products-images/products/pokovki/shesterni-pokovki/IMG_1361.JPG",
+    ],
   },
   {
     name: "АНКЕР ЗАКЛАДНОЙ",
     description: "У этого товара к сожалению пока нет описания.",
     id: 7,
+    images: [
+      "/images/products-images/products/pokovki/anker-zakladnoj/IMG_1152.JPG",
+    ],
   },
   {
     name: "ШАЙБА ЗАКЛАДНАЯ",
     description: "У этого товара к сожалению пока нет описания.",
     id: 8,
+    images: ["/images/products-images/products/pokovki/shayba/1.jpg"],
   },
   {
     name: "КУЛАК ПОВОРОТНЫЙ АВТОМОБИЛЯ МЗКТ",
     description:
       "Поворотный кулак - деталь подвески автомобиля (как передней, так и задней), являющаяся основанием для ступицы, на которую монтируется колесо.",
     id: 9,
+    images: [
+      "/images/products-images/products/pokovki/kulak-povorotnyj-avtomobilya-mzkt/IMG_0936.JPG",
+      "/images/products-images/products/pokovki/kulak-povorotnyj-avtomobilya-mzkt/IMG_1012.JPG",
+    ],
   },
   {
     name: "КРЮК ЧАЛОЧНЫЙ",
     description:
       "Крюки чалочные применяются для изготовления грузозахватных приспособлений (чалок). ГОСТ 25573-82. Исполнение К1 (с замком).",
     id: 10,
+    images: ["/images/products-images/products/pokovki/kruk/1.jpg"],
   },
   {
     name: "КУЛАК ПОВОРОТНЫЙ АВТОМОБИЛЯ БЕЛАЗ",
     description:
       "Поворотный кулак - деталь подвески автомобиля (как передней, так и задней), являющаяся основанием для ступицы, на которую монтируется колесо.",
     id: 11,
+    images: [
+      "/images/products-images/products/pokovki/kulak-povorotnyj-avtomobilya-belaz/IMG_1021.JPG",
+    ],
   },
   {
     name: "КРЕСТОВИНА",
     description: "У этого товара к сожалению пока нет описания.",
     id: 12,
+    images: ["/images/products-images/products/pokovki/krestovina/1.jpg"],
   },
   {
     name: "КЛИН ТЯГОВОГО ХОМУТА 106.00.002-2",
     description:
       "Изготовлен методом горячей штамповки из стали 38ХС. Является комплектующим изделием сцепного устройства в железнодорожном подвижном составе.",
     id: 13,
+    images: ["/images/products-images/products/pokovki/klin/1.jpg"],
   },
   {
     name: "СКРЕБОК",
     description: "У этого товара к сожалению пока нет описания.",
     id: 14,
+    images: ["/images/products-images/products/pokovki/skrebok/1.jpg"],
   },
 ];
 export const knots = [
@@ -495,136 +534,220 @@ export const knots = [
     name: "КАРТЕР ЗАДНЕГО МОСТА МАЗ",
     description: "54321-2401012, 64221-2401012, 64221-2501012",
     id: 1,
+    images: [
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-maz/IMG_0939.JPG",
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-maz/IMG_0978.JPG",
+    ],
   },
   {
     name: "КАРТЕР ЗАДНЕГО МОСТА МАЗ",
     description:
       "54321-2401012-030, 64221-2401012-030, 64221-2501012-030, 6430-2401012-030, 6430-2501012-030, 5440-2401012-030, 64301-2401012-030, 64301-2501012-030, 651608-2401012, 6501W6-2501012-000",
     id: 2,
+    images: [
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-maz-2/IMG_0952.JPG",
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-maz-2/IMG_0984.JPG",
+    ],
   },
   {
     name: "КАРТЕР ЗАДНЕГО МОСТА МЗКТ",
     description:
       "8007-2301014, 8007-2321014, 6923-2401014, 6923-2501014, 5201-2401013, 6923-2401013, 6923-2501013",
     id: 3,
+    images: [
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-mzkt/IMG_1344.JPG",
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-mzkt/IMG_1357.JPG",
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-mzkt/IMG_1362.JPG",
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-mzkt/IMG_1364.JPG",
+    ],
   },
   {
     name: "КАРТЕР ЗАДНЕГО МОСТА ФРОНТАЛЬНОГО ПОГРУЗЧИКА «АМКОДОР»",
     description: "342.05.01.200, 342.05.01.300, 342.05.01.400",
     id: 4,
+    images: [
+      "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-frontalnogo-pogruzchika-amkodor/IMG_0995.JPG",
+    ],
   },
   {
     name: "ОБОД КОЛЕСА АВТОМОБИЛЯ БЕЛАЗ",
     description:
       "Ободья колёс для шин карьерных самосвалов большой грузоподъёмности (г/п).",
     id: 5,
+    images: [
+      "/images/products-images/products/uzli_i_detali/obod-kolesa-avtomobilya-belaz/IMG_0961.JPG",
+      "/images/products-images/products/uzli_i_detali/obod-kolesa-avtomobilya-belaz/IMG_0962.JPG",
+      "/images/products-images/products/uzli_i_detali/obod-kolesa-avtomobilya-belaz/IMG_0996.JPG",
+      "/images/products-images/products/uzli_i_detali/obod-kolesa-avtomobilya-belaz/IMG_0997.JPG",
+      "/images/products-images/products/uzli_i_detali/obod-kolesa-avtomobilya-belaz/IMG_0998.JPG",
+      "/images/products-images/products/uzli_i_detali/obod-kolesa-avtomobilya-belaz/IMG_1006.JPG",
+    ],
   },
   {
     name: "ЛОНЖЕРОНЫ, ПОЛУЧАЕМЫЕ ИЗ МЕРНОГО ШВЕЛЛЕРА",
     description: "4370-2801020/021",
     id: 6,
+    images: [
+      "/images/products-images/products/uzli_i_detali/lonzherony-iz-mernogo-shvellera/506817_original.jpg",
+      "/images/products-images/products/uzli_i_detali/lonzherony-iz-mernogo-shvellera/IMG_1015.JPG",
+    ],
   },
   {
     name: "ЛОНЖЕРОНЫ ПЕРЕМЕННОГО СЕЧЕНИЯ",
     description: "555102-2801020/021",
     id: 7,
+    images: [
+      "/images/products-images/products/uzli_i_detali/lonzherony-tipa-555102-2801020-021/1.jpg",
+      "/images/products-images/products/uzli_i_detali/lonzherony-iz-mernogo-shvellera/IMG_1015.JPG",
+    ],
   },
   {
     name: "ЛОНЖЕРОНЫ УСИЛЕННЫЕ",
     description: "555102-2801020/021",
     id: 8,
+    images: [
+      "/images/products-images/products/uzli_i_detali/lonzherony-sdvoennye-tipa-551605-2801014-014-015-014/1.jpg",
+    ],
   },
 ];
+// пропущена категория, заполнить фотки
 export const spareParts = [
   {
     name: "ЛАПА КУЛЬТИВАТОРА ЧИЗЕЛЬНОГО КЧ 01.00.012, КЧ 01.00.012-01",
     description: "ПГ 03.02.000",
     id: 1,
+    images: [
+      "/images/products-images/products/zp_selhoz/lapa-kultivatora-chizelnogo-kch01-00-005/1.jpg",
+    ],
   },
   {
     name: "ЛАПА РЫХЛИТЕЛЬНАЯ 65Х10-М10 ПОД БОЛТ 10-КУ (КЧ 01.00.005)",
     description: "лапа рыхлительная 65х10-М10 под болт 10-ку",
     id: 2,
+    images: [
+      "/images/products-images/products/zp_selhoz/lapa-rihlitylnaya-m10/1.jpg",
+    ],
   },
   {
     name: "ЛАПА РЫХЛИТЕЛЬНАЯ 65Х10-М12 ПОД БОЛТ 12-КУ (КЧ 01.00.005)",
     description: "65х10-М12 под болт 12-ку",
     id: 3,
+    images: [
+      "/images/products-images/products/zp_selhoz/lapa-rihlitylnaya-m12/1.jpg",
+    ],
   },
   {
     name: "ЛАПА РЫХЛИТЕЛЬНАЯ ОБОРОТНАЯ ДОЛОТООБРАЗНАЯ 65Х10-О-М10 ПОД БОЛТ 10-КУ (КЧ01.00.011)",
     description:
       "лапа рыхлительная оборотная долотообразная 65х10-О-М10 под болт 10-ку",
     id: 4,
+    images: [
+      "/images/products-images/products/zp_selhoz/lapa-rihlitylnaya-oborotnya-m10/1.jpg",
+    ],
   },
   {
     name: "ЛАПА РЫХЛИТЕЛЬНАЯ ОБОРОТНАЯ ДОЛОТООБРАЗНАЯ 65Х10-О-М12 ПОД БОЛТ 12-КУ (КЧ01.00.011)",
     description:
       "лапа рыхлительная оборотная долотообразная 65х10-О-М12 под болт 12-ку",
     id: 5,
+    images: [
+      "/images/products-images/products/zp_selhoz/lapa-rihlitylnaya-oborotnya-m12/1.jpg",
+    ],
   },
   {
     name: "ЛАПА КУЛЬТИВАТОРА ЧИЗЕЛЬНОГО КПЦ 02.402",
     description: "КПЦ 02.402",
     id: 6,
+    images: [
+      "/images/products-images/products/zp_selhoz/lapa-kultivatora-chizelnogo-kch02-402/1.jpg",
+    ],
   },
   {
     name: "ДИСК В 2-2-650-6",
     description: "В 2-2-650-6. Используется для бороны дисковой БДТ-3; БДТ-7",
     id: 7,
+    images: [
+      "/images/products-images/products/zp_selhoz/disk-v-2-2-650-6/1.jpg",
+    ],
   },
   {
     name: "ЛЕМЕХ ППН.8.30/50-301П (-01) (АНАЛОГ «КВЕРНЕЛАНД»)",
     description: "ППН.8.30/50-301П (-01)",
     id: 8,
+    images: [
+      "/images/products-images/products/zp_selhoz/lemekh-ppn-8-30-50-301p-01/1.jpg",
+    ],
   },
 ];
+
 export const lightIndustryProducts = [
   {
     name: "РУКАВИЦЫ СПЕЦИАЛЬНЫЕ ГОСТ 12.4.010-75*",
     description:
       "Для защиты рук работающих от повышенных температур и механических воздействий.",
     id: 1,
+    images: [
+      "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-1/IMG_1102.JPG",
+      "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-1/IMG_1103.JPG",
+    ],
   },
   {
     name: "РУКАВИЦЫ СПЕЦИАЛЬНЫЕ ГОСТ 12.4.010-75*",
     description:
       "Для защиты рук работающих от повышенных температур и механических воздействий.",
     id: 2,
+    images: [
+      "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-2/IMG_1100.JPG",
+    ],
   },
   {
     name: "РУКАВИЦЫ СПЕЦИАЛЬНЫЕ ГОСТ 12.4.010-75*",
     description:
       "Для защиты рук работающих от истирания, механических воздействий; повышенная сцепляемость с поверхностями.",
     id: 3,
+    images: [
+      "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-3/IMG_11251.JPG",
+      "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-3/IMG_11261.JPG",
+    ],
   },
   {
     name: "КОСТЮМ БРЕЗЕНТОВЫЙ ОТ ПОВЫШЕННЫХ ТЕМПЕРАТУР",
     description: "Защита от повышенных температур.",
     id: 4,
+    images: [
+      "/images/products-images/products/legprom/custum-temperatyra/1.jpg",
+    ],
   },
   {
     name: "КОСТЮМ МУЖСКОЙ ГОСТ 27653-88, СТБ 1387-2003",
     description:
       "Костюм мужской - предназначен для защиты от общепроизводственных факторов.",
     id: 5,
+    images: ["/images/products-images/products/legprom/custum-gost/1.jpg"],
   },
   {
     name: "КУРТКА УТЕПЛЕННАЯ",
     description: "нет описания",
     id: 6,
+    images: ["/images/products-images/products/legprom/kyrtka/1.jpg"],
   },
   {
     name: "ПОЛОТНО СИНТЕТИЧЕСКОЕ СЕТКА ТУ BY 600038921.003-2006",
     description:
       "Предназначено для изготовления полиграфической продукции, рассчитанной на длительную и интенсивную эксплуатацию.",
     id: 7,
+    images: [
+      "/images/products-images/products/legprom/polotno-sinteticheskoe-setka-tu-by-600038921-003-2006/IMG_1312.JPG",
+    ],
   },
   {
     name: "ПАКЕТ ТУ РБ 600038921.001-2003",
     description:
       "Предназначены для упаковывания, транспортирования и хранения пищевых продуктов. Допускается использование пакетов для упаковывания промышленных товаров и пр.",
     id: 8,
+    images: [
+      "/images/products-images/products/legprom/paket-tu-rb-600038921-001-2003/IMG_1306.JPG",
+    ],
   },
 ];
 export const springs = [
@@ -632,6 +755,7 @@ export const springs = [
     name: "ПРУЖИНЫ",
     description: "Пружины сжатия и растяжения",
     id: 1,
+    images: ["/images/products-images/products/pruzhiny/pruzhiny/1.JPG"],
   },
 ];
 export const buildingMaterials = [
@@ -640,12 +764,16 @@ export const buildingMaterials = [
     description:
       "изготавливаются в соответствии с СТБ 1035-96, СТБ-1544-2005. По заявке покупателя вводится противоморозная добавка. Возможна доставка.",
     id: 1,
+    images: ["/images/products-images/products/stroymat/betonnye-smesi/1.jpg"],
   },
   {
     name: "РАСТВОРНЫЕ СМЕСИ КЛАДОЧНЫЕ, ЦЕМЕНТНЫЕ",
     description:
       "изготавливаются в соответствии с СТБ 1307-2012. По заявке покупателя вводится противоморозная добавка. Возможна доставка",
     id: 2,
+    images: [
+      "/images/products-images/products/stroymat/rastvorimye-smesi/1.jpg",
+    ],
   },
 ];
 export const consumptionGoods = [
@@ -653,12 +781,22 @@ export const consumptionGoods = [
     name: "ПЕЧИ ДЛЯ БАНИ",
     description: "Печи для бани с емкостью каменки 0.02м3 и 0.04м3.",
     id: 1,
+    images: [
+      "/images/products-images/products/tnp/pechi/pech2.jpg",
+      "/images/products-images/products/tnp/pechi/pech3.jpg",
+    ],
   },
   {
     name: "МАНГАЛЫ",
     description:
       'Мангал - это приспособление для приготовления мяса на угольях, исконно русское название — "жаровня". Предлагаем несколько модификаций.',
     id: 2,
+    images: [
+      "/images/products-images/products/tnp/mangal/1.jpg",
+      "/images/products-images/products/tnp/mangal/mangal012.png",
+      "/images/products-images/products/tnp/mangal/mangal016.png",
+      "/images/products-images/products/tnp/mangal/mangal017.png",
+    ],
   },
 ];
 export const sidewalkTile = [
@@ -666,21 +804,25 @@ export const sidewalkTile = [
     name: 'ПЛИТКА ТРОТУАРНАЯ "НОВЫЙ ГОРОД" СТБ1071-2007 Б 3.020.1-8.08',
     description: "",
     id: 1,
+    images: ["/images/products-images/products/plitka/plitka-newcity/1.jpg"],
   },
   {
     name: "БОРТ ТРОТУАРНЫЙ СТБ 1097-2012 3.020.1-9.12",
     description: "",
     id: 2,
+    images: ["/images/products-images/products/plitka/bort-trotyarnyi/1.jpg"],
   },
   {
     name: "БОРТ ДОРОЖНЫЙ СТБ 1097-2012 3.020.1-9.12 (ВРЕМЕННО НЕ ИЗГОТАВЛИВАЮТСЯ)",
     description: "",
     id: 3,
+    images: ["/images/products-images/products/plitka/bort-dorojnyi/1.jpg"],
   },
   {
     name: 'ПЛИТКА ТРОТУАРНАЯ "КИРПИЧИК" СТБ1071-2007 Б.3.020.1-8.08',
     description: "",
     id: 4,
+    images: ["/images/products-images/products/plitka/plitka-trotyarnya/1.jpg"],
   },
 ];
 export const fittings = [
@@ -689,38 +831,61 @@ export const fittings = [
     description:
       "Для створок оконных блоков и полотен дверных блоков без наплава.",
     id: 1,
+    images: [
+      "/images/products-images/products/furnitura/petlya-pn/1.jpg",
+      "/images/products-images/products/furnitura/petlya-pn/IMG_1923.JPG",
+    ],
   },
   {
     name: "ПЕТЛЯ ПН 1-110 ПО ГОСТ 5088-94",
     description:
       "Для створок оконных блоков и полотен дверных блоков без наплава.",
     id: 2,
+    images: [
+      "/images/products-images/products/furnitura/petlya-pn/1.jpg",
+      "/images/products-images/products/furnitura/petlya-pn/IMG_1923.JPG",
+    ],
   },
   {
     name: "ПЕТЛЯ ПН 1-130 ПО ГОСТ 5088-94",
     description:
       "Для створок оконных блоков и полотен дверных блоков без наплава.",
     id: 3,
+    images: [
+      "/images/products-images/products/furnitura/petlya-pn/1.jpg",
+      "/images/products-images/products/furnitura/petlya-pn/IMG_1923.JPG",
+    ],
   },
   {
     name: "ПЕТЛЯ ПС 280",
     description: "",
     id: 4,
+    images: ["/images/products-images/products/furnitura/petlya-pc/1.jpg"],
   },
   {
     name: "УГОЛОК У3",
     description: "Полимерное покрытие",
     id: 5,
+    images: [
+      "/images/products-images/products/furnitura/ugolok-u3/IMG_1943.JPG",
+    ],
   },
   {
     name: "УГОЛОК У4",
     description: "Полимерное покрытие",
     id: 6,
+    images: [
+      "/images/products-images/products/furnitura/ugolok-u4/IMG_1944.JPG",
+    ],
   },
   {
     name: "МЕБЕЛЬНАЯ ФУРНИТУРА",
     description: "используется при изготовлении кресел для зрительных залов",
     id: 7,
+    images: [
+      "/images/products-images/products/furnitura/mebelnaya-furnitura/IMG_1154.JPG",
+      "/images/products-images/products/furnitura/mebelnaya-furnitura/IMG_1155.JPG",
+    ],
   },
 ];
 export const flanges = [
@@ -729,18 +894,30 @@ export const flanges = [
     description:
       "Фланцы применяются для соединения изделий арматуры с трубопроводами, соединения отдельных участков трубопроводов между собой и для присоединения трубопроводов к различному оборудованию.",
     id: 1,
+    images: [
+      "/images/products-images/products/flanci/flantsy-po-din-2632-2633-2634-2635/IMG_1027.JPG",
+    ],
   },
   {
     name: "ФЛАНЦЫ ПО ГОСТ 33259-2015",
     description:
       "Фланцы применяются для соединения изделий арматуры с трубопроводами, соединения отдельных участков трубопроводов между собой и для присоединения трубопроводов к различному оборудованию.",
     id: 2,
+    images: [
+      "/images/products-images/products/flanci/flantsy-po-gost-12820-80/IMG_1024.JPG",
+      "/images/products-images/products/flanci/flantsy-po-gost-12820-80/IMG_1025.JPG",
+      "/images/products-images/products/flanci/flantsy-po-gost-12820-80/IMG_1026.JPG",
+      "/images/products-images/products/flanci/flantsy-po-gost-12820-80/IMG_1134.JPG",
+    ],
   },
   {
     name: "ЗАГЛУШКИ DIN 2527",
     description:
       "Заглушки фланцевые применяются в нефте- и газопроводах, на нефтеперерабатывающих заводах и водопроводах. Температура применения фланцевых заглушек зависит от марки стали, из которой они изготовлены, и варьируется от -70 до +650°С.",
     id: 3,
+    images: [
+      "/images/products-images/products/flanci/zaglushki-din-2527/1.jpg",
+    ],
   },
 ];
 //
