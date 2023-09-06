@@ -420,6 +420,28 @@ export const forgings = [
     images: [
       "/images/products-images/products/pokovki/kolenchatyj-val-pokovka/IMG_0974.JPG",
     ],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "43,7",
+      },
+      {
+        name: "длина L, мм",
+        id: "2",
+        value: "737",
+      },
+      {
+        name: "диаметр шейки D, мм",
+        id: "3",
+        value: "108",
+      },
+      {
+        name: "диаметр шейки d, мм",
+        id: "4",
+        value: "47",
+      },
+    ],
   },
 
   {
@@ -429,6 +451,28 @@ export const forgings = [
     images: [
       "/images/products-images/products/pokovki/balka-opory/IMG_0983.JPG",
       "/images/products-images/products/pokovki/balka-opory/IMG_1351.JPG",
+    ],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "15,5",
+      },
+      {
+        name: "длина L, мм",
+        id: "2",
+        value: "950",
+      },
+      {
+        name: "диаметр головы D, мм",
+        id: "3",
+        value: "60",
+      },
+      {
+        name: "высота головы d, мм",
+        id: "4",
+        value: "44",
+      },
     ],
   },
   {
@@ -441,12 +485,66 @@ export const forgings = [
       "/images/products-images/products/pokovki/balka/IMG_1353.JPG",
       "/images/products-images/products/pokovki/balka/IMG_1354.JPG",
     ],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "116",
+      },
+      {
+        name: "длина L, мм",
+        id: "2",
+        value: "1829",
+      },
+      {
+        name: "диаметр головы D, мм",
+        id: "3",
+        value: "80",
+      },
+      {
+        name: "высота головы d, мм",
+        id: "4",
+        value: "107",
+      },
+      {
+        name: "ширина площадки s, мм",
+        id: "5",
+        value: "165",
+      },
+    ],
   },
   {
     name: "ЧАШКА",
     description: 'Поковки деталей типа "Чашка"',
     id: 4,
     images: ["/images/products-images/products/pokovki/cup/CUP.jpg"],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "16,5",
+      },
+      {
+        name: "высота Н, мм",
+        id: "2",
+        value: "180",
+      },
+      {
+        name: "диаметр фланца D, мм",
+        id: "3",
+        value: "197",
+      },
+      {
+        name: "диаметр d, мм",
+        id: "4",
+        value: "106",
+      },
+      {
+        name: "диаметр отверстия d, мм",
+        id: "5",
+        value: "52",
+      },
+    ],
   },
   {
     name: "ЦАПФА МОСТА АВТОМОБИЛЯ МАЗ",
@@ -458,6 +556,28 @@ export const forgings = [
       "/images/products-images/products/pokovki/capfa/2.JPG",
       "/images/products-images/products/pokovki/capfa/3.JPG",
     ],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "24,4",
+      },
+      {
+        name: "высота Н, мм",
+        id: "2",
+        value: "340",
+      },
+      {
+        name: "диаметр фланца D, мм",
+        id: "3",
+        value: "213",
+      },
+      {
+        name: "диаметр d, мм",
+        id: "4",
+        value: "65",
+      },
+    ],
   },
   {
     name: "ШЕСТЕРНИ (ПОКОВКИ)",
@@ -468,6 +588,13 @@ export const forgings = [
       "/images/products-images/products/pokovki/shesterni-pokovki/IMG_1360.JPG",
       "/images/products-images/products/pokovki/shesterni-pokovki/IMG_1361.JPG",
     ],
+    characteristics: [
+      {
+        name: "",
+        id: "",
+        value: "",
+      },
+    ],
   },
   {
     name: "АНКЕР ЗАКЛАДНОЙ",
@@ -476,13 +603,28 @@ export const forgings = [
     images: [
       "/images/products-images/products/pokovki/anker-zakladnoj/IMG_1152.JPG",
     ],
+    characteristics: [
+      {
+        name: "",
+        id: "",
+        value: "",
+      },
+    ],
   },
   {
     name: "ШАЙБА ЗАКЛАДНАЯ",
     description: "У этого товара к сожалению пока нет описания.",
     id: 8,
     images: ["/images/products-images/products/pokovki/shayba/1.jpg"],
+    characteristics: [
+      {
+        name: "",
+        id: "",
+        value: "",
+      },
+    ],
   },
+
   {
     name: "КУЛАК ПОВОРОТНЫЙ АВТОМОБИЛЯ МЗКТ",
     description:
@@ -492,6 +634,28 @@ export const forgings = [
       "/images/products-images/products/pokovki/kulak-povorotnyj-avtomobilya-mzkt/IMG_0936.JPG",
       "/images/products-images/products/pokovki/kulak-povorotnyj-avtomobilya-mzkt/IMG_1012.JPG",
     ],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "54",
+      },
+      {
+        name: "диаметр наружный D, мм",
+        id: "2",
+        value: "316",
+      },
+      {
+        name: "диаметр отверстия d, мм",
+        id: "3",
+        value: "216",
+      },
+      {
+        name: "диаметр шейки dш, мм",
+        id: "4",
+        value: "83",
+      },
+    ],
   },
   {
     name: "КРЮК ЧАЛОЧНЫЙ",
@@ -499,6 +663,18 @@ export const forgings = [
       "Крюки чалочные применяются для изготовления грузозахватных приспособлений (чалок). ГОСТ 25573-82. Исполнение К1 (с замком).",
     id: 10,
     images: ["/images/products-images/products/pokovki/kruk/1.jpg"],
+    characteristics: [
+      {
+        name: "Материал",
+        id: "1",
+        value: "Ст 20",
+      },
+      {
+        name: "Грузоподъемность, т",
+        id: "2",
+        value: "от 1,6 до 5,0",
+      },
+    ],
   },
   {
     name: "КУЛАК ПОВОРОТНЫЙ АВТОМОБИЛЯ БЕЛАЗ",
@@ -508,12 +684,61 @@ export const forgings = [
     images: [
       "/images/products-images/products/pokovki/kulak-povorotnyj-avtomobilya-belaz/IMG_1021.JPG",
     ],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "88,26",
+      },
+      {
+        name: "высота Н, мм",
+        id: "2",
+        value: "340",
+      },
+      {
+        name: "диаметр шейки d, мм",
+        id: "3",
+        value: "88",
+      },
+      {
+        name: "длина L, мм",
+        id: "4",
+        value: "597",
+      },
+    ],
   },
   {
     name: "КРЕСТОВИНА",
     description: "У этого товара к сожалению пока нет описания.",
     id: 12,
     images: ["/images/products-images/products/pokovki/krestovina/1.jpg"],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "6",
+      },
+      {
+        name: "диаметр наружный D, мм",
+        id: "2",
+        value: "127",
+      },
+      {
+        name: "диаметр отверстия d, мм",
+        id: "3",
+        value: "75",
+      },
+      {
+        name: "диаметр шеек dш, мм",
+        id: "4",
+        value: "44",
+      },
+      {
+        name: "длина L, мм",
+        id: "5",
+        value: "280",
+      },
+    ],
   },
   {
     name: "КЛИН ТЯГОВОГО ХОМУТА 106.00.002-2",
@@ -521,14 +746,59 @@ export const forgings = [
       "Изготовлен методом горячей штамповки из стали 38ХС. Является комплектующим изделием сцепного устройства в железнодорожном подвижном составе.",
     id: 13,
     images: ["/images/products-images/products/pokovki/klin/1.jpg"],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "7.1",
+      },
+      {
+        name: "ширина b, мм",
+        id: "2",
+        value: "115",
+      },
+      {
+        name: "толщина s , мм",
+        id: "3",
+        value: "32",
+      },
+      {
+        name: "длина L, мм",
+        id: "4",
+        value: "310",
+      },
+    ],
   },
   {
     name: "СКРЕБОК",
     description: "У этого товара к сожалению пока нет описания.",
     id: 14,
     images: ["/images/products-images/products/pokovki/skrebok/1.jpg"],
+    characteristics: [
+      {
+        name: "масса, кг",
+        id: "1",
+        value: "23.3",
+      },
+      {
+        name: "ширина b, мм",
+        id: "2",
+        value: "90",
+      },
+      {
+        name: "высота Н, мм",
+        id: "3",
+        value: "145",
+      },
+      {
+        name: "длина L, мм",
+        id: "4",
+        value: "672",
+      },
+    ],
   },
 ];
+
 export const knots = [
   {
     name: "КАРТЕР ЗАДНЕГО МОСТА МАЗ",
@@ -537,6 +807,13 @@ export const knots = [
     images: [
       "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-maz/IMG_0939.JPG",
       "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-maz/IMG_0978.JPG",
+    ],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
     ],
   },
   {
@@ -547,6 +824,13 @@ export const knots = [
     images: [
       "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-maz-2/IMG_0952.JPG",
       "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-maz-2/IMG_0984.JPG",
+    ],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
     ],
   },
   {
@@ -560,6 +844,13 @@ export const knots = [
       "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-mzkt/IMG_1362.JPG",
       "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-mzkt/IMG_1364.JPG",
     ],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
+    ],
   },
   {
     name: "КАРТЕР ЗАДНЕГО МОСТА ФРОНТАЛЬНОГО ПОГРУЗЧИКА «АМКОДОР»",
@@ -567,6 +858,13 @@ export const knots = [
     id: 4,
     images: [
       "/images/products-images/products/uzli_i_detali/karter-zadnego-mosta-frontalnogo-pogruzchika-amkodor/IMG_0995.JPG",
+    ],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
     ],
   },
   {
@@ -582,6 +880,33 @@ export const knots = [
       "/images/products-images/products/uzli_i_detali/obod-kolesa-avtomobilya-belaz/IMG_0998.JPG",
       "/images/products-images/products/uzli_i_detali/obod-kolesa-avtomobilya-belaz/IMG_1006.JPG",
     ],
+    characteristics: [
+      {
+        name: "31/90-49; 27.00 R 49",
+        id: "1",
+        value: "г/п 110-136 тонн",
+      },
+      {
+        name: "33.00-51; 33.00 R 51",
+        id: "2",
+        value: "г/п 130-136 тонн",
+      },
+      {
+        name: "36.00 R 51",
+        id: "3",
+        value: "г/п 154-160 тонн",
+      },
+      {
+        name: "40.00 R 57; 46/90-57",
+        id: "4",
+        value: "г/п 220-240 тонн",
+      },
+      {
+        name: "40.00-57",
+        id: "5",
+        value: "г/п 180-200 тонн",
+      },
+    ],
   },
   {
     name: "ЛОНЖЕРОНЫ, ПОЛУЧАЕМЫЕ ИЗ МЕРНОГО ШВЕЛЛЕРА",
@@ -590,6 +915,23 @@ export const knots = [
     images: [
       "/images/products-images/products/uzli_i_detali/lonzherony-iz-mernogo-shvellera/506817_original.jpg",
       "/images/products-images/products/uzli_i_detali/lonzherony-iz-mernogo-shvellera/IMG_1015.JPG",
+    ],
+    characteristics: [
+      {
+        name: "Масса, кг",
+        id: "1",
+        value: "от 79 до 140",
+      },
+      {
+        name: "длина, мм",
+        id: "2",
+        value: "от 5270 до 7680",
+      },
+      {
+        name: "площадь, м.кв.",
+        id: "3",
+        value: "от 2,5 до 5",
+      },
     ],
   },
   {
@@ -600,6 +942,23 @@ export const knots = [
       "/images/products-images/products/uzli_i_detali/lonzherony-tipa-555102-2801020-021/1.jpg",
       "/images/products-images/products/uzli_i_detali/lonzherony-iz-mernogo-shvellera/IMG_1015.JPG",
     ],
+    characteristics: [
+      {
+        name: "Масса, кг",
+        id: "1",
+        value: "от 129,5 до 258",
+      },
+      {
+        name: "длина, мм",
+        id: "2",
+        value: "от 5455 до 9535",
+      },
+      {
+        name: "площадь, м.кв.",
+        id: "3",
+        value: "от 4,1 до 8,5",
+      },
+    ],
   },
   {
     name: "ЛОНЖЕРОНЫ УСИЛЕННЫЕ",
@@ -608,9 +967,26 @@ export const knots = [
     images: [
       "/images/products-images/products/uzli_i_detali/lonzherony-sdvoennye-tipa-551605-2801014-014-015-014/1.jpg",
     ],
+    characteristics: [
+      {
+        name: "Масса, кг",
+        id: "1",
+        value: "от 260 до 380",
+      },
+      {
+        name: "длина, мм",
+        id: "2",
+        value: "от 6915 до 7035",
+      },
+      {
+        name: "площадь, м.кв.",
+        id: "3",
+        value: "от 8,2 до 12,2",
+      },
+    ],
   },
 ];
-// пропущена категория, заполнить фотки
+
 export const spareParts = [
   {
     name: "ЛАПА КУЛЬТИВАТОРА ЧИЗЕЛЬНОГО КЧ 01.00.012, КЧ 01.00.012-01",
@@ -618,6 +994,43 @@ export const spareParts = [
     id: 1,
     images: [
       "/images/products-images/products/zp_selhoz/lapa-kultivatora-chizelnogo-kch01-00-005/1.jpg",
+    ],
+    characteristics: [
+      {
+        name: "№ ДЕТАЛИ",
+        id: "1",
+        value: "01.00.012, 01.00.012-01",
+      },
+      {
+        name: "КРЕПЁЖНЫЕ ОТВЕРСТИЯ, ММ",
+        id: "2",
+        value: "М12",
+      },
+      {
+        name: "МЕЖОСЕВОЕ РАССТОЯНИЕ, ММ",
+        id: "3",
+        value: "45",
+      },
+      {
+        name: "МАТЕРИАЛ",
+        id: "4",
+        value: "Сталь 65Г",
+      },
+      {
+        name: "ШИРИНА ЗАХВАТА L, ММ",
+        id: "5",
+        value: "150-270",
+      },
+      {
+        name: "ТОЛЬЩИНА S, ММ",
+        id: "6",
+        value: "8",
+      },
+      {
+        name: "МАССА M, КГ",
+        id: "7",
+        value: "1,2 - 1,54",
+      },
     ],
   },
   {
@@ -627,6 +1040,23 @@ export const spareParts = [
     images: [
       "/images/products-images/products/zp_selhoz/lapa-rihlitylnaya-m10/1.jpg",
     ],
+    characteristics: [
+      {
+        name: "крепёжные отверстия, мм",
+        id: "1",
+        value: "M10",
+      },
+      {
+        name: "материал",
+        id: "2",
+        value: "Сталь 65Г",
+      },
+      {
+        name: "толщина S, мм",
+        id: "3",
+        value: "10",
+      },
+    ],
   },
   {
     name: "ЛАПА РЫХЛИТЕЛЬНАЯ 65Х10-М12 ПОД БОЛТ 12-КУ (КЧ 01.00.005)",
@@ -634,6 +1064,23 @@ export const spareParts = [
     id: 3,
     images: [
       "/images/products-images/products/zp_selhoz/lapa-rihlitylnaya-m12/1.jpg",
+    ],
+    characteristics: [
+      {
+        name: "крепёжные отверстия, мм",
+        id: "1",
+        value: "M12",
+      },
+      {
+        name: "материал",
+        id: "2",
+        value: "Сталь 65Г",
+      },
+      {
+        name: "толщина S, мм",
+        id: "3",
+        value: "10",
+      },
     ],
   },
   {
@@ -644,6 +1091,33 @@ export const spareParts = [
     images: [
       "/images/products-images/products/zp_selhoz/lapa-rihlitylnaya-oborotnya-m10/1.jpg",
     ],
+    characteristics: [
+      {
+        name: "крепёжные отверстия, мм",
+        id: "1",
+        value: "M10",
+      },
+      {
+        name: "материал",
+        id: "2",
+        value: "Сталь 65Г",
+      },
+      {
+        name: "толщина S, мм",
+        id: "3",
+        value: "10",
+      },
+      {
+        name: "Межосевое расстояние, мм",
+        id: "4",
+        value: "45",
+      },
+      {
+        name: "Масса, кг",
+        id: "4",
+        value: "1,1",
+      },
+    ],
   },
   {
     name: "ЛАПА РЫХЛИТЕЛЬНАЯ ОБОРОТНАЯ ДОЛОТООБРАЗНАЯ 65Х10-О-М12 ПОД БОЛТ 12-КУ (КЧ01.00.011)",
@@ -653,6 +1127,33 @@ export const spareParts = [
     images: [
       "/images/products-images/products/zp_selhoz/lapa-rihlitylnaya-oborotnya-m12/1.jpg",
     ],
+    characteristics: [
+      {
+        name: "крепёжные отверстия, мм",
+        id: "1",
+        value: "M12",
+      },
+      {
+        name: "материал",
+        id: "2",
+        value: "Сталь 65Г",
+      },
+      {
+        name: "толщина S, мм",
+        id: "3",
+        value: "10",
+      },
+      {
+        name: "Межосевое расстояние, мм",
+        id: "4",
+        value: "45",
+      },
+      {
+        name: "Масса, кг",
+        id: "4",
+        value: "1,1",
+      },
+    ],
   },
   {
     name: "ЛАПА КУЛЬТИВАТОРА ЧИЗЕЛЬНОГО КПЦ 02.402",
@@ -660,6 +1161,23 @@ export const spareParts = [
     id: 6,
     images: [
       "/images/products-images/products/zp_selhoz/lapa-kultivatora-chizelnogo-kch02-402/1.jpg",
+    ],
+    characteristics: [
+      {
+        name: "материал",
+        id: "1",
+        value: "Сталь 65Г",
+      },
+      {
+        name: "толщина S, мм",
+        id: "2",
+        value: "6",
+      },
+      {
+        name: "масса m, кг",
+        id: "3",
+        value: "0,33",
+      },
     ],
   },
   {
@@ -669,6 +1187,23 @@ export const spareParts = [
     images: [
       "/images/products-images/products/zp_selhoz/disk-v-2-2-650-6/1.jpg",
     ],
+    characteristics: [
+      {
+        name: "материал",
+        id: "1",
+        value: "Сталь 65Г",
+      },
+      {
+        name: "диаметр d , мм",
+        id: "2",
+        value: "650",
+      },
+      {
+        name: "масса m, кг",
+        id: "3",
+        value: "12,2",
+      },
+    ],
   },
   {
     name: "ЛЕМЕХ ППН.8.30/50-301П (-01) (АНАЛОГ «КВЕРНЕЛАНД»)",
@@ -676,6 +1211,13 @@ export const spareParts = [
     id: 8,
     images: [
       "/images/products-images/products/zp_selhoz/lemekh-ppn-8-30-50-301p-01/1.jpg",
+    ],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
     ],
   },
 ];
@@ -690,6 +1232,18 @@ export const lightIndustryProducts = [
       "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-1/IMG_1102.JPG",
       "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-1/IMG_1103.JPG",
     ],
+    characteristics: [
+      {
+        name: "Рекомендуемые размеры",
+        id: "1",
+        value: "1, 2",
+      },
+      {
+        name: "Материал",
+        id: "2",
+        value: "парусина полульняная с огнеупорной пропиткой ГОСТ 15530-76",
+      },
+    ],
   },
   {
     name: "РУКАВИЦЫ СПЕЦИАЛЬНЫЕ ГОСТ 12.4.010-75*",
@@ -698,6 +1252,18 @@ export const lightIndustryProducts = [
     id: 2,
     images: [
       "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-2/IMG_1100.JPG",
+    ],
+    characteristics: [
+      {
+        name: "Рекомендуемые размеры",
+        id: "1",
+        value: "1, 2",
+      },
+      {
+        name: "Материал",
+        id: "2",
+        value: "парусина полульняная с огнеупорной пропиткой ГОСТ 15530-76",
+      },
     ],
   },
   {
@@ -709,6 +1275,18 @@ export const lightIndustryProducts = [
       "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-3/IMG_11251.JPG",
       "/images/products-images/products/legprom/rukavitsy-spetsialnye-gost-12-4-010-75-3/IMG_11261.JPG",
     ],
+    characteristics: [
+      {
+        name: "Рекомендуемые размеры",
+        id: "1",
+        value: "1, 2",
+      },
+      {
+        name: "Материал",
+        id: "2",
+        value: "парусина полульняная с огнеупорной пропиткой ГОСТ 15530-76",
+      },
+    ],
   },
   {
     name: "КОСТЮМ БРЕЗЕНТОВЫЙ ОТ ПОВЫШЕННЫХ ТЕМПЕРАТУР",
@@ -717,6 +1295,13 @@ export const lightIndustryProducts = [
     images: [
       "/images/products-images/products/legprom/custum-temperatyra/1.jpg",
     ],
+    characteristics: [
+      {
+        name: "Материал",
+        id: "1",
+        value: "парусина полульняная с огнеупорной пропиткой ГОСТ 15530-76",
+      },
+    ],
   },
   {
     name: "КОСТЮМ МУЖСКОЙ ГОСТ 27653-88, СТБ 1387-2003",
@@ -724,12 +1309,26 @@ export const lightIndustryProducts = [
       "Костюм мужской - предназначен для защиты от общепроизводственных факторов.",
     id: 5,
     images: ["/images/products-images/products/legprom/custum-gost/1.jpg"],
+    characteristics: [
+      {
+        name: "Материал",
+        id: "1",
+        value: "Грета 51% х/б, 49% п/э.",
+      },
+    ],
   },
   {
     name: "КУРТКА УТЕПЛЕННАЯ",
     description: "нет описания",
     id: 6,
     images: ["/images/products-images/products/legprom/kyrtka/1.jpg"],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
+    ],
   },
   {
     name: "ПОЛОТНО СИНТЕТИЧЕСКОЕ СЕТКА ТУ BY 600038921.003-2006",
@@ -738,6 +1337,28 @@ export const lightIndustryProducts = [
     id: 7,
     images: [
       "/images/products-images/products/legprom/polotno-sinteticheskoe-setka-tu-by-600038921-003-2006/IMG_1312.JPG",
+    ],
+    characteristics: [
+      {
+        name: "Ширина полотна, м",
+        id: "1",
+        value: "от 1 до 3",
+      },
+      {
+        name: "Поверхностная плотность, г/м2",
+        id: "2",
+        value: "40",
+      },
+      {
+        name: "Разрывная нагрузка по длине, Н",
+        id: "3",
+        value: "190",
+      },
+      {
+        name: "Разрывная нагрузка по ширине, Н",
+        id: "4",
+        value: "50",
+      },
     ],
   },
   {
@@ -748,16 +1369,47 @@ export const lightIndustryProducts = [
     images: [
       "/images/products-images/products/legprom/paket-tu-rb-600038921-001-2003/IMG_1306.JPG",
     ],
+    characteristics: [
+      {
+        name: "Материал",
+        id: "1",
+        value: "плёнка полиэтиленовая",
+      },
+      {
+        name: "Толщина пленки, мк",
+        id: "2",
+        value: "от 0,2 до 0,8",
+      },
+      {
+        name: "Максимальная ширина, м",
+        id: "3",
+        value: "до 1",
+      },
+    ],
   },
 ];
+// много данных в таблице
 export const springs = [
   {
     name: "ПРУЖИНЫ",
     description: "Пружины сжатия и растяжения",
     id: 1,
     images: ["/images/products-images/products/pruzhiny/pruzhiny/1.JPG"],
+    characteristics: [
+      {
+        name: "Диаметр прутка, мм",
+        id: "1",
+        value: "от 10 до 20",
+      },
+      {
+        name: "Диаметр, мм",
+        id: "1",
+        value: "от 41 до 175",
+      },
+    ],
   },
 ];
+
 export const buildingMaterials = [
   {
     name: "СМЕСИ БЕТОННЫЕ ГОТОВЫЕ К УПОТРЕБЛЕНИЮ",
@@ -765,6 +1417,13 @@ export const buildingMaterials = [
       "изготавливаются в соответствии с СТБ 1035-96, СТБ-1544-2005. По заявке покупателя вводится противоморозная добавка. Возможна доставка.",
     id: 1,
     images: ["/images/products-images/products/stroymat/betonnye-smesi/1.jpg"],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
+    ],
   },
   {
     name: "РАСТВОРНЫЕ СМЕСИ КЛАДОЧНЫЕ, ЦЕМЕНТНЫЕ",
@@ -774,8 +1433,16 @@ export const buildingMaterials = [
     images: [
       "/images/products-images/products/stroymat/rastvorimye-smesi/1.jpg",
     ],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
+    ],
   },
 ];
+
 export const consumptionGoods = [
   {
     name: "ПЕЧИ ДЛЯ БАНИ",
@@ -784,6 +1451,48 @@ export const consumptionGoods = [
     images: [
       "/images/products-images/products/tnp/pechi/pech2.jpg",
       "/images/products-images/products/tnp/pechi/pech3.jpg",
+    ],
+    characteristics: [
+      {
+        name: "МАРКИРОВКА",
+        id: "1",
+        value: "179-96-013, 179-96-014",
+      },
+      {
+        name: "ГАБАРИТНЫЕ РАЗМЕРЫ (ДХШХВ) (ММ)",
+        id: "2",
+        value: "884х414х1000, 641х554х1075",
+      },
+      {
+        name: "ВЕС (КГ)",
+        id: "3",
+        value: "126, 95",
+      },
+      {
+        name: "ЕМКОСТЬ КАМЕНКИ (М3)",
+        id: "4",
+        value: "от 0,02 до 0,04",
+      },
+      {
+        name: "ОБЪЕМ ОТАПЛИВАЕМОГО ПОМЕЩЕНИЯ (М3)",
+        id: "5",
+        value: "16",
+      },
+      {
+        name: "ТОЛЩИНА МЕТАЛЛА ТОПКИ/КАМЕНКИ (ММ)",
+        id: "6",
+        value: "14/6",
+      },
+      {
+        name: "МАКСИМАЛЬНО-ДОПУСТИМАЯ ДЛИНА ДРОВ (ММ)",
+        id: "7",
+        value: "от 550 до 800",
+      },
+      {
+        name: "ТИП ТОПЛИВА",
+        id: "8",
+        value: "дрова",
+      },
     ],
   },
   {
@@ -797,8 +1506,31 @@ export const consumptionGoods = [
       "/images/products-images/products/tnp/mangal/mangal016.png",
       "/images/products-images/products/tnp/mangal/mangal017.png",
     ],
+    characteristics: [
+      {
+        name: "179-96-012",
+        id: "1",
+        value: "300X700X900",
+      },
+      {
+        name: "179-96-016",
+        id: "2",
+        value: "300X570X828",
+      },
+      {
+        name: "179-96-017",
+        id: "3",
+        value: "390X1300X1000",
+      },
+      {
+        name: "179-96-015",
+        id: "4",
+        value: "Печь для казана",
+      },
+    ],
   },
 ];
+// много данных в таблице
 export const sidewalkTile = [
   {
     name: 'ПЛИТКА ТРОТУАРНАЯ "НОВЫЙ ГОРОД" СТБ1071-2007 Б 3.020.1-8.08',
@@ -835,6 +1567,23 @@ export const fittings = [
       "/images/products-images/products/furnitura/petlya-pn/1.jpg",
       "/images/products-images/products/furnitura/petlya-pn/IMG_1923.JPG",
     ],
+    characteristics: [
+      {
+        name: "ПЕТЛЯ ПРАВАЯ",
+        id: "1",
+        value: "ПН1-85.00, ПН1-85Н.00",
+      },
+      {
+        name: "ПЕТЛЯ ЛЕВАЯ",
+        id: "2",
+        value: "ПН1-85.00-01, ПН1-85Н.00-01",
+      },
+      {
+        name: "СОКРАЩЁННОЕ ОБОЗНАЧЕНИЕ ПОКРЫТИЯ",
+        id: "3",
+        value: "Хим.фосф.прм., полимерное белое",
+      },
+    ],
   },
   {
     name: "ПЕТЛЯ ПН 1-110 ПО ГОСТ 5088-94",
@@ -844,6 +1593,23 @@ export const fittings = [
     images: [
       "/images/products-images/products/furnitura/petlya-pn/1.jpg",
       "/images/products-images/products/furnitura/petlya-pn/IMG_1923.JPG",
+    ],
+    characteristics: [
+      {
+        name: "ПЕТЛЯ ПРАВАЯ",
+        id: "1",
+        value: "ПН1-110.00, ПН1-110Н.00",
+      },
+      {
+        name: "ПЕТЛЯ ЛЕВАЯ",
+        id: "2",
+        value: "ПН1-110.00-01, ПН1-110Н.00-01",
+      },
+      {
+        name: "СОКРАЩЁННОЕ ОБОЗНАЧЕНИЕ ПОКРЫТИЯ",
+        id: "3",
+        value: "Хим.фосф.прм., полимерное белое",
+      },
     ],
   },
   {
@@ -855,12 +1621,51 @@ export const fittings = [
       "/images/products-images/products/furnitura/petlya-pn/1.jpg",
       "/images/products-images/products/furnitura/petlya-pn/IMG_1923.JPG",
     ],
+    characteristics: [
+      {
+        name: "ПЕТЛЯ ПРАВАЯ",
+        id: "1",
+        value: "ПН1-130.00, ПН1-130Н.00",
+      },
+      {
+        name: "ПЕТЛЯ ЛЕВАЯ",
+        id: "2",
+        value: "ПН1-130.00-01, ПН1-130Н.00-01",
+      },
+      {
+        name: "СОКРАЩЁННОЕ ОБОЗНАЧЕНИЕ ПОКРЫТИЯ",
+        id: "3",
+        value: "Хим.фосф.прм., полимерное белое",
+      },
+    ],
   },
   {
     name: "ПЕТЛЯ ПС 280",
     description: "",
     id: 4,
     images: ["/images/products-images/products/furnitura/petlya-pc/1.jpg"],
+    characteristics: [
+      {
+        name: "длина L, мм",
+        id: "1",
+        value: "280",
+      },
+      {
+        name: "толщина s , мм",
+        id: "2",
+        value: "3",
+      },
+      {
+        name: "высота H, мм",
+        id: "3",
+        value: "50",
+      },
+      {
+        name: "Диаметр отверстий d, мм",
+        id: "4",
+        value: "5,5",
+      },
+    ],
   },
   {
     name: "УГОЛОК У3",
@@ -869,6 +1674,28 @@ export const fittings = [
     images: [
       "/images/products-images/products/furnitura/ugolok-u3/IMG_1943.JPG",
     ],
+    characteristics: [
+      {
+        name: "длина L, мм",
+        id: "1",
+        value: "65",
+      },
+      {
+        name: "толщина s , мм",
+        id: "2",
+        value: "2",
+      },
+      {
+        name: "высота H, мм",
+        id: "3",
+        value: "65",
+      },
+      {
+        name: "ширина B, мм",
+        id: "4",
+        value: "40",
+      },
+    ],
   },
   {
     name: "УГОЛОК У4",
@@ -876,6 +1703,28 @@ export const fittings = [
     id: 6,
     images: [
       "/images/products-images/products/furnitura/ugolok-u4/IMG_1944.JPG",
+    ],
+    characteristics: [
+      {
+        name: "длина L, мм",
+        id: "1",
+        value: "85",
+      },
+      {
+        name: "толщина s , мм",
+        id: "2",
+        value: "2",
+      },
+      {
+        name: "высота H, мм",
+        id: "3",
+        value: "45",
+      },
+      {
+        name: "ширина B, мм",
+        id: "4",
+        value: "40",
+      },
     ],
   },
   {
@@ -886,8 +1735,16 @@ export const fittings = [
       "/images/products-images/products/furnitura/mebelnaya-furnitura/IMG_1154.JPG",
       "/images/products-images/products/furnitura/mebelnaya-furnitura/IMG_1155.JPG",
     ],
+    characteristics: [
+      {
+        name: "",
+        id: "1",
+        value: "",
+      },
+    ],
   },
 ];
+// много данных в таблице
 export const flanges = [
   {
     name: "ФЛАНЦЫ ПО DIN 2632,2633,2634,2635",

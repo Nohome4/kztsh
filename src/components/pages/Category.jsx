@@ -18,6 +18,12 @@ const Category = () => {
       {item.images.map((el) => (
         <img src={el} alt={item.name} />
       ))}
+      {item.characteristics.map((el) => (
+        <div>
+          <p>{el.name}</p>
+          <p>{el.value}</p>
+        </div>
+      ))}
     </div>
   );
 };
