@@ -157,4 +157,7 @@ a {
     font-size: 0.8em;
     margin-bottom: 20px;
   }
+  .icon-link {
+    margin-left: -20px;
+  }
 }
