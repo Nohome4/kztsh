@@ -18,17 +18,22 @@ const Category = () => {
       <h2 className="header-h2">{item.name}</h2>
       <MainReturnButton />
       <div className="category">
-        <SliderComponent images={item.images} />
-        <p>{item.description}</p>
-        {/* {item.images.map((el) => (
-          <img className="slider-img" key={el} src={el} alt={item.name} />
-        ))} */}
-        {item.characteristics.map((el) => (
-          <div key={el.id}>
-            <p>{el.name}</p>
-            <p>{el.value}</p>
+        <div className="category-slider">
+          <SliderComponent images={item.images} />
+        </div>
+        <div className="category-description">
+          <h3>Описание</h3>
+          <p>{item.description}</p>
+          <div className="category-characteristics">
+            <h3>Характеристики</h3>
+            {item.characteristics.map((el) => (
+              <div key={el.id}>
+                <p>{el.name}</p>
+                <p>{el.value}</p>
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </div>
   );
