@@ -21,8 +21,8 @@ const ProductPage = () => {
               <div className="product-page-card" key={category.id}>
                 <img
                   className="product-page-card-img"
-                  src="/images/product-icons/1.png"
-                  alt="1"
+                  src={category.images[0]}
+                  alt={category.name}
                 />
                 <div className="product-page-card-text">
                   <Link to={`/products/${product.id}/${category.id}`}>

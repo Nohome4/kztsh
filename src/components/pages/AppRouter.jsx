@@ -9,6 +9,7 @@ import Category from "./Category";
 
 const AppRouter = () => {
   const isAuth = true;
+
   return (
     <div className="wrapper">
       <Header />

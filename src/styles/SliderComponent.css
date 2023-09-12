@@ -38,18 +38,41 @@
   cursor: pointer;
 }
 .slider-wrap {
-  width: 600px;
   height: max-content;
+  margin-bottom: 50px;
+}
 
-  margin-bottom: 100px;
-  margin-left: 100px;
+.slick-arrow {
+  z-index: 1;
+  width: 40px;
+  height: 40px;
+  opacity: 0.8;
+}
+
+.slick-arrow:before {
+  font-size: 30px;
+}
+.slick-next {
+  right: 0;
 }
 .slick-prev {
-  background-color: #000;
-  color: white;
+  left: 0;
 }
 
-.slick-next {
-  background-color: #000;
-  color: red;
+.btn-wrap {
+  text-align: center;
+  width: 100%;
+}
+button {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  transition: all 0.5s;
+}
+button.slick-disabled {
+  opacity: 0.6;
 }

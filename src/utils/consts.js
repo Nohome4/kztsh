@@ -239,9 +239,9 @@ export const directorPhotoContacts = [
     job: "Заместитель директора по экономическим вопросам",
   },
   {
-    name: "Шидловский Валерий Леонидович",
-    img: "./images/management/shidlovskiy.png",
-    job: "Заместитель директора по коммерческим вопросам",
+    name: "Миськов Вячеслав Михайлович",
+    img: "./images/management/Miskov.jpg",
+    job: "Исполняющий обязанности заместителя директора по идеологической работе и социальным вопросам",
   },
   {
     name: "Жовнерик Юрий Степанович",
@@ -1783,7 +1783,7 @@ export const items = [
     title: "Поковки и штамповки",
     count: "14",
     id: 1,
-    image: "../images/products-images/flantsy.jpg",
+    image: "../images/products-images/pokovki.jpg",
     categories: forgings,
   },
   {
@@ -1846,7 +1846,7 @@ export const items = [
     title: "Фланцы",
     count: "3",
     id: 10,
-    image: "../images/products-images/furnityra.jpg",
+    image: "../images/products-images/flantsy.jpg",
     categories: flanges,
   },
 ];

@@ -4,6 +4,7 @@ import { items } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
 import SliderComponent from "../../UI/SliderComponent";
 import "../../styles/Category.css";
+import IconsLinks from "../../UI/IconsLinks";
 const Category = () => {
   const { productId } = useParams();
   const { categoryId } = useParams();
@@ -22,19 +23,21 @@ const Category = () => {
           <SliderComponent images={item.images} />
         </div>
         <div className="category-description">
-          <h3>Описание</h3>
           <p>{item.description}</p>
           <div className="category-characteristics">
             <h3>Характеристики</h3>
             {item.characteristics.map((el) => (
               <div key={el.id}>
-                <p>{el.name}</p>
-                <p>{el.value}</p>
+                <p>
+                  {el.name}---
+                  {el.value}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </div>
+      <IconsLinks />
     </div>
   );
 };
