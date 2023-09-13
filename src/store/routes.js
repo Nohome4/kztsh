@@ -20,6 +20,7 @@ import Requisites from "../components/pages/Requisites";
 import {
   ABOUT_ROUTE,
   ADMIN_ROUTE,
+  CONTACTS_ROUTE,
   INFO_ROUTE,
   MAIN_ROUTE,
 } from "../utils/consts";
@@ -38,7 +39,7 @@ export const userRoutes = [
     Component: Info,
   },
   {
-    path: "/contacts",
+    path: CONTACTS_ROUTE,
     Component: Contacts,
   },
   {

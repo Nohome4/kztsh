@@ -1,9 +1,10 @@
 import React from "react";
 import { slide as Menu } from "react-burger-menu";
 import { MAIN_ROUTES } from "../utils/consts";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const BurgerMenu = () => {
+  const location = useLocation();
   return (
     <div>
       <Menu

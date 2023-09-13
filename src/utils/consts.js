@@ -9,27 +9,27 @@ export const CONTACTS_ROUTE = "/contacts";
 export const MAIN_ROUTES = [
   {
     name: "Главная",
-    path: "/",
+    path: MAIN_ROUTE,
   },
   {
     name: "О заводе",
-    path: "/about",
+    path: ABOUT_ROUTE,
   },
   {
     name: "Продукция",
-    path: "/products",
+    path: PRODUCTS_ROUTE,
   },
   {
     name: "Услуги",
-    path: "/servises",
+    path: SERVISES_ROUTE,
   },
   {
     name: "Информация",
-    path: "/info",
+    path: INFO_ROUTE,
   },
   {
     name: "Контакты",
-    path: "/contacts",
+    path: CONTACTS_ROUTE,
   },
 ];
 export const ABOUT_ROUTES = [
