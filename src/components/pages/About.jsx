@@ -6,12 +6,12 @@ import { ABOUT_ROUTES } from "../../utils/consts";
 const About = () => {
   return (
     <div className="about">
-      <h2>О заводе</h2>
+      <h2 className="header-h2">О заводе</h2>
       <MainReturnButton />
       <div className="about-container">
         <LeftMenu arr={ABOUT_ROUTES} />
         <div className="about-content">
-          <h2>Этапы становления завода</h2>
+          <h2 className="header-h2">Этапы становления завода</h2>
           <div className="about-content-card">
             <span></span>
             <h3>1976</h3>

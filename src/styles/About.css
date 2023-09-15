@@ -28,20 +28,13 @@ p {
   font-size: medium;
   margin-right: 20px;
   margin-bottom: 20px;
+  font-weight: 300;
 }
-@media screen and (max-width: 1200px) {
-  .about-content {
-    width: 100%;
-    padding: 20px;
-  }
-  .header-h2 {
-    margin-left: 20px;
-  }
-}
+
 .about-content-card {
   display: flex;
   box-shadow: 0px 1px 8px 0px rgba(34, 60, 80, 0.2);
-  height: max-content;
+  height: 250px;
   flex-direction: row;
   margin-bottom: 20px;
   padding: 20px;
@@ -63,4 +56,31 @@ p {
 .about-content-card img {
   border-radius: 5px;
   width: 25%;
+}
+@media screen and (max-width: 1200px) {
+  .about-content {
+    width: 100%;
+    padding: 20px;
+  }
+  .header-h2 {
+    margin-left: 20px;
+  }
+  .about p {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 757px) {
+  .about-content-card {
+    flex-direction: column;
+    height: max-content;
+    align-items: center;
+  }
+  .about-content-card p {
+    width: 100%;
+    font-size: 0.8;
+  }
+  .about-content-card img {
+    width: 50%;
+    height: 50%;
+  }
 }

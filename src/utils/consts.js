@@ -6,32 +6,6 @@ export const SERVISES_ROUTE = "/servises";
 export const INFO_ROUTE = "/info";
 export const CONTACTS_ROUTE = "/contacts";
 
-export const MAIN_ROUTES = [
-  {
-    name: "Главная",
-    path: MAIN_ROUTE,
-  },
-  {
-    name: "О заводе",
-    path: ABOUT_ROUTE,
-  },
-  {
-    name: "Продукция",
-    path: PRODUCTS_ROUTE,
-  },
-  {
-    name: "Услуги",
-    path: SERVISES_ROUTE,
-  },
-  {
-    name: "Информация",
-    path: INFO_ROUTE,
-  },
-  {
-    name: "Контакты",
-    path: CONTACTS_ROUTE,
-  },
-];
 export const ABOUT_ROUTES = [
   {
     name: "Отчетность",
@@ -104,6 +78,34 @@ export const INFO_ROUTES = [
     path: "/distribution",
   },
 ];
+export const MAIN_ROUTES = [
+  {
+    name: "О заводе",
+    path: ABOUT_ROUTE,
+    links: ABOUT_ROUTES,
+  },
+  {
+    name: "Продукция",
+    path: PRODUCTS_ROUTE,
+    links: PRODUCTS_ROUTES,
+  },
+  {
+    name: "Услуги",
+    path: SERVISES_ROUTE,
+    links: [],
+  },
+  {
+    name: "Информация",
+    path: INFO_ROUTE,
+    links: INFO_ROUTES,
+  },
+  {
+    name: "Контакты",
+    path: CONTACTS_ROUTE,
+    links: CONTACTS_ROUTES,
+  },
+];
+
 export const directorContacts = [
   {
     job: "Директор",
