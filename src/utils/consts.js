@@ -78,6 +78,12 @@ export const INFO_ROUTES = [
     path: "/distribution",
   },
 ];
+export const SERVISES_ROUTES = [
+  {
+    name: "Общежитие",
+    path: "/hostel",
+  },
+];
 export const MAIN_ROUTES = [
   {
     name: "О заводе",
@@ -92,7 +98,7 @@ export const MAIN_ROUTES = [
   {
     name: "Услуги",
     path: SERVISES_ROUTE,
-    links: [],
+    links: SERVISES_ROUTES,
   },
   {
     name: "Информация",
@@ -127,13 +133,13 @@ export const directorContacts = [
   },
   {
     job: "Заместитель директора по коммерческим вопросам",
-    name: "Шидловский Валерий Леонидович",
+    name: "Жовнерик Юрий Степанович",
     internalPhone: "4-82",
     phone: "2-44-82",
   },
   {
     job: "Заместитель директора по производству",
-    name: "Жовнерик Юрий Степанович",
+    name: "Мурадов Анар Алиевич",
     internalPhone: "4-04",
     phone: "2-44-04",
   },
@@ -150,8 +156,8 @@ export const directorContacts = [
     phone: "2-44-06",
   },
   {
-    job: "Заместитель директора по идеологической работе и соц. вопросам",
-    name: "Мурадов Анар Алиевич",
+    job: "Исполняющий обязанности заместителя директора по идеологической работе и соц. вопросам",
+    name: "Миськов Вячеслав Михайлович",
     internalPhone: "5-07",
     phone: "2-45-07",
   },
