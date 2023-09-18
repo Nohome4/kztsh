@@ -6,10 +6,11 @@ import Footer from "../Footer";
 import ButtonUp from "../../UI/ButtonUp";
 import ProductPage from "./ProductPage";
 import Category from "./Category";
+import Grid from "../../UI/Grid";
+import PartnersGrid from "../../UI/PartnersGrid";
 
 const AppRouter = () => {
   const isAuth = true;
-
   return (
     <div className="wrapper">
       <Header />
@@ -25,6 +26,8 @@ const AppRouter = () => {
         <Route path="/products/:productId" element={<ProductPage />} />
         <Route path="/products/:productId/:categoryId" element={<Category />} />
       </Routes>
+      <Grid />
+      <PartnersGrid />
       <Footer />
     </div>
   );
