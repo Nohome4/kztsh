@@ -7,7 +7,6 @@ import "../../styles/ProductPage.css";
 import { Link } from "react-router-dom";
 const ProductPage = () => {
   const { productId } = useParams();
-
   const product = items.find((product) => product.id === Number(productId));
   return (
     <div>

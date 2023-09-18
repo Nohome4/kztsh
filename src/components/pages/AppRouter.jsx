@@ -8,6 +8,8 @@ import ProductPage from "./ProductPage";
 import Category from "./Category";
 import Grid from "../../UI/Grid";
 import PartnersGrid from "../../UI/PartnersGrid";
+import NewsPage from "./NewsPage";
+import NewsSlider from "../../UI/NewsSlider";
 
 const AppRouter = () => {
   const isAuth = true;
@@ -25,9 +27,11 @@ const AppRouter = () => {
         ))}
         <Route path="/products/:productId" element={<ProductPage />} />
         <Route path="/products/:productId/:categoryId" element={<Category />} />
+        <Route path="/news/:newsId" element={<NewsPage />} />
       </Routes>
       <Grid />
       <PartnersGrid />
+      <NewsSlider />
       <Footer />
     </div>
   );

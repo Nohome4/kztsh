@@ -13,7 +13,7 @@ import Main from "../components/pages/Main";
 import Management from "../components/pages/Management";
 import ManagementTeam from "../components/pages/ManagementTeam";
 import MarketingTeam from "../components/pages/MarketingTeam";
-import Partners from "../components/pages/Partners";
+import News from "../components/pages/News";
 import PriceList from "../components/pages/PriceList";
 import ProductsList from "../components/pages/ProductsList";
 import Reporting from "../components/pages/Reporting";
@@ -54,10 +54,6 @@ export const userRoutes = [
   {
     path: "/jobs",
     Component: Jobs,
-  },
-  {
-    path: "/partners",
-    Component: Partners,
   },
   {
     path: "/requisites",
@@ -102,6 +98,10 @@ export const userRoutes = [
   {
     path: "/hostel",
     Component: Hostel,
+  },
+  {
+    path: "/news",
+    Component: News,
   },
 ];
 
