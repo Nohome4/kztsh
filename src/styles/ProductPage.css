@@ -6,6 +6,7 @@
 .product-page-content {
   width: 75%;
   margin-top: 20px;
+  font-size: 1em;
 }
 .product-page-card {
   display: flex;
@@ -26,4 +27,29 @@
 }
 .product-page-card-text h3 {
   font-weight: 500;
+}
+@media screen and (max-width: 1200px) {
+  .product-page-content {
+    margin-left: 20px;
+    width: 100%;
+    margin-right: 0;
+  }
+  .product-page-card {
+    margin-right: 0;
+  }
+  .header-h2 {
+    margin-left: 20px;
+  }
+}
+@media screen and (max-width: 725px) {
+  .product-page-content {
+    font-size: 0.8em;
+  }
+  .product-page-content p {
+    font-size: 0.9em;
+  }
+  .product-page-card-img {
+    width: 50%;
+    height: 100%;
+  }
 }

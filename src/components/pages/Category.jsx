@@ -1,19 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router";
 import { items } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
 import SliderComponent from "../../UI/SliderComponent";
 import "../../styles/Category.css";
 import IconsLinks from "../../UI/IconsLinks";
+import { CSSTransition } from "react-transition-group";
+import { useRef } from "react";
+
 const Category = () => {
   const { productId } = useParams();
   const { categoryId } = useParams();
-
+  const categoryRef = useRef(null);
   const categoryObj = items.find((el) => el.id === Number(productId));
 
   const item = categoryObj.categories.find(
     (item) => item.id === Number(categoryId)
   );
+
+  const [showTable, setShowTable] = useState(false);
+
+  const toggleTable = () => {
+    setShowTable(!showTable);
+  };
   return (
     <div>
       <h2 className="header-h2">{item.name}</h2>
@@ -51,26 +60,39 @@ const Category = () => {
       </div>
       <div className="table-characteristics">
         {item.tableCharacteristics ? (
-          <table className="category-table">
-            <thead>
-              {item.tableNameCharacteristics.map((el, index) => (
-                <tr>
-                  {el.map((value, subIndex) => (
-                    <th key={subIndex}>{value}</th>
+          <div className="category-table-container">
+            <button className="category-button" onClick={toggleTable}>
+              Все характеристики ⮟
+            </button>
+            <CSSTransition
+              in={showTable}
+              timeout={10}
+              classNames="category-table"
+              unmountOnExit
+              nodeRef={categoryRef}
+            >
+              <table className="category-table">
+                <thead>
+                  {item.tableNameCharacteristics.map((el, index) => (
+                    <tr key={index}>
+                      {el.map((value, subIndex) => (
+                        <th key={subIndex}>{value}</th>
+                      ))}
+                    </tr>
                   ))}
-                </tr>
-              ))}
-            </thead>
-            <tbody>
-              {item.tableCharacteristics.map((el, index) => (
-                <tr key={index}>
-                  {el.map((value, subIndex) => (
-                    <td key={subIndex}>{value}</td>
+                </thead>
+                <tbody>
+                  {item.tableCharacteristics.map((el, index) => (
+                    <tr key={index}>
+                      {el.map((value, subIndex) => (
+                        <td key={subIndex}>{value}</td>
+                      ))}
+                    </tr>
                   ))}
-                </tr>
-              ))}
-            </tbody>
-          </table>
+                </tbody>
+              </table>
+            </CSSTransition>
+          </div>
         ) : (
           ""
         )}

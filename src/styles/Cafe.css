@@ -1,0 +1,11 @@
+.delivery {
+  display: flex;
+  justify-content: space-between;
+}
+.delivery-content {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin-top: 20px;
+  margin-right: 50px;
+}

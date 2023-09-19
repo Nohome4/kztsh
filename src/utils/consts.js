@@ -79,6 +79,10 @@ export const SERVISES_ROUTES = [
     name: "Общежитие",
     path: "/hostel",
   },
+  {
+    name: 'Кафе "Северное"',
+    path: "/cafe",
+  },
 ];
 export const MAIN_ROUTES = [
   {

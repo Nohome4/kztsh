@@ -10,7 +10,7 @@ const ProductPage = () => {
   const product = items.find((product) => product.id === Number(productId));
   return (
     <div>
-      <h2>{product.title}</h2>
+      <h2 className="header-h2">{product.title}</h2>
       <MainReturnButton />
       <div className="product-page">
         <LeftMenu arr={itemsLeftMenu} />
