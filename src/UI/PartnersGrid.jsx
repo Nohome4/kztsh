@@ -30,13 +30,13 @@ const PartnersGrid = () => {
           </Link>
         </div>
         <div className="partners-child-grid partners-grid-5">
-          <Link className="partners-grid-link" to="https://mzkt.by/">
-            <h4>МЗКТ</h4>
+          <Link className="partners-grid-link" to="http://www.moaz.ru/">
+            <h4>МОАЗ</h4>
           </Link>
         </div>
         <div className="partners-child-grid partners-grid-6">
-          <Link className="partners-grid-link" to="http://www.moaz.ru/">
-            <h4>МОАЗ</h4>
+          <Link className="partners-grid-link" to="https://mzkt.by/">
+            <h4>МЗКТ</h4>
           </Link>
         </div>
       </div>

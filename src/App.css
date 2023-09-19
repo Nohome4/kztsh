@@ -375,7 +375,7 @@
   padding: 10px;
 }
 .slider-news-wrap {
-  padding: 50px;
+  padding: 30px;
   width: 93%;
   margin-left: 50px;
 }
@@ -383,4 +383,9 @@
   font-size: 10px;
   font-weight: 200;
   margin-top: -5px;
+}
+@media screen and (max-width: 1073px) {
+  .news-slider {
+    display: none;
+  }
 }

@@ -26,23 +26,54 @@ const Category = () => {
           <p>{item.description}</p>
           <div className="category-characteristics">
             <h3>Характеристики</h3>
-            {item.characteristics.map((el) => (
-              <div key={el.id}>
-                <p>
-                  {el.name}---
-                  {el.value}
-                </p>
-              </div>
-            ))}
+            <table className="category-table">
+              <thead></thead>
+              <tbody>
+                {item.characteristics.map((el) =>
+                  el.name !== "" ? (
+                    <tr key={el.name}>
+                      <td>{el.name}</td>
+                      <td>{el.value}</td>
+                    </tr>
+                  ) : (
+                    <p>К сожалению у данного товара пока нет описания</p>
+                  )
+                )}
+              </tbody>
+            </table>
+          </div>
+          <div className="product-page-info">
+            Внимание! Кузнечный завод тяжелых штамповок имеет возможность
+            изготовления продукции не предтавленной в этом каталоге, по
+            индивидуальному заказу.
           </div>
         </div>
       </div>
-      <div className="product-page-info">
-        <p>
-          Внимание! Кузнечный завод тяжелых штамповок имеет возможность
-          изготовления продукции не предтавленной в этом каталоге, по
-          индивидуальному заказу.
-        </p>
+      <div className="table-characteristics">
+        {item.tableCharacteristics ? (
+          <table className="category-table">
+            <thead>
+              {item.tableNameCharacteristics.map((el, index) => (
+                <tr>
+                  {el.map((value, subIndex) => (
+                    <th key={subIndex}>{value}</th>
+                  ))}
+                </tr>
+              ))}
+            </thead>
+            <tbody>
+              {item.tableCharacteristics.map((el, index) => (
+                <tr key={index}>
+                  {el.map((value, subIndex) => (
+                    <td key={subIndex}>{value}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          ""
+        )}
       </div>
       <IconsLinks />
     </div>

@@ -25,7 +25,7 @@ const ProductPage = () => {
                 />
                 <div className="product-page-card-text">
                   <Link to={`/products/${product.id}/${category.id}`}>
-                    {category.name}
+                    <h3>{category.name}</h3>
                   </Link>
                   <hr />
                   <p>{category.description}</p>
