@@ -59,3 +59,14 @@
   font-size: 18px;
   font-weight: 400;
 }
+@media screen and (max-width: 1200px) {
+  .news-content {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+@media screen and (max-width: 780px) {
+  .new-card {
+    width: 90%;
+  }
+}

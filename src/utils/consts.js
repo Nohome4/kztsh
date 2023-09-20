@@ -294,11 +294,6 @@ export const jobs = [
     salary: " 1500",
   },
   {
-    name: "Машинист крана",
-    description: "Обучаем за счет предприятия",
-    salary: "1200",
-  },
-  {
     name: "Каменщик",
     description: "",
     salary: "1300",
