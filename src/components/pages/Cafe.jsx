@@ -8,9 +8,9 @@ const Cafe = () => {
     <div>
       <h2 className="header-h2">Кафе "Северное"</h2>
       <MainReturnButton />
-      <div className="delivery">
+      <div className="cafe">
         <LeftMenu arr={SERVISES_ROUTES} />
-        <div className="delivery-content"></div>
+        <div className="cafe-content"></div>
       </div>
     </div>
   );
