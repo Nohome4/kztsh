@@ -98,6 +98,13 @@
 .main-navbar li {
   margin: 0 10px;
 }
+.dropdown-burger-menu {
+  margin-top: -10px;
+}
+.MenuItem {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
 
 .main-navbar .Link {
   display: block;
