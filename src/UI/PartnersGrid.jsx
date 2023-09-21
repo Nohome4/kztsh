@@ -7,37 +7,49 @@ const PartnersGrid = () => {
       <h2>Наши партнеры</h2>
       <div className="partners-grid">
         <div className="partners-child-grid partners-grid-1">
-          <Link className="partners-grid-link" to="https://amkodor.by/">
-            <h4>АМКОДОР</h4>
-          </Link>
+          <div className="shadow">
+            <Link className="partners-grid-link" to="https://amkodor.by/">
+              <h4>АМКОДОР</h4>
+            </Link>
+          </div>
         </div>
         <div className="partners-child-grid partners-grid-2">
-          <Link
-            className="partners-grid-link"
-            to="https://belarus-tractor.com/"
-          >
-            <h4>БЕЛАРУС</h4>
-          </Link>
+          <div className="shadow">
+            <Link
+              className="partners-grid-link"
+              to="https://belarus-tractor.com/"
+            >
+              <h4>БЕЛАРУС</h4>
+            </Link>
+          </div>
         </div>
         <div className="partners-child-grid partners-grid-3">
-          <Link className="partners-grid-link" to="https://belaz.by/">
-            <h4>БЕЛАЗ</h4>
-          </Link>
+          <div className="shadow">
+            <Link className="partners-grid-link" to="https://belaz.by/">
+              <h4>БЕЛАЗ</h4>
+            </Link>
+          </div>
         </div>
         <div className="partners-child-grid partners-grid-4">
-          <Link className="partners-grid-link" to="https://maz.by/">
-            <h4>МАЗ</h4>
-          </Link>
+          <div className="shadow">
+            <Link className="partners-grid-link" to="https://maz.by/">
+              <h4>МАЗ</h4>
+            </Link>
+          </div>
         </div>
         <div className="partners-child-grid partners-grid-5">
-          <Link className="partners-grid-link" to="http://www.moaz.ru/">
-            <h4>МОАЗ</h4>
-          </Link>
+          <div className="shadow">
+            <Link className="partners-grid-link" to="http://www.moaz.ru/">
+              <h4>МОАЗ</h4>
+            </Link>
+          </div>
         </div>
         <div className="partners-child-grid partners-grid-6">
-          <Link className="partners-grid-link" to="https://mzkt.by/">
-            <h4>МЗКТ</h4>
-          </Link>
+          <div className="shadow">
+            <Link className="partners-grid-link" to="https://mzkt.by/">
+              <h4>МЗКТ</h4>
+            </Link>
+          </div>
         </div>
       </div>
       <hr className="partners-grid-hr" />

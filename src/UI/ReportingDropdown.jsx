@@ -20,12 +20,12 @@ const ReportingDropdown = ({ reporting, header }) => {
         {isOpen ? (
           <div className="button-text">
             <h4>{header}</h4>
-            <p>⮝</p>
+            <span className="reporting-menu-span">&#9650;</span>
           </div>
         ) : (
           <div className="button-text">
             <h4>{header}</h4>
-            <p>⮟</p>
+            <span className="reporting-menu-span">&#9660;</span>
           </div>
         )}
       </button>

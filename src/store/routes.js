@@ -19,6 +19,8 @@ import PriceList from "../components/pages/PriceList";
 import ProductsList from "../components/pages/ProductsList";
 import Reporting from "../components/pages/Reporting";
 import Requisites from "../components/pages/Requisites";
+import Servises from "../components/pages/Servises";
+import Shop from "../components/pages/Shop";
 import {
   ABOUT_ROUTE,
   ADMIN_ROUTE,
@@ -107,6 +109,14 @@ export const userRoutes = [
   {
     path: "/cafe",
     Component: Cafe,
+  },
+  {
+    path: "/shop",
+    Component: Shop,
+  },
+  {
+    path: "/servises",
+    Component: Servises,
   },
 ];
 

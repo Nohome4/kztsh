@@ -1,27 +1,31 @@
 import React from "react";
-import { CONTACTS_ROUTES } from "../../utils/consts";
+import { PRODUCTS_ROUTES } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/Contacts.css";
 import { Link } from "react-router-dom";
-const Contacts = () => {
+const Shop = () => {
   return (
     <div className="contacts">
-      <h2 className="header-h2">Контакты</h2>
+      <h2 className="header-h2">Магазин</h2>
       <MainReturnButton />
       <div className="contacts-container">
-        <LeftMenu arr={CONTACTS_ROUTES} />
+        <LeftMenu arr={PRODUCTS_ROUTES} />
         <div className="contacts-content">
-          <div className="contacts-adress">
+          <div className="contacts-adress shop-adress">
             <h3 className="contacts-name">
-              Открытое акционерное общество «Кузнечный завод тяжелых штамповок»
+              Магазин ОАО "Кузнечный завод тяжелых штамповок"
             </h3>
             <h3>Адрес</h3>
             <p>222161 Республика Беларусь, г. Жодино, ул. Кузнечная 26,</p>
-            <h3>Канцелярия:</h3>
-            <p>+3751775 2-44-85</p>
-            <h3>Приемная:</h3>
-            <p>+3751775 2-44-00 | +3751775 2-44-92 факс</p>
+            <h3>Телефон</h3>
+            <p>8-(01775)2-44-77</p>
+            <h3>Режим работы</h3>
+            <p>с 6-45 до 15-00</p>
+            <h3>Обед</h3>
+            <p>с 12-30 до 13-00</p>
+            <h3>Выходной</h3>
+            <p>суббота, воскресение</p>
             <div className="contacts-links">
               <Link className="contacts-icon-link" to="https://t.me/kztsh_info">
                 <img src="./images/Telegram.svg" alt="telegram" />
@@ -52,4 +56,4 @@ const Contacts = () => {
   );
 };
 
-export default Contacts;
+export default Shop;
