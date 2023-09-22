@@ -7,6 +7,7 @@ import Contacts from "../components/pages/Contacts";
 import Delivery from "../components/pages/Delivery";
 import Distribution from "../components/pages/Distribution";
 import Documents from "../components/pages/Documents";
+import Galery from "../components/pages/Galery";
 import Hostel from "../components/pages/Hostel";
 import Info from "../components/pages/Info";
 import Jobs from "../components/pages/Jobs";
@@ -117,6 +118,10 @@ export const userRoutes = [
   {
     path: "/servises",
     Component: Servises,
+  },
+  {
+    path: "/galery",
+    Component: Galery,
   },
 ];
 

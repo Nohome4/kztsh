@@ -17,7 +17,7 @@ export const ABOUT_ROUTES = [
   },
   {
     name: "Галерея",
-    path: "/images",
+    path: "/galery",
   },
   {
     name: "Вакансии",
@@ -2232,4 +2232,12 @@ export const news = [
     date: "30 Декабрь 2022",
     id: 4,
   },
+];
+export const galery = [
+  "/images/galery-images/1.jpg",
+  "/images/galery-images/2.jpg",
+  "/images/galery-images/3.jpg",
+  "/images/galery-images/4.jpg",
+  "/images/galery-images/5.jpg",
+  "/images/galery-images/4.png",
 ];
