@@ -87,15 +87,16 @@
 
 .partners-grid-link {
   color: white;
+  opacity: 0.8;
 }
 .partners-grid-link:hover {
   color: white;
+  opacity: 1;
 }
 .partners-grid-link h5 {
   text-align: center;
 }
 .partners-grid-link h4 {
-  opacity: 1;
   font-size: 20px;
   margin-bottom: 20px;
   text-shadow: #111;
