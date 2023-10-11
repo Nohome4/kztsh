@@ -58,7 +58,9 @@ const СharacteristicsAdmin = (props) => {
           />
         </label>
         <br />
-        <button type="submit">Добавить характеристику</button>
+        <button className="characteristics-btn" type="submit">
+          Добавить информацию
+        </button>
       </form>
     </div>
   );

@@ -57,7 +57,9 @@ const TableCharacteristicsAdmin = (props) => {
           />
         </label>
         <br />
-        <button type="submit">Добавить информацию</button>
+        <button className="characteristics-btn" type="submit">
+          Добавить информацию
+        </button>
       </form>
     </div>
   );

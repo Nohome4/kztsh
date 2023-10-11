@@ -114,3 +114,29 @@ label {
 .table-characteristics {
   padding: 20px;
 }
+.item-admin {
+  border: 5px solid #3695d9;
+  padding: 15px;
+  margin-bottom: 50px;
+}
+.category-admin {
+  border: 2px solid rgb(206, 193, 21);
+  padding: 15px;
+  margin-bottom: 20px;
+  background-color: whitesmoke;
+}
+.characteristics-btn {
+  width: 150px;
+  font-size: 14px;
+  font-weight: 300;
+}
+
+.admin-content .characteristics-btn {
+  background-color: rgb(24, 148, 80);
+}
+.category-img {
+  width: 400px;
+  height: 300px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
