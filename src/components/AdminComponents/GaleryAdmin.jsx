@@ -4,19 +4,36 @@ import "../../styles/AdminStyles/NewsAdmin.css";
 
 const GaleryAdmin = () => {
   const [galery, setGalery] = useState([]);
+  const [error, setError] = useState(null);
+  const [load, setLoad] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     img: null, // Добавляем поле для файла изображения
   });
 
   useEffect(() => {
-    fetchGalery().then((data) => setGalery(data));
+    setLoad(true);
+    fetchGalery().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setGalery(data);
+      }
+    });
   }, []);
 
   const rerenderingGalery = async (id) => {
+    setLoad(true);
     await deleteGalery(id);
-    const updatedGalery = await fetchGalery();
-    setGalery(updatedGalery);
+    await fetchGalery().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setGalery(data);
+      }
+    });
   };
 
   const handleInputChange = (e) => {
@@ -38,24 +55,43 @@ const GaleryAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoad(true);
+
       const formDataToSend = new FormData();
 
       formDataToSend.append("name", formData.name);
       formDataToSend.append("img", formData.img);
 
       await addGalery(formDataToSend);
-
+      setLoad(false);
       setFormData({
         name: "",
         img: null,
       });
 
-      const updatedGalery = await fetchGalery();
-      setGalery(updatedGalery);
+      await fetchGalery().then((data) => {
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setGalery(data);
+        }
+      });
     } catch (error) {
+      setLoad(false);
       console.error("Ошибка при добавлении новости:", error);
     }
   };
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
+
   return (
     <div className="admin-content">
       <h2>Добавить фотографию в галерею</h2>

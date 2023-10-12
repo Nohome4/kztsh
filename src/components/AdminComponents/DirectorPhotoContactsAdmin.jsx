@@ -8,20 +8,37 @@ import "../../styles/AdminStyles/NewsAdmin.css";
 
 const DirectorPhotoContactsAdmin = () => {
   const [directorPhotoContacts, setDirectorPhotoContacts] = useState([]);
+  const [load, setLoad] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     job: "",
-    image: null, // Добавляем поле для файла изображения
+    image: null,
   });
 
   useEffect(() => {
-    fetchDirectorPhotoContacts().then((data) => setDirectorPhotoContacts(data));
+    setLoad(true);
+    fetchDirectorPhotoContacts().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setDirectorPhotoContacts(data);
+      }
+    });
   }, []);
 
   const rerenderingDirectorPhotoContacts = async (id) => {
+    setLoad(true);
     await deleteDirectorPhotoContacts(id);
-    const updatedDirectorPhotoContacts = await fetchDirectorPhotoContacts();
-    setDirectorPhotoContacts(updatedDirectorPhotoContacts);
+    await fetchDirectorPhotoContacts().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setDirectorPhotoContacts(data);
+      }
+    });
   };
 
   const handleInputChange = (e) => {
@@ -43,6 +60,7 @@ const DirectorPhotoContactsAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoad(true);
       const formDataToSend = new FormData();
 
       // Добавляем данные из state в объект FormData
@@ -52,20 +70,35 @@ const DirectorPhotoContactsAdmin = () => {
       formDataToSend.append("image", formData.image);
 
       await addDirectorPhotoContacts(formDataToSend);
-
+      setLoad(false);
       setFormData({
         name: "",
         job: "",
         image: null,
       });
 
-      const updatedDirectorPhotoContacts = await fetchDirectorPhotoContacts();
-      setDirectorPhotoContacts(updatedDirectorPhotoContacts);
+      await fetchDirectorPhotoContacts().then((data) => {
+        setLoad(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setDirectorPhotoContacts(data);
+        }
+      });
     } catch (error) {
       console.error("Ошибка при добавлении новости:", error);
     }
   };
-
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
   return (
     <div className="admin-content">
       <h2>Добавить фото руководства</h2>

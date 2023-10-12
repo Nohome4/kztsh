@@ -4,6 +4,8 @@ import "../../styles/AdminStyles/NewsAdmin.css";
 
 const NewsAdmin = () => {
   const [news, setNews] = useState([]);
+  const [load, setLoad] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     description: "",
@@ -13,13 +15,28 @@ const NewsAdmin = () => {
   });
 
   useEffect(() => {
-    fetchNews().then((data) => setNews(data));
+    setLoad(true);
+    fetchNews().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setNews(data);
+      }
+    });
   }, []);
 
   const rerenderingNews = async (id) => {
+    setLoad(true);
     await deleteNews(id);
-    const updatedNews = await fetchNews();
-    setNews(updatedNews);
+    await fetchNews().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setNews(data);
+      }
+    });
   };
 
   const handleInputChange = (e) => {
@@ -41,6 +58,7 @@ const NewsAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoad(true);
       const formDataToSend = new FormData();
 
       // Добавляем данные из state в объект FormData
@@ -51,7 +69,7 @@ const NewsAdmin = () => {
       formDataToSend.append("img", formData.img);
 
       await addNews(formDataToSend);
-
+      setLoad(false);
       setFormData({
         name: "",
         description: "",
@@ -60,12 +78,28 @@ const NewsAdmin = () => {
         imageFile: null,
       });
 
-      const updatedNews = await fetchNews();
-      setNews(updatedNews);
+      await fetchNews().then((data) => {
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setNews(data);
+        }
+      });
     } catch (error) {
+      setLoad(false);
       console.error("Ошибка при добавлении новости:", error);
     }
   };
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   return (
     <div className="admin-content">
@@ -118,7 +152,6 @@ const NewsAdmin = () => {
         <br />
         <button type="submit">Добавить новость</button>
       </form>
-
       <div className="admin-data">
         {news.map((el) => (
           <div className="admin-elem" key={el.id}>

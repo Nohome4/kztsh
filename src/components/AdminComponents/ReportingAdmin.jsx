@@ -11,30 +11,81 @@ import ReportingLinksAdmin from "./ReportingLinksAdmin";
 
 const ReportingAdmin = () => {
   const [Reporting, setReporting] = useState([]);
+  const [load, setLoad] = useState(false);
+  const [error, setError] = useState(null);
   const [reportingLinksOpen, setReportingLinksOpen] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
   });
 
   useEffect(() => {
-    fetchReporting().then((data) => setReporting(data));
+    setLoad(true);
+    fetchReporting()
+      .then((data) => {
+        setLoad(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setReporting(data);
+        }
+      })
+      .catch((error) => {
+        setLoad(false);
+        setError(error.message || "Произошла ошибка сети");
+      });
   }, []);
 
   const renderReporting = async () => {
-    const updatedReporting = await fetchReporting();
-    setReporting(updatedReporting);
+    setLoad(true);
+    await fetchReporting()
+      .then((data) => {
+        setLoad(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setReporting(data);
+        }
+      })
+      .catch((error) => {
+        setLoad(false);
+        setError(error.message || "Произошла ошибка сети");
+      });
   };
 
   const rerenderingReporting = async (id) => {
+    setLoad(true);
     await deleteReporting(id);
-    const updatedReporting = await fetchReporting();
-    setReporting(updatedReporting);
+    await fetchReporting()
+      .then((data) => {
+        setLoad(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setReporting(data);
+        }
+      })
+      .catch((error) => {
+        setLoad(false);
+        setError(error.message || "Произошла ошибка сети");
+      });
   };
 
   const rerenderingReportingLinks = async (id) => {
+    setLoad(true);
     await deleteReportingLink(id);
-    const updatedReporting = await fetchReporting();
-    setReporting(updatedReporting);
+    await fetchReporting()
+      .then((data) => {
+        setLoad(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setReporting(data);
+        }
+      })
+      .catch((error) => {
+        setLoad(false);
+        setError(error.message || "Произошла ошибка сети");
+      });
   };
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -47,6 +98,7 @@ const ReportingAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoad(true);
       const formDataToSend = new FormData();
 
       // Добавляем данные из state в объект FormData
@@ -55,13 +107,29 @@ const ReportingAdmin = () => {
       setFormData({
         name: "",
       });
-
-      const updatedReporting = await fetchReporting();
-      setReporting(updatedReporting);
+      await fetchReporting().then((data) => {
+        setLoad(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setReporting(data);
+        }
+      });
     } catch (error) {
       console.error("Ошибка при добавлении новости:", error);
     }
   };
+
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   return (
     <div className="admin-content">

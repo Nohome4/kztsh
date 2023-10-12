@@ -1,78 +1,145 @@
 import { $host } from ".";
 
 // news-api
+// news-api
 export const fetchNews = async () => {
-  const { data } = await $host.get("api/news");
-  return data;
+  try {
+    const { data } = await $host.get("api/news");
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error fetching news" };
+  }
 };
 
 export const deleteNews = async (id) => {
-  const { data } = await $host.delete("api/news/" + id);
-  return data;
+  try {
+    const { data } = await $host.delete("api/news/" + id);
+    return data;
+  } catch (error) {
+    return {
+      error: `Error deleting news item with id ${id}: ${error.message}`,
+    };
+  }
 };
 
 export const addNews = async (formData) => {
-  const { data } = await $host.post("api/news/", formData);
-  return data;
+  try {
+    const { data } = await $host.post("api/news/", formData);
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error adding news" };
+  }
 };
 
 // galery-api
 export const fetchGalery = async () => {
-  const { data } = await $host.get("api/galery");
-  return data;
+  try {
+    const { data } = await $host.get("api/galery");
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error fetching gallery" };
+  }
 };
 
 export const deleteGalery = async (id) => {
-  const { data } = await $host.delete("api/galery/" + id);
-  return data;
+  try {
+    const { data } = await $host.delete("api/galery/" + id);
+    return data;
+  } catch (error) {
+    return {
+      error: `Error deleting gallery item with id ${id}: ${error.message}`,
+    };
+  }
 };
 
 export const addGalery = async (formData) => {
-  const { data } = await $host.post("api/galery/", formData);
-  return data;
+  try {
+    const { data } = await $host.post("api/galery/", formData);
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error adding gallery item" };
+  }
 };
 
 // marketing-contacts-api
 export const fetchMarketingContacts = async () => {
-  const { data } = await $host.get("api/marketingContacts");
-  return data;
+  try {
+    const { data } = await $host.get("api/marketingContacts");
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error fetching marketing contacts" };
+  }
 };
 
 export const deleteMarketingContacts = async (id) => {
-  const { data } = await $host.delete("api/marketingContacts/" + id);
-  return data;
+  try {
+    const { data } = await $host.delete("api/marketingContacts/" + id);
+    return data;
+  } catch (error) {
+    return {
+      error: `Error deleting marketing contact with id ${id}: ${error.message}`,
+    };
+  }
 };
 
 export const addMarketingContacts = async (formData) => {
-  const { data } = await $host.post("api/marketingContacts/", formData);
-  return data;
+  try {
+    const { data } = await $host.post("api/marketingContacts/", formData);
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error adding marketing contact" };
+  }
 };
 
 // director-contacts-api
 export const fetchDirectorContacts = async () => {
-  const { data } = await $host.get("api/directorContacts");
-  return data;
+  try {
+    const { data } = await $host.get("api/directorContacts");
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error fetching director contacts" };
+  }
 };
 
 export const deleteDirectorContacts = async (id) => {
-  const { data } = await $host.delete("api/directorContacts/" + id);
-  return data;
+  try {
+    const { data } = await $host.delete("api/directorContacts/" + id);
+    return data;
+  } catch (error) {
+    return {
+      error: `Error deleting director contact with id ${id}: ${error.message}`,
+    };
+  }
 };
 
 export const addDirectorContacts = async (formData) => {
-  const { data } = await $host.post("api/directorContacts/", formData);
-  return data;
+  try {
+    const { data } = await $host.post("api/directorContacts/", formData);
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error adding director contact" };
+  }
 };
 
 // director-photo-contacts-api
 export const fetchDirectorPhotoContacts = async () => {
-  const { data } = await $host.get("api/directorPhotoContacts");
-  return data;
+  try {
+    const { data } = await $host.get("api/directorPhotoContacts");
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error fetching director photo contacts" };
+  }
 };
 
 export const deleteDirectorPhotoContacts = async (id) => {
-  const { data } = await $host.delete("api/directorPhotoContacts/" + id);
-  return data;
+  try {
+    const { data } = await $host.delete("api/directorPhotoContacts/" + id);
+    return data;
+  } catch (error) {
+    return {
+      error: `Error deleting director photo contact with id ${id}: ${error.message}`,
+    };
+  }
 };
 
 export const addDirectorPhotoContacts = async (formData) => {

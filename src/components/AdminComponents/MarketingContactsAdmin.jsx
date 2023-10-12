@@ -8,6 +8,8 @@ import "../../styles/AdminStyles/NewsAdmin.css";
 
 const MarketingContactsAdmin = () => {
   const [marketingContacts, setMarketingContacts] = useState([]);
+  const [load, setLoad] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     job: "",
@@ -16,13 +18,28 @@ const MarketingContactsAdmin = () => {
   });
 
   useEffect(() => {
-    fetchMarketingContacts().then((data) => setMarketingContacts(data));
+    setLoad(true);
+    fetchMarketingContacts().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setMarketingContacts(data);
+      }
+    });
   }, []);
 
   const rerenderingMarketingContacts = async (id) => {
+    setLoad(true);
     await deleteMarketingContacts(id);
-    const updatedMarketingContacts = await fetchMarketingContacts();
-    setMarketingContacts(updatedMarketingContacts);
+    fetchMarketingContacts().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setMarketingContacts(data);
+      }
+    });
   };
 
   const handleInputChange = (e) => {
@@ -36,6 +53,7 @@ const MarketingContactsAdmin = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
+      setLoad(true);
       const formDataToSend = new FormData();
 
       // Добавляем данные из state в объект FormData
@@ -45,20 +63,37 @@ const MarketingContactsAdmin = () => {
       formDataToSend.append("phone", formData.phone);
 
       await addMarketingContacts(formDataToSend);
-
+      setLoad(false);
       setFormData({
         name: "",
         job: "",
         internalPhone: "",
         phone: Number(),
       });
-
-      const updatedMarketingContacts = await fetchMarketingContacts();
-      setMarketingContacts(updatedMarketingContacts);
+      fetchMarketingContacts().then((data) => {
+        setLoad(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setMarketingContacts(data);
+        }
+      });
     } catch (error) {
       console.error("Ошибка при добавлении новости:", error);
     }
   };
+
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
+
   return (
     <div>
       <h2>Добавить информацию</h2>

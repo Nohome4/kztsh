@@ -8,6 +8,8 @@ import "../../styles/AdminStyles/NewsAdmin.css";
 
 const DirectorContactsAdmin = () => {
   const [directorContacts, setDirectorContacts] = useState([]);
+  const [load, setLoad] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     job: "",
@@ -16,13 +18,28 @@ const DirectorContactsAdmin = () => {
   });
 
   useEffect(() => {
-    fetchDirectorContacts().then((data) => setDirectorContacts(data));
+    setLoad(true);
+    fetchDirectorContacts().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setDirectorContacts(data);
+      }
+    });
   }, []);
 
   const rerenderingDirectorContacts = async (id) => {
+    setLoad(true);
     await deleteDirectorContacts(id);
-    const updatedDirectorContacts = await fetchDirectorContacts();
-    setDirectorContacts(updatedDirectorContacts);
+    fetchDirectorContacts().then((data) => {
+      setLoad(false);
+      if (data.error) {
+        setError(data.error);
+      } else {
+        setDirectorContacts(data);
+      }
+    });
   };
 
   const handleInputChange = (e) => {
@@ -34,6 +51,7 @@ const DirectorContactsAdmin = () => {
   };
 
   const handleSubmit = async (e) => {
+    setLoad(true);
     e.preventDefault();
     try {
       const formDataToSend = new FormData();
@@ -45,7 +63,7 @@ const DirectorContactsAdmin = () => {
       formDataToSend.append("phone", formData.phone);
 
       await addDirectorContacts(formDataToSend);
-
+      setLoad(false);
       setFormData({
         name: "",
         job: "",
@@ -59,6 +77,18 @@ const DirectorContactsAdmin = () => {
       console.error("Ошибка при добавлении новости:", error);
     }
   };
+
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
+
   return (
     <div>
       <h2>Добавить информацию</h2>

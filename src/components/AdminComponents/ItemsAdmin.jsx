@@ -19,49 +19,61 @@ const ItemsAdmin = () => {
   const [tableCharacteristicOpen, setTableCharacteristicsOpen] =
     useState(false);
   const [categoryStates, setCategoryStates] = useState([]);
+  const [load, setLoad] = useState(false);
+  const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
     image: null,
   });
 
-  useEffect(() => {
-    fetchItems().then((data) => {
-      setItems(data);
-      const initialCategoryStates = {};
-      data.forEach((el) => {
-        initialCategoryStates[el.id] = false;
-      });
+  const fetchLoaderItems = () => {
+    setLoad(true);
+    fetchItems()
+      .then((data) => {
+        setLoad(false);
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setItems(data);
+          const initialCategoryStates = {};
+          data.forEach((el) => {
+            initialCategoryStates[el.id] = false;
+          });
 
-      setCategoryStates(initialCategoryStates);
-    });
+          setCategoryStates(initialCategoryStates);
+        }
+      })
+      .catch((error) => {
+        setLoad(false);
+        setError(error.message || "Произошла ошибка сети");
+      });
+  };
+
+  useEffect(() => {
+    fetchLoaderItems();
   }, []);
 
   const renderItems = async () => {
-    const updatedItems = await fetchItems();
-    setItems(updatedItems);
+    fetchLoaderItems();
   };
 
   const rerenderingItems = async (id) => {
     await deleteItems(id);
-    const updatedItems = await fetchItems();
-    setItems(updatedItems);
+    fetchLoaderItems();
   };
   const rerenderingCategory = async (id) => {
     await deleteCategory(id);
-    const updatedItems = await fetchItems();
-    setItems(updatedItems);
+    fetchLoaderItems();
   };
 
   const rerenderingTableCharacteristics = async (id) => {
     await deleteTableCharacteristics(id);
-    const updatedItems = await fetchItems();
-    setItems(updatedItems);
+    fetchLoaderItems();
   };
 
   const rerenderingCharacteristics = async (id) => {
     await deleteCharacteristics(id);
-    const updatedItems = await fetchItems();
-    setItems(updatedItems);
+    fetchLoaderItems();
   };
 
   const handleInputChange = (e) => {
@@ -94,8 +106,7 @@ const ItemsAdmin = () => {
         image: null,
       });
 
-      const updatedItems = await fetchItems();
-      setItems(updatedItems);
+      fetchLoaderItems();
     } catch (error) {
       console.error("Ошибка при добавлении продукции:", error);
     }
@@ -107,6 +118,17 @@ const ItemsAdmin = () => {
       [categoryId]: !prevStates[categoryId],
     }));
   };
+
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
+  if (error) {
+    return <div className="error">{error}</div>;
+  }
 
   return (
     <div className="admin-content">
