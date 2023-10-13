@@ -8,9 +8,7 @@ const Product = (props) => {
       </Link>
       <h5>Количество категорий: {props.item.count}</h5>
       <img src={props.item.image} alt={props.item.title} />
-      <div className="product-desc">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt.
-      </div>
+      <div className="product-desc">{props.item.description}</div>
     </div>
   );
 };

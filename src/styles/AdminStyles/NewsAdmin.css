@@ -8,33 +8,74 @@
   margin-bottom: 20px;
   margin-left: 0;
 }
-.admin-content input {
-  margin-bottom: 20px;
-  border: 1px solid #3695d9;
-  border-radius: 2px;
-}
-.admin-content:focus {
-  background-color: lightblue;
+/* Стилизация самой формы */
+form {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 20px;
+  background-color: #f2f2f2;
+  border: 1px solid #ddd;
+  border-radius: 5px;
 }
 
-.admin-content textarea {
+/* Стилизация label */
+form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Стилизация полей для ввода текста (input, file) */
+form input[type="text"],
+form input[type="file"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
   margin-bottom: 20px;
+}
+
+/* Стилизация кнопки для отправки */
+form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+form textarea {
   width: 100%;
   height: 150px;
-  padding: 12px 20px;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  background-color: #f8f8f8;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  resize: vertical; /* Разрешить изменение размеров только по вертикали */
+  margin-bottom: 20px;
   resize: none;
 }
 
 label {
   font-size: 18px;
 }
+
+.admin-content {
+  margin-top: 20px;
+}
 .admin-content .red-btn {
   background-color: rgb(197, 44, 44);
   color: #f8f8f8;
+  width: 120px;
+  height: 40px;
+  font-size: 12px;
+  padding: 5px;
 }
 .admin-content button {
   cursor: pointer;
@@ -58,8 +99,8 @@ label {
   border-radius: 4px;
   padding: 10px;
 }
-.admin-elem img {
-  width: 300px;
+.admin-content img {
+  width: 400px;
 }
 .admin-elem button {
   width: 50%;
@@ -152,6 +193,7 @@ label {
   align-items: center;
   height: 100vh;
 }
+
 .loader {
   border: 6px solid #3498db; /* Light grey */
   border-top: 6px solid #f3f3f3; /* Blue */

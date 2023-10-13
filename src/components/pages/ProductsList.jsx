@@ -20,19 +20,12 @@ const ProductsList = () => {
               className="product-card"
               to={`/products/${product.id}`}
             >
-              <div key={product.id}>
-                <img
-                  className="icon-image"
-                  src={`../../images/product-icons/${product.id}.png`}
-                  alt="icon"
-                ></img>
+              <div className="product-card-wrapper" key={product.id}>
+                <img className="icon-image" src={product.icon} alt="icon"></img>
                 <div className="product-card-desc">
                   <h3>{product.title}</h3>
-                  <p>Количество товаров:{product.count}</p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Error, culpa!
-                  </p>
+                  <h5>Количество товаров:{product.count}</h5>
+                  <p>{product.description}</p>
                 </div>
               </div>
             </Link>

@@ -23,7 +23,9 @@ const ItemsAdmin = () => {
   const [error, setError] = useState(null);
   const [formData, setFormData] = useState({
     title: "",
+    description: "",
     image: null,
+    icon: null,
   });
 
   const fetchLoaderItems = () => {
@@ -92,6 +94,13 @@ const ItemsAdmin = () => {
       image: file,
     });
   };
+  const handleIconChange = (e) => {
+    const file = e.target.files[0];
+    setFormData({
+      ...formData,
+      icon: file,
+    });
+  };
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -99,11 +108,15 @@ const ItemsAdmin = () => {
 
       // Добавляем данные из state в объект FormData
       formDataToSend.append("title", formData.title);
+      formDataToSend.append("description", formData.description);
       formDataToSend.append("image", formData.image);
+      formDataToSend.append("icon", formData.icon);
       await addItems(formDataToSend);
       setFormData({
         title: "",
+        description: "",
         image: null,
+        icon: null,
       });
 
       fetchLoaderItems();
@@ -131,7 +144,7 @@ const ItemsAdmin = () => {
   }
 
   return (
-    <div className="admin-content">
+    <div className="admin">
       <h2>Создать новую продукцию</h2>
       <form onSubmit={handleSubmit}>
         <label>
@@ -144,8 +157,22 @@ const ItemsAdmin = () => {
           />
         </label>
         <label>
+          Описание:
+          <textarea
+            type="text"
+            name="description"
+            value={formData.name}
+            onChange={handleInputChange}
+          />
+        </label>
+        <label>
           Изображение:
           <input type="file" accept="image/*" onChange={handleImageChange} />
+        </label>
+        <br />
+        <label>
+          Иконка:
+          <input type="file" accept="image/*" onChange={handleIconChange} />
         </label>
         <br />
         <button type="submit">Создать продукцию</button>
@@ -270,7 +297,7 @@ const ItemsAdmin = () => {
                 </div>
               ))}
             <button onClick={() => setCategoryOpen(!categoryOpen)}>
-              Добавить категорию
+              {`Добавить категорию к продукции: ${el.title}`}
             </button>
             {categoryOpen && (
               <CategoryAdmin id={el.id} renderItems={renderItems} />
@@ -281,5 +308,4 @@ const ItemsAdmin = () => {
     </div>
   );
 };
-
 export default ItemsAdmin;

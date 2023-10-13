@@ -6,6 +6,7 @@ import DirectorContactsAdmin from "../AdminComponents/DirectorContactsAdmin";
 import DirectorPhotoContactsAdmin from "../AdminComponents/DirectorPhotoContactsAdmin";
 import ReportingAdmin from "../AdminComponents/ReportingAdmin";
 import ItemsAdmin from "../AdminComponents/ItemsAdmin";
+import Login from "../AdminComponents/Login";
 
 const Admin = () => {
   const [newsOpen, setNewsOpen] = useState(false);
@@ -18,6 +19,7 @@ const Admin = () => {
   const [items, setItems] = useState(false);
   return (
     <div className="admin-wrapper">
+      <Login />
       <button onClick={() => setNewsOpen(!newsOpen)}>
         Редактировать новости
       </button>

@@ -10,8 +10,8 @@ const NewsAdmin = () => {
     name: "",
     description: "",
     smallDescription: "",
-    date: Number(),
-    img: null, // Добавляем поле для файла изображения
+
+    img: null,
   });
 
   useEffect(() => {
@@ -65,7 +65,7 @@ const NewsAdmin = () => {
       formDataToSend.append("name", formData.name);
       formDataToSend.append("description", formData.description);
       formDataToSend.append("smallDescription", formData.smallDescription);
-      formDataToSend.append("date", formData.date);
+
       formDataToSend.append("img", formData.img);
 
       await addNews(formDataToSend);
@@ -74,7 +74,7 @@ const NewsAdmin = () => {
         name: "",
         description: "",
         smallDescription: "",
-        date: Number(),
+
         imageFile: null,
       });
 
@@ -135,16 +135,7 @@ const NewsAdmin = () => {
           />
         </label>
         <br />
-        <label>
-          Дата:
-          <input
-            type="text"
-            name="date"
-            value={formData.date}
-            onChange={handleInputChange}
-          />
-        </label>
-        <br />
+
         <label>
           Изображение:
           <input type="file" accept="image/*" onChange={handleImageChange} />
