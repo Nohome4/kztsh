@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import NewsAdmin from "../AdminComponents/NewsAdmin";
 import GaleryAdmin from "../AdminComponents/GaleryAdmin";
 import MarketingContactsAdmin from "../AdminComponents/MarketingContactsAdmin";
@@ -7,6 +7,7 @@ import DirectorPhotoContactsAdmin from "../AdminComponents/DirectorPhotoContacts
 import ReportingAdmin from "../AdminComponents/ReportingAdmin";
 import ItemsAdmin from "../AdminComponents/ItemsAdmin";
 import Login from "../AdminComponents/Login";
+import { checkToken } from "../../http/allApi";
 
 const Admin = () => {
   const [newsOpen, setNewsOpen] = useState(false);
@@ -17,37 +18,79 @@ const Admin = () => {
     useState(false);
   const [reporting, setReporting] = useState(false);
   const [items, setItems] = useState(false);
+
+  const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem("token"));
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      // Ваш API-запрос
+      checkToken({
+        method: "POST",
+        headers: {
+          authorization: `Bearer ${token}`,
+        },
+      })
+        .then((response) => response.json())
+        .then(({ valid }) => {
+          if (valid) {
+            setLoggedIn(true);
+          } else {
+            // Удалить невалидный токен
+            localStorage.removeItem("token");
+            setLoggedIn(false);
+          }
+        })
+        .catch(() => {
+          // Обработка ошибок
+          setLoggedIn(false);
+        });
+    }
+  }, []);
+
   return (
     <div className="admin-wrapper">
-      <Login />
-      <button onClick={() => setNewsOpen(!newsOpen)}>
-        Редактировать новости
-      </button>
-      {newsOpen && <NewsAdmin />}
-      <button onClick={() => setGaleryOpen(!galeryOpen)}>
-        Редактировать галерею
-      </button>
-      {galeryOpen && <GaleryAdmin />}
-      <button onClick={() => setMarketingContactsOpen(!marketingContactsOpen)}>
-        Редактировать данные отдела маркетинга
-      </button>
-      {marketingContactsOpen && <MarketingContactsAdmin />}
-      <button onClick={() => setDirectorContactsOpen(!directorContactsOpen)}>
-        Редактировать данные руководства
-      </button>
-      {directorContactsOpen && <DirectorContactsAdmin />}
-      <button
-        onClick={() => setDirectorPhotoContactsOpen(!directorPhotoContactsOpen)}
-      >
-        Редактировать фото руководства
-      </button>
-      {directorPhotoContactsOpen && <DirectorPhotoContactsAdmin />}
-      <button onClick={() => setReporting(!reporting)}>
-        Редактировать отчетность
-      </button>
-      {reporting && <ReportingAdmin />}
-      <button onClick={() => setItems(!items)}>Редактировать продукцию</button>
-      {items && <ItemsAdmin />}
+      {!loggedIn && <Login setLoggedIn={setLoggedIn} />}
+      {loggedIn && (
+        <div className="admin-wrapper">
+          <button onClick={() => setNewsOpen(!newsOpen)}>
+            Редактировать новости
+          </button>
+          {newsOpen && <NewsAdmin />}
+          <button onClick={() => setGaleryOpen(!galeryOpen)}>
+            Редактировать галерею
+          </button>
+          {galeryOpen && <GaleryAdmin />}
+          <button
+            onClick={() => setMarketingContactsOpen(!marketingContactsOpen)}
+          >
+            Редактировать данные отдела маркетинга
+          </button>
+          {marketingContactsOpen && <MarketingContactsAdmin />}
+          <button
+            onClick={() => setDirectorContactsOpen(!directorContactsOpen)}
+          >
+            Редактировать данные руководства
+          </button>
+          {directorContactsOpen && <DirectorContactsAdmin />}
+          <button
+            onClick={() =>
+              setDirectorPhotoContactsOpen(!directorPhotoContactsOpen)
+            }
+          >
+            Редактировать фото руководства
+          </button>
+          {directorPhotoContactsOpen && <DirectorPhotoContactsAdmin />}
+          <button onClick={() => setReporting(!reporting)}>
+            Редактировать отчетность
+          </button>
+          {reporting && <ReportingAdmin />}
+          <button onClick={() => setItems(!items)}>
+            Редактировать продукцию
+          </button>
+          {items && <ItemsAdmin />}
+        </div>
+      )}
     </div>
   );
 };

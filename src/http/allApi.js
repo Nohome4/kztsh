@@ -1,7 +1,6 @@
 import { $host } from ".";
 
 // news-api
-// news-api
 export const fetchNews = async () => {
   try {
     const { data } = await $host.get("api/news");
@@ -232,5 +231,15 @@ export const deleteCharacteristics = async (id) => {
   const { data } = await $host.delete(
     "api/category/deleteCharacteristics/" + id
   );
+  return data;
+};
+
+export const login = async (formData) => {
+  const { data } = await $host.post("api/auth/login", formData);
+  return data;
+};
+
+export const checkToken = async (obj) => {
+  const { data } = await $host.post("api/auth/checkToken", obj);
   return data;
 };

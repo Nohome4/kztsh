@@ -10,7 +10,6 @@ const NewsAdmin = () => {
     name: "",
     description: "",
     smallDescription: "",
-
     img: null,
   });
 
@@ -74,7 +73,6 @@ const NewsAdmin = () => {
         name: "",
         description: "",
         smallDescription: "",
-
         imageFile: null,
       });
 

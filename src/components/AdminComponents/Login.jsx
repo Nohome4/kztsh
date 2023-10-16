@@ -1,25 +1,65 @@
 import React, { useState } from "react";
-import "../../styles/AdminStyles/Login.css"; // Подключаем файл со стилями
+import "../../styles/AdminStyles/Login.css";
+import { login } from "../../http/allApi";
 
-const Login = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+const Login = ({ setLoggedIn }) => {
+  const [load, setLoad] = useState(false);
+  const [loginStatus, setLoginStatus] = useState(false);
+  const [error, setError] = useState(null); // state for tracking error
+  const [formData, setFormData] = useState({
+    name: "",
+    password: "",
+  });
 
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
   };
 
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
-  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      setLoad(true);
+      const formDataToSend = new FormData();
+      formDataToSend.append("name", formData.name);
+      formDataToSend.append("password", formData.password);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Ваша логика для отправки данных на сервер или осуществления проверки авторизации
-    console.log("Username:", username);
-    console.log("Password:", password);
-  };
+      const response = await login(formDataToSend);
+      console.log(response);
 
+      if (response.token) {
+        localStorage.setItem("token", response.token);
+        setLoggedIn(true);
+        setError(null);
+        setLoginStatus(true);
+      } else {
+        setError(response.message);
+      }
+
+      setLoad(false);
+    } catch (error) {
+      setLoad(false);
+      // show generic error message or error message from server if available
+      setError(error.response.data.message);
+      setLoginStatus(false);
+      console.error("Вход не выполнен:", error);
+    }
+
+    setFormData({
+      name: "",
+      password: "",
+    });
+  };
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
   return (
     <div className="login-container">
       <form className="login-form" onSubmit={handleSubmit}>
@@ -27,19 +67,25 @@ const Login = () => {
         <input
           type="text"
           placeholder="Имя пользователя"
-          value={username}
-          onChange={handleUsernameChange}
+          name="name"
+          value={formData.name}
+          onChange={handleInputChange}
         />
         <input
           type="password"
           placeholder="Пароль"
-          value={password}
-          onChange={handlePasswordChange}
+          name="password"
+          value={formData.password}
+          onChange={handleInputChange}
         />
         <button type="submit">Войти</button>
       </form>
+      {loginStatus && <p>Вход выполнен!</p>}
+      {error && <p>{error}</p>}
     </div>
   );
 };
 
 export default Login;
+
+
