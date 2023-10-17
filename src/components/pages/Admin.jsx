@@ -18,26 +18,36 @@ const Admin = () => {
     useState(false);
   const [reporting, setReporting] = useState(false);
   const [items, setItems] = useState(false);
+  const [load, setLoad] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
-  const [loggedIn, setLoggedIn] = useState(!!localStorage.getItem("token"));
+  const removeToken = () => {
+    setLoad(true);
+    localStorage.removeItem("token");
+    setLoggedIn(false);
+    setLoad(false);
+  };
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    if (token) {
-      checkToken(token)
-        .then(({ valid }) => {
-          if (valid) {
-            setLoggedIn(true);
-          } else {
-            localStorage.removeItem("token");
-            setLoggedIn(false);
-          }
-        })
-        .catch(() => {
-          setLoggedIn(false);
-        });
-    }
+    setLoad(true);
+    checkToken()
+      .then((data) => {
+        setLoggedIn(true);
+      })
+      .catch((error) => {
+        setLoggedIn(false);
+      })
+
+      .finally(() => setLoad(false));
   }, []);
+
+  if (load) {
+    return (
+      <div className="loader-wrapper">
+        <div className="loader"></div>
+      </div>
+    );
+  }
 
   return (
     <div className="admin-wrapper">
@@ -80,6 +90,7 @@ const Admin = () => {
             Редактировать продукцию
           </button>
           {items && <ItemsAdmin />}
+          <button onClick={() => removeToken()}>Выйти со страницы</button>
         </div>
       )}
     </div>

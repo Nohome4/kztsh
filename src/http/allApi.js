@@ -1,5 +1,5 @@
 import { $host, $authHost } from ".";
-
+import jwtDecode from "jwt-decode";
 // news-api
 export const fetchNews = async () => {
   try {
@@ -239,11 +239,8 @@ export const login = async (formData) => {
   return data;
 };
 
-export const checkToken = async (token) => {
-  const { data } = await $host.get(
-    "api/auth/checkToken",
-    {},
-    { method: "get", headers: { authorization: `Bearer ${token}` } }
-  );
-  return data;
+export const checkToken = async () => {
+  const { data } = await $authHost.get("api/auth/checkToken");
+  localStorage.setItem("token", data.token);
+  return jwtDecode(data.token);
 };
