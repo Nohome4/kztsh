@@ -89,6 +89,32 @@ const DirectorPhotoContactsAdmin = () => {
       console.error("Ошибка при добавлении новости:", error);
     }
   };
+
+  // const addAllDirectorsPhotoContacts = async (directorPhotoContactsArr) => {
+  //   for (const contact of directorPhotoContactsArr) {
+  //     // Создаем объект FormData для каждого контакта
+  //     const formDataToSend = new FormData();
+  //     formDataToSend.append("name", contact.name);
+  //     formDataToSend.append("job", contact.job);
+  //     formDataToSend.append("image", contact.image);
+
+  //     // Отправляем данные
+  //     const response = await addDirectorPhotoContacts(formDataToSend);
+  //     // Проверяем успешность запроса
+  //     if (response.error) {
+  //       console.error(`Ошибка при добавлении контакта: ${response.error}`);
+  //       // Если есть ошибка, прекращаем выполнение функции
+  //       return;
+  //     }
+  //   }
+  //   // После успешного добавления всех контактов, обновляем данные на странице
+  //   const data = await fetchDirectorPhotoContacts();
+  //   if (data.error) {
+  //     console.error(`Ошибка при получении контактов: ${data.error}`);
+  //   } else {
+  //     setDirectorPhotoContacts(data);
+  //   }
+  // };
   if (load) {
     return (
       <div className="loader-wrapper">

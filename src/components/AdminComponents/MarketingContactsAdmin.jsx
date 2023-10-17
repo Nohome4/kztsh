@@ -5,6 +5,7 @@ import {
   addMarketingContacts,
 } from "../../http/allApi";
 import "../../styles/AdminStyles/NewsAdmin.css";
+import { marketingContactsArr } from "../../utils/consts";
 
 const MarketingContactsAdmin = () => {
   const [marketingContacts, setMarketingContacts] = useState([]);
@@ -82,6 +83,31 @@ const MarketingContactsAdmin = () => {
       console.error("Ошибка при добавлении новости:", error);
     }
   };
+
+  // Удалить функцию после добавления данных
+
+  const addAllMarketingContacts = async (marketingArray) => {
+    setLoad(true);
+
+    for (const marketing of marketingArray) {
+      try {
+        const formDataToSend = new FormData();
+
+        formDataToSend.append("name", marketing.name);
+        formDataToSend.append("job", marketing.job);
+        formDataToSend.append("internalPhone", marketing.internalPhone);
+        formDataToSend.append("phone", marketing.phone);
+
+        await addMarketingContacts(formDataToSend);
+      } catch (error) {
+        console.error("Ошибка при добавлении контакта:", error);
+      }
+    }
+    const updatedDirectorContacts = await fetchMarketingContacts();
+    setMarketingContacts(updatedDirectorContacts);
+    setLoad(false);
+  };
+  // ---------------------------------------------------------------------
 
   if (load) {
     return (
@@ -170,6 +196,9 @@ const MarketingContactsAdmin = () => {
           </tbody>
         </table>
       </div>
+      <button onClick={() => addAllMarketingContacts(marketingContactsArr)}>
+        Добавить данные с фронта
+      </button>
     </div>
   );
 };

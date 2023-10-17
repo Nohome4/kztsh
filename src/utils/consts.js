@@ -180,6 +180,9 @@ export const directorContacts = [
     phone: "2-44-85",
   },
 ];
+
+export const directorContactsArr = new Array(...directorContacts);
+
 export const marketingContacts = [
   {
     job: "Начальник отдела",
@@ -230,6 +233,8 @@ export const marketingContacts = [
     phone: "+375 1775 24422",
   },
 ];
+export const marketingContactsArr = new Array(...marketingContacts);
+
 export const directorPhotoContacts = [
   {
     name: "Бубелев Виталий Александрович",
@@ -262,6 +267,7 @@ export const directorPhotoContacts = [
     job: "Заместитель директора завода по идеологической работе и социальным вопросам",
   },
 ];
+
 export const jobs = [
   {
     name: "Кузнец-штамповщик",

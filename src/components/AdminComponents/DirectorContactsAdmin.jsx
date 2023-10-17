@@ -5,6 +5,7 @@ import {
   addDirectorContacts,
 } from "../../http/allApi";
 import "../../styles/AdminStyles/NewsAdmin.css";
+import { directorContactsArr } from "../../utils/consts";
 
 const DirectorContactsAdmin = () => {
   const [directorContacts, setDirectorContacts] = useState([]);
@@ -14,7 +15,7 @@ const DirectorContactsAdmin = () => {
     name: "",
     job: "",
     internalPhone: "",
-    phone: Number(),
+    phone: "",
   });
 
   useEffect(() => {
@@ -40,6 +41,28 @@ const DirectorContactsAdmin = () => {
         setDirectorContacts(data);
       }
     });
+  };
+  // добавление всего массива
+  const addAllDirectorsContacts = async (directorsArray) => {
+    setLoad(true);
+
+    for (const director of directorsArray) {
+      try {
+        const formDataToSend = new FormData();
+
+        formDataToSend.append("name", director.name);
+        formDataToSend.append("job", director.job);
+        formDataToSend.append("internalPhone", director.internalPhone);
+        formDataToSend.append("phone", director.phone);
+
+        await addDirectorContacts(formDataToSend);
+      } catch (error) {
+        console.error("Ошибка при добавлении контакта:", error);
+      }
+    }
+    const updatedDirectorContacts = await fetchDirectorContacts();
+    setDirectorContacts(updatedDirectorContacts);
+    setLoad(false);
   };
 
   const handleInputChange = (e) => {
@@ -68,7 +91,7 @@ const DirectorContactsAdmin = () => {
         name: "",
         job: "",
         internalPhone: "",
-        phone: Number(),
+        phone: "",
       });
 
       const updatedDirectorContacts = await fetchDirectorContacts();
@@ -165,6 +188,9 @@ const DirectorContactsAdmin = () => {
           </tbody>
         </table>
       </div>
+      <button onClick={() => addAllDirectorsContacts(directorContactsArr)}>
+        Добавить все данные с фронта
+      </button>
     </div>
   );
 };
