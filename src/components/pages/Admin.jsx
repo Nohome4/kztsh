@@ -24,25 +24,16 @@ const Admin = () => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      // Ваш API-запрос
-      checkToken({
-        method: "POST",
-        headers: {
-          authorization: `Bearer ${token}`,
-        },
-      })
-        .then((response) => response.json())
+      checkToken(token)
         .then(({ valid }) => {
           if (valid) {
             setLoggedIn(true);
           } else {
-            // Удалить невалидный токен
             localStorage.removeItem("token");
             setLoggedIn(false);
           }
         })
         .catch(() => {
-          // Обработка ошибок
           setLoggedIn(false);
         });
     }

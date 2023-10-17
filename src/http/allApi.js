@@ -1,4 +1,4 @@
-import { $host } from ".";
+import { $host, $authHost } from ".";
 
 // news-api
 export const fetchNews = async () => {
@@ -239,7 +239,11 @@ export const login = async (formData) => {
   return data;
 };
 
-export const checkToken = async (obj) => {
-  const { data } = await $host.post("api/auth/checkToken", obj);
+export const checkToken = async (token) => {
+  const { data } = await $host.get(
+    "api/auth/checkToken",
+    {},
+    { method: "get", headers: { authorization: `Bearer ${token}` } }
+  );
   return data;
 };
