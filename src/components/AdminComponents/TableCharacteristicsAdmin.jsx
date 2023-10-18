@@ -8,6 +8,7 @@ const TableCharacteristicsAdmin = (props) => {
   const [array, setArray] = useState([]);
   const [arrayName, setArrayName] = useState([]);
   const [submitted, setSubmitted] = useState(false);
+  const [submittedName, setSubmittedName] = useState(false);
 
   const handleSubmit = async () => {
     try {
@@ -25,7 +26,7 @@ const TableCharacteristicsAdmin = (props) => {
       // Отправка массива на сервер
       await addTableNameCharacteristics(arrayName, props.id);
 
-      setSubmitted(true);
+      setSubmittedName(true);
     } catch (error) {
       console.error("Ошибка при отправке на сервер", error);
     }
@@ -51,7 +52,7 @@ const TableCharacteristicsAdmin = (props) => {
         <textarea rows="5" cols="50" onChange={handleNameChange} />
         <br />
         <button onClick={handleNameSubmit}>Отправить</button>
-        {submitted && <p>Массив успешно отправлен на сервер!</p>}
+        {submittedName && <p>Заголовок успешно отправлен на сервер!</p>}
       </div>
       <div>
         <textarea rows="5" cols="50" onChange={handleChange} />

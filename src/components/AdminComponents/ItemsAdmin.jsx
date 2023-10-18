@@ -6,6 +6,7 @@ import {
   deleteCategory,
   deleteCharacteristics,
   deleteTableCharacteristics,
+  deleteTableNameCharacteristics,
 } from "../../http/allApi";
 import "../../styles/AdminStyles/NewsAdmin.css";
 import CategoryAdmin from "./CategoryAdmin";
@@ -14,7 +15,7 @@ import CharacteristicsAdmin from "./CharacteristicsAdmin";
 
 const ItemsAdmin = () => {
   const [items, setItems] = useState([]);
-  const [categoryOpen, setCategoryOpen] = useState(false);
+  const [categoryOpen, setCategoryOpen] = useState([]);
   const [characteristicsOpen, setCharacteristicsOpen] = useState(false);
   const [tableCharacteristicOpen, setTableCharacteristicsOpen] =
     useState(false);
@@ -33,7 +34,7 @@ const ItemsAdmin = () => {
     fetchItems()
       .then((data) => {
         setLoad(false);
-        console.log(data);
+
         if (data.error) {
           setError(data.error);
         } else {
@@ -42,7 +43,7 @@ const ItemsAdmin = () => {
           data.forEach((el) => {
             initialCategoryStates[el.id] = false;
           });
-
+          setCategoryOpen(initialCategoryStates);
           setCategoryStates(initialCategoryStates);
         }
       })
@@ -71,6 +72,10 @@ const ItemsAdmin = () => {
 
   const rerenderingTableCharacteristics = async (id) => {
     await deleteTableCharacteristics(id);
+    fetchLoaderItems();
+  };
+  const rerenderingTableNameCharacteristics = async (id) => {
+    await deleteTableNameCharacteristics(id);
     fetchLoaderItems();
   };
 
@@ -128,6 +133,13 @@ const ItemsAdmin = () => {
 
   const toggleCategory = (categoryId) => {
     setCategoryStates((prevStates) => ({
+      ...prevStates,
+      [categoryId]: !prevStates[categoryId],
+    }));
+  };
+
+  const toggleCategoryOpen = (categoryId) => {
+    setCategoryOpen((prevStates) => ({
       ...prevStates,
       [categoryId]: !prevStates[categoryId],
     }));
@@ -208,88 +220,26 @@ const ItemsAdmin = () => {
                     />
                   ))}
                   <hr />
-                  <div className="category-characteristics">
-                    <h3>Характеристики</h3>
-                    <table className="category-table">
-                      <thead></thead>
-                      <tbody>
-                        {category.characteristics.map((characteristics) => (
-                          <tr key={characteristics.name}>
-                            <td>{characteristics.name}</td>
-                            <td>{characteristics.value}</td>
-                            <button
-                              className="red-btn"
-                              onClick={() =>
-                                rerenderingCharacteristics(characteristics.id)
-                              }
-                            >
-                              Удалить характеристику
-                            </button>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                    <button
-                      className="characteristics-btn"
-                      onClick={() =>
-                        setCharacteristicsOpen(!characteristicsOpen)
-                      }
-                    >
-                      {characteristicsOpen
-                        ? "Скрыть"
-                        : "Добавить характеристику"}
-                    </button>
-                    {characteristicsOpen && (
-                      <CharacteristicsAdmin
-                        id={category.id}
-                        renderItems={renderItems}
-                      />
-                    )}
-                  </div>
+                  <CharacteristicsComponent
+                    {...{
+                      category,
+                      rerenderingCharacteristics,
+                      setCharacteristicsOpen,
+                      characteristicsOpen,
+                      renderItems,
+                    }}
+                  />
                   <hr />
-
-                  <div className="category-characteristics">
-                    <h3>Характеристики в таблице</h3>
-                    <table className="category-table">
-                      <thead></thead>
-                      <tbody>
-                        {category.tableCharacteristics &&
-                          category.tableCharacteristics.map((elem, index) => (
-                            <tr key={index}>
-                              {elem.name.map((value, subIndex) => (
-                                <td key={subIndex}>{value}</td>
-                              ))}
-                              <td>
-                                <button
-                                  className="red-btn"
-                                  onClick={() =>
-                                    rerenderingTableCharacteristics(elem.id)
-                                  }
-                                >
-                                  Удалить характеристику
-                                </button>
-                              </td>
-                            </tr>
-                          ))}
-                      </tbody>
-                    </table>
-                    <button
-                      className="characteristics-btn"
-                      onClick={() =>
-                        setTableCharacteristicsOpen(!tableCharacteristicOpen)
-                      }
-                    >
-                      {tableCharacteristicOpen
-                        ? "Скрыть"
-                        : "Добавить характеристику в таблицу"}
-                    </button>
-                    {tableCharacteristicOpen && (
-                      <TableCharacteristicsAdmin
-                        id={category.id}
-                        renderItems={renderItems}
-                      />
-                    )}
-                  </div>
+                  <TableCharacteristicsComponent
+                    {...{
+                      rerenderingTableCharacteristics,
+                      rerenderingTableNameCharacteristics,
+                      setTableCharacteristicsOpen,
+                      tableCharacteristicOpen,
+                      category,
+                      renderItems,
+                    }}
+                  />
                   <hr />
                   <button
                     className="red-btn"
@@ -299,10 +249,12 @@ const ItemsAdmin = () => {
                   </button>
                 </div>
               ))}
-            <button onClick={() => setCategoryOpen(!categoryOpen)}>
-              {`Добавить категорию к продукции: ${el.title}`}
+            <button onClick={() => toggleCategoryOpen(el.id)}>
+              {categoryOpen[el.id]
+                ? "Скрыть добавление категории"
+                : `Добавить категорию к продукции: ${el.title}`}
             </button>
-            {categoryOpen && (
+            {categoryOpen[el.id] && (
               <CategoryAdmin id={el.id} renderItems={renderItems} />
             )}
           </div>
@@ -316,16 +268,32 @@ export default ItemsAdmin;
 const TableCharacteristicsComponent = (props) => {
   const {
     rerenderingTableCharacteristics,
+    rerenderingTableNameCharacteristics,
     setTableCharacteristicsOpen,
     tableCharacteristicOpen,
     category,
     renderItems,
   } = props;
+
   return (
     <div className="category-characteristics">
       <h3>Характеристики в таблице</h3>
       <table className="category-table">
-        <thead></thead>
+        <thead>
+          {category.tableNameCharacteristics.map((el, index) => (
+            <tr key={index}>
+              {el.name.map((value, subIndex) => (
+                <th key={subIndex}>{value}</th>
+              ))}
+              <button
+                className="red-btn"
+                onClick={() => rerenderingTableNameCharacteristics(el.id)}
+              >
+                Удалить заголовок
+              </button>
+            </tr>
+          ))}
+        </thead>
         <tbody>
           {category.tableCharacteristics &&
             category.tableCharacteristics.map((elem, index) => (
@@ -355,6 +323,47 @@ const TableCharacteristicsComponent = (props) => {
       </button>
       {tableCharacteristicOpen && (
         <TableCharacteristicsAdmin id={category.id} renderItems={renderItems} />
+      )}
+    </div>
+  );
+};
+
+const CharacteristicsComponent = (props) => {
+  const {
+    category,
+    rerenderingCharacteristics,
+    setCharacteristicsOpen,
+    characteristicsOpen,
+    renderItems,
+  } = props;
+  return (
+    <div className="category-characteristics">
+      <h3>Характеристики</h3>
+      <table className="category-table">
+        <thead></thead>
+        <tbody>
+          {category.characteristics.map((characteristics) => (
+            <tr key={characteristics.name}>
+              <td>{characteristics.name}</td>
+              <td>{characteristics.value}</td>
+              <button
+                className="red-btn"
+                onClick={() => rerenderingCharacteristics(characteristics.id)}
+              >
+                Удалить характеристику
+              </button>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <button
+        className="characteristics-btn"
+        onClick={() => setCharacteristicsOpen(!characteristicsOpen)}
+      >
+        {characteristicsOpen ? "Скрыть" : "Добавить характеристику"}
+      </button>
+      {characteristicsOpen && (
+        <CharacteristicsAdmin id={category.id} renderItems={renderItems} />
       )}
     </div>
   );
