@@ -9,7 +9,6 @@ import ItemsAdmin from "../AdminComponents/ItemsAdmin";
 import Login from "../AdminComponents/Login";
 import { checkToken } from "../../http/allApi";
 
-
 const Admin = () => {
   const [newsOpen, setNewsOpen] = useState(false);
   const [galeryOpen, setGaleryOpen] = useState(false);
@@ -49,7 +48,6 @@ const Admin = () => {
       </div>
     );
   }
-
 
   return (
     <div className="admin-wrapper">

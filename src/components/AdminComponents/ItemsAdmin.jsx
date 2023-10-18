@@ -33,6 +33,7 @@ const ItemsAdmin = () => {
     fetchItems()
       .then((data) => {
         setLoad(false);
+        console.log(data);
         if (data.error) {
           setError(data.error);
         } else {
@@ -181,7 +182,10 @@ const ItemsAdmin = () => {
         {items.map((el) => (
           <div className="item-admin" key={el.id}>
             <h3>Наименование продукции: {el.title}</h3>
-            <img src={process.env.REACT_APP_API_URL + el.image} alt={el.name} />
+            <img
+              src={process.env.REACT_APP_API_URL + el.image}
+              alt={el.title}
+            />
             <button className="red-btn" onClick={() => rerenderingItems(el.id)}>
               Удалить продукцию
             </button>
@@ -204,7 +208,6 @@ const ItemsAdmin = () => {
                     />
                   ))}
                   <hr />
-
                   <div className="category-characteristics">
                     <h3>Характеристики</h3>
                     <table className="category-table">
@@ -250,24 +253,24 @@ const ItemsAdmin = () => {
                     <table className="category-table">
                       <thead></thead>
                       <tbody>
-                        {category.tableCharacteristics.map(
-                          (tableCharacteristics) => (
-                            <tr key={tableCharacteristics.name}>
-                              <td>{tableCharacteristics.name}</td>
-                              <td>{tableCharacteristics.value}</td>
-                              <button
-                                className="red-btn"
-                                onClick={() =>
-                                  rerenderingTableCharacteristics(
-                                    tableCharacteristics.id
-                                  )
-                                }
-                              >
-                                Удалить характеристику
-                              </button>
+                        {category.tableCharacteristics &&
+                          category.tableCharacteristics.map((elem, index) => (
+                            <tr key={index}>
+                              {elem.name.map((value, subIndex) => (
+                                <td key={subIndex}>{value}</td>
+                              ))}
+                              <td>
+                                <button
+                                  className="red-btn"
+                                  onClick={() =>
+                                    rerenderingTableCharacteristics(elem.id)
+                                  }
+                                >
+                                  Удалить характеристику
+                                </button>
+                              </td>
                             </tr>
-                          )
-                        )}
+                          ))}
                       </tbody>
                     </table>
                     <button
@@ -309,3 +312,50 @@ const ItemsAdmin = () => {
   );
 };
 export default ItemsAdmin;
+
+const TableCharacteristicsComponent = (props) => {
+  const {
+    rerenderingTableCharacteristics,
+    setTableCharacteristicsOpen,
+    tableCharacteristicOpen,
+    category,
+    renderItems,
+  } = props;
+  return (
+    <div className="category-characteristics">
+      <h3>Характеристики в таблице</h3>
+      <table className="category-table">
+        <thead></thead>
+        <tbody>
+          {category.tableCharacteristics &&
+            category.tableCharacteristics.map((elem, index) => (
+              <tr key={index}>
+                {elem.name.map((value, subIndex) => (
+                  <td key={subIndex}>{value}</td>
+                ))}
+                <td>
+                  <button
+                    className="red-btn"
+                    onClick={() => rerenderingTableCharacteristics(elem.id)}
+                  >
+                    Удалить характеристику
+                  </button>
+                </td>
+              </tr>
+            ))}
+        </tbody>
+      </table>
+      <button
+        className="characteristics-btn"
+        onClick={() => setTableCharacteristicsOpen(!tableCharacteristicOpen)}
+      >
+        {tableCharacteristicOpen
+          ? "Скрыть"
+          : "Добавить характеристику в таблицу"}
+      </button>
+      {tableCharacteristicOpen && (
+        <TableCharacteristicsAdmin id={category.id} renderItems={renderItems} />
+      )}
+    </div>
+  );
+};

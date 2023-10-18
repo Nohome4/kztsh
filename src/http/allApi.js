@@ -204,9 +204,33 @@ export const addCategory = async (formData, id) => {
   return data;
 };
 
+// Сharacteristics-api
+export const addCharacteristics = async (formData, id) => {
+  const { data } = await $host.post(
+    "api/category/addCharacteristics/" + id,
+    formData
+  );
+  return data;
+};
+
+export const deleteCharacteristics = async (id) => {
+  const { data } = await $host.delete(
+    "api/category/deleteCharacteristics/" + id
+  );
+  return data;
+};
+
+// TableCharacteristics - api
+
 export const addTableCharacteristics = async (formData, id) => {
+  // const config = {
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // };
   const { data } = await $host.post(
     "api/category/addTableCharacteristics/" + id,
+
     formData
   );
   return data;
@@ -219,17 +243,22 @@ export const deleteTableCharacteristics = async (id) => {
   return data;
 };
 
-export const addCharacteristics = async (formData, id) => {
+export const addTableNameCharacteristics = async (formData, id) => {
+  // const config = {
+  //   headers: {
+  //     "Content-Type": "application/json",
+  //   },
+  // };
   const { data } = await $host.post(
-    "api/category/addCharacteristics/" + id,
+    "api/category/addTableNameCharacteristics/" + id,
     formData
   );
   return data;
 };
 
-export const deleteCharacteristics = async (id) => {
+export const deleteTableNameCharacteristics = async (id) => {
   const { data } = await $host.delete(
-    "api/category/deleteCharacteristics/" + id
+    "api/category/deleteTableNameCharacteristics/" + id
   );
   return data;
 };
