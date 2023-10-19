@@ -244,11 +244,6 @@ export const deleteTableCharacteristics = async (id) => {
 };
 
 export const addTableNameCharacteristics = async (formData, id) => {
-  // const config = {
-  //   headers: {
-  //     "Content-Type": "application/json",
-  //   },
-  // };
   const { data } = await $host.post(
     "api/category/addTableNameCharacteristics/" + id,
     formData
