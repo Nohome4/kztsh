@@ -8,9 +8,10 @@ import { Link } from "react-router-dom";
 const ProductPage = () => {
   const { productId } = useParams();
   const localData = localStorage.getItem("items");
+
   const items = JSON.parse(localData);
   const product = items.find((product) => product.id === Number(productId));
-
+  // смотреть тут, что-то делать с localstorage
   return (
     <div>
       <h2 className="header-h2">{product.title}</h2>
@@ -23,7 +24,7 @@ const ProductPage = () => {
               <div className="product-page-card" key={category.id}>
                 <img
                   className="product-page-card-img"
-                  src={category.images[0]}
+                  src={process.env.REACT_APP_API_URL + category.images[0]}
                   alt={category.name}
                 />
                 <div className="product-page-card-text">
