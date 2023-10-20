@@ -13,25 +13,24 @@ const Main = () => {
 
   useEffect(() => {
     const localData = localStorage.getItem("items");
-    if (localData) {
-      setItems(JSON.parse(localData));
-    } else {
-      setLoad(true);
-      fetchItems()
-        .then((data) => {
-          setLoad(false);
-          if (data.error) {
-            setError(data.error);
-          } else {
-            setItems(data);
-            localStorage.setItem("items", JSON.stringify(data)); // Save to localStorage.
-          }
-        })
-        .catch((error) => {
-          setLoad(false);
-          setError(error.message);
-        });
-    }
+    setLoad(true);
+    fetchItems()
+      .then((data) => {
+        setLoad(false);
+        if (data === localData) {
+          setItems(JSON.parse(localData));
+        }
+        if (data.error) {
+          setError(data.error);
+        } else {
+          setItems(data);
+          localStorage.setItem("items", JSON.stringify(data)); // Save to localStorage.
+        }
+      })
+      .catch((error) => {
+        setLoad(false);
+        setError(error.message);
+      });
   }, []);
   if (error) {
     return <ErrorMessage />;
