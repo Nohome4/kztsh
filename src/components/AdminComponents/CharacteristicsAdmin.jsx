@@ -25,7 +25,7 @@ const СharacteristicsAdmin = (props) => {
       formDataToSend.append("value", formData.value);
 
       await addCharacteristics(formDataToSend, props.id);
-      await props.renderItems();
+      // await props.renderItems();
       setFormData({
         name: "",
         value: "",

@@ -23,12 +23,20 @@ const Login = ({ setLoggedIn }) => {
     e.preventDefault();
     try {
       setLoad(true);
+
       const formDataToSend = new FormData();
       formDataToSend.append("name", formData.name);
       formDataToSend.append("password", formData.password);
 
       const response = await login(formDataToSend);
-      console.log(response);
+
+      if (!response) {
+        setLoginStatus(false);
+        setError("Нет ответа от сервера");
+        console.error("Нет ответа от сервера");
+
+        return;
+      }
 
       if (response.token) {
         localStorage.setItem("token", response.token);
@@ -42,8 +50,8 @@ const Login = ({ setLoggedIn }) => {
       setLoad(false);
     } catch (error) {
       setLoad(false);
-      // show generic error message or error message from server if available
-      setError(error.response.data.message);
+      // Check if error message is available from the server
+      setError(error.response?.data?.message || "Нет ответа от сервера");
       setLoginStatus(false);
       console.error("Вход не выполнен:", error);
     }
@@ -53,6 +61,7 @@ const Login = ({ setLoggedIn }) => {
       password: "",
     });
   };
+
   if (load) {
     return (
       <div className="loader-wrapper">
@@ -87,5 +96,3 @@ const Login = ({ setLoggedIn }) => {
 };
 
 export default Login;
-
-
