@@ -12,26 +12,31 @@ const Main = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    const localData = localStorage.getItem("items");
-    setLoad(true);
-    fetchItems()
-      .then((data) => {
-        setLoad(false);
-        if (data === localData) {
-          setItems(JSON.parse(localData));
-        }
+    const fetchData = async () => {
+      const localData = localStorage.getItem("items");
+      setLoad(true);
+      try {
+        const data = await fetchItems();
         if (data.error) {
           setError(data.error);
         } else {
-          setItems(data);
-          localStorage.setItem("items", JSON.stringify(data)); // Save to localStorage.
+          const dataStr = JSON.stringify(data);
+          if (dataStr === localData) {
+            setItems(JSON.parse(localData));
+          } else {
+            setItems(data);
+            localStorage.setItem("items", dataStr); // Save to localStorage.
+          }
         }
-      })
-      .catch((error) => {
+      } catch (error) {
+        setError(error.toString());
+      } finally {
         setLoad(false);
-        setError(error.message);
-      });
+      }
+    };
+    fetchData();
   }, []);
+
   if (error) {
     return <ErrorMessage />;
   }
