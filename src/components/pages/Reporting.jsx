@@ -14,20 +14,26 @@ const Reporting = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoad(true);
-    fetchReporting()
-      .then((data) => {
-        setLoad(false);
-        if (data.error) {
-          setError(data.error);
-        } else {
-          setReporting(data);
-        }
-      })
-      .catch((error) => {
-        setLoad(false);
-        setError(error.message);
-      });
+    const localData = localStorage.getItem("reporting");
+    if (localData) {
+      setReporting(JSON.parse(localData));
+    } else {
+      setLoad(true);
+      fetchReporting()
+        .then((data) => {
+          setLoad(false);
+          if (data.error) {
+            setError(data.error);
+          } else {
+            setReporting(data);
+            localStorage.setItem("reporting", JSON.stringify(data)); // Save to localStorage.
+          }
+        })
+        .catch((error) => {
+          setLoad(false);
+          setError(error.message);
+        });
+    }
   }, []);
 
   if (error) {
@@ -46,6 +52,7 @@ const Reporting = () => {
           <div className="reporting-content">
             {reporting.map((el) => (
               <ReportingDropdown
+                key={el.id}
                 reporting={el.reportingLinks}
                 header={el.name}
               />

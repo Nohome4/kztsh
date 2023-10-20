@@ -7,7 +7,10 @@ import "../../styles/ProductPage.css";
 import { Link } from "react-router-dom";
 const ProductPage = () => {
   const { productId } = useParams();
+  const localData = localStorage.getItem("items");
+  const items = JSON.parse(localData);
   const product = items.find((product) => product.id === Number(productId));
+
   return (
     <div>
       <h2 className="header-h2">{product.title}</h2>
