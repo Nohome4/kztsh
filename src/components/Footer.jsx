@@ -37,7 +37,7 @@ const Footer = () => {
             <img src="./images/Mail.ru.svg" alt="mail" />
           </Link>
         </div>
-        <div className="map">
+        {/* <div className="map">
           <iframe
             className="map"
             title="iframe"
@@ -45,7 +45,7 @@ const Footer = () => {
             width="392"
             height="240"
           ></iframe>
-        </div>
+        </div> */}
       </div>
       <div className="footer-year">
         <hr />

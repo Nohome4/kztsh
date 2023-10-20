@@ -9,6 +9,14 @@ export const fetchNews = async () => {
     return { error: error.message || "Error fetching news" };
   }
 };
+export const fetchOneNews = async (id) => {
+  try {
+    const { data } = await $host.get("api/news/" + id);
+    return data;
+  } catch (error) {
+    return { error: error.message || "Error fetching news" };
+  }
+};
 
 export const deleteNews = async (id) => {
   try {
@@ -36,7 +44,7 @@ export const fetchGalery = async () => {
     const { data } = await $host.get("api/galery");
     return data;
   } catch (error) {
-    return { error: error.message || "Error fetching gallery" };
+    return { error: error.message || "Ошибка подключения" };
   }
 };
 
