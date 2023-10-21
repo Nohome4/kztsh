@@ -1,20 +1,28 @@
 import React from "react";
 import { useParams } from "react-router";
-import { items, itemsLeftMenu } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/ProductPage.css";
 import { Link } from "react-router-dom";
+
 const ProductPage = () => {
   const { productId } = useParams();
-  const localData = localStorage.getItem("items");
 
-  const items = JSON.parse(localData);
+  const itemsJSON = localStorage.getItem("items");
+  const items = JSON.parse(itemsJSON);
+
+  const itemsLeftMenu = items.map((el) => {
+    return {
+      name: el.title,
+      path: `/products/${el.id}`,
+    };
+  });
+
   const product = items.find((product) => product.id === Number(productId));
-  // смотреть тут, что-то делать с localstorage
+
   return (
     <div>
-      <h2 className="header-h2">{product.title}</h2>
+      <h2 className="header-h2">{product.name}</h2>
       <MainReturnButton />
       <div className="product-page">
         <LeftMenu arr={itemsLeftMenu} />

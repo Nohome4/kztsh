@@ -1,18 +1,31 @@
-import React from "react";
+import React, { useContext } from "react";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/ProductsList.css";
 import { Link } from "react-router-dom";
+import ItemContext from "../../utils/context";
+import ErrorMessage from "../../UI/Error";
+import Loader from "../../UI/Loader";
 const ProductsList = () => {
-  const localData = localStorage.getItem("items");
-  const items = JSON.parse(localData);
+  const itemsProps = useContext(ItemContext);
+  const { items, error, load } = itemsProps;
+
   const itemsLeftMenu = items.map((el) => {
     return {
       name: el.title,
       path: `/products/${el.id}`,
     };
   });
-  console.log(items);
+  if (error) {
+    return <ErrorMessage />;
+  }
+  if (load) {
+    return (
+      <div className="loader-wrapper-app">
+        <Loader />
+      </div>
+    );
+  }
   return (
     <div>
       <h2 className="header-h2">Каталог продукции</h2>
