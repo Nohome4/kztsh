@@ -40,13 +40,20 @@ const Main = () => {
   if (error) {
     return <ErrorMessage />;
   }
+  if (load) {
+    return (
+      <div className="loader-wrapper-app">
+        <Loader />
+      </div>
+    );
+  }
   return (
     <div>
       <div className="app">
         <FirstPage />
       </div>
       <IconsLinks />
-      {load ? <Loader /> : <Products items={items} />}
+      : <Products items={items} />
     </div>
   );
 };
