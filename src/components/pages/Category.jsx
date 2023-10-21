@@ -25,7 +25,7 @@ const Category = () => {
   const item = categoryObj.categories.find(
     (item) => item.id === Number(categoryId)
   );
-  console.log(item);
+
   return (
     <div>
       <h2 className="header-h2">{item.name}</h2>
@@ -61,12 +61,12 @@ const Category = () => {
           </div>
         </div>
       </div>
-      {item.tableCharacteristics ? (
+      {item.tableCharacteristics.length !== 0 ? (
         <div className="table-characteristics">
           {item.tableCharacteristics && item.tableNameCharacteristics ? (
             <div className="category-table-container">
               <button className="category-button" onClick={toggleTable}>
-                Все характеристики ⮟
+                {showTable ? "Все характеристики 🠝" : "Все характеристики ⮟"}
               </button>
               <CSSTransition
                 in={showTable}
@@ -87,9 +87,9 @@ const Category = () => {
                   </thead>
                   <tbody>
                     {item.tableCharacteristics.map((obj) => (
-                      <tr key={obj}>
+                      <tr key={obj.id}>
                         {obj.name.map((value, subIndex) => (
-                          <td key={subIndex + value}>{value}</td>
+                          <td key={subIndex}>{value}</td>
                         ))}
                       </tr>
                     ))}
