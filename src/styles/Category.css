@@ -111,3 +111,14 @@
     display: none;
   }
 }
+
+.dropdown-category {
+  margin-bottom: 20px;
+  height: max-content;
+}
+
+.category-noInfo {
+  opacity: 0.8;
+  margin-top: 100px;
+  margin-bottom: 125px;
+}

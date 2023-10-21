@@ -19,7 +19,7 @@ const ProductPage = () => {
   });
 
   const product = items.find((product) => product.id === Number(productId));
-
+  console.log(product.categories);
   return (
     <div>
       <h2 className="header-h2">{product.name}</h2>
@@ -41,6 +41,18 @@ const ProductPage = () => {
                   </Link>
                   <hr />
                   <p>{category.description}</p>
+
+                  {category.characteristics &&
+                    category.characteristics.map((el) => (
+                      <div
+                        className="product-page-card-characteristics-wrapper"
+                        key={el.id}
+                      >
+                        <p className="product-page-card-characteristics">
+                          {el.name} - {el.value}
+                        </p>
+                      </div>
+                    ))}
                 </div>
               </div>
             ))

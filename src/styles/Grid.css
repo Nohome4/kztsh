@@ -25,6 +25,7 @@
   background-size: 135%;
   background-position: center center;
   transition: background-size 0.8s ease;
+  border-radius: 4px;
 }
 .child-grid:hover {
   background-size: 150%;

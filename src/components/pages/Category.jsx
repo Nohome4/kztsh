@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { useParams } from "react-router";
-
+import { useSpring, animated } from "react-spring";
 import MainReturnButton from "../../UI/MainReturnButton";
 import SliderComponent from "../../UI/SliderComponent";
 import "../../styles/Category.css";
 import IconsLinks from "../../UI/IconsLinks";
-import { CSSTransition } from "react-transition-group";
-import { useRef } from "react";
 
 const Category = () => {
   const itemsJSON = localStorage.getItem("items");
@@ -14,17 +12,21 @@ const Category = () => {
   const { productId } = useParams();
   const { categoryId } = useParams();
 
-  const categoryRef = useRef(null);
-  const [showTable, setShowTable] = useState(false);
-  const toggleTable = () => {
-    setShowTable(!showTable);
-  };
-
   const categoryObj = items.find((el) => el.id === Number(productId));
 
   const item = categoryObj.categories.find(
     (item) => item.id === Number(categoryId)
   );
+
+  const [isOpen, setIsOpen] = useState(false);
+  const dropdownAnimation = useSpring({
+    opacity: isOpen ? 1 : 0,
+    maxHeight: isOpen ? "1000px" : "0px",
+    config: {
+      duration: 300, // Длительность анимации
+      delay: isOpen ? 0 : 200, // Задержка перед началом анимации исчезновения
+    },
+  });
 
   return (
     <div>
@@ -38,21 +40,23 @@ const Category = () => {
           <p>{item.description}</p>
           <div className="category-characteristics">
             <h3>Характеристики</h3>
-            <table className="category-table">
-              <thead></thead>
-              <tbody>
-                {item.characteristics.map((el) =>
-                  el.name !== "" ? (
+            {item.characteristics.length ? (
+              <table className="category-table">
+                <thead></thead>
+                <tbody>
+                  {item.characteristics.map((el) => (
                     <tr key={el.name}>
                       <td>{el.name}</td>
                       <td>{el.value}</td>
                     </tr>
-                  ) : (
-                    <p>К сожалению у данного товара пока нет описания</p>
-                  )
-                )}
-              </tbody>
-            </table>
+                  ))}
+                </tbody>
+              </table>
+            ) : (
+              <h4 className="category-noInfo">
+                К сожалению у этого товара еще нет описания
+              </h4>
+            )}
           </div>
           <div className="product-page-info">
             Внимание! Кузнечный завод тяжелых штамповок имеет возможность
@@ -65,15 +69,16 @@ const Category = () => {
         <div className="table-characteristics">
           {item.tableCharacteristics && item.tableNameCharacteristics ? (
             <div className="category-table-container">
-              <button className="category-button" onClick={toggleTable}>
-                {showTable ? "Все характеристики 🠝" : "Все характеристики ⮟"}
+              <button
+                className="category-button"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {isOpen ? "Все характеристики 🠝" : "Все характеристики 🠟"}
               </button>
-              <CSSTransition
-                in={showTable}
-                timeout={10}
-                classNames="category-table"
-                unmountOnExit
-                nodeRef={categoryRef}
+
+              <animated.ul
+                style={dropdownAnimation}
+                className={`dropdown-category ${isOpen ? "open" : ""}`}
               >
                 <table className="category-table">
                   <thead>
@@ -95,7 +100,7 @@ const Category = () => {
                     ))}
                   </tbody>
                 </table>
-              </CSSTransition>
+              </animated.ul>
             </div>
           ) : (
             ""
