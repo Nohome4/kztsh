@@ -9,6 +9,7 @@ import Grid from "../../UI/Grid";
 import PartnersGrid from "../../UI/PartnersGrid";
 import NewsPage from "./NewsPage";
 import NewsSlider from "../../UI/NewsSlider";
+import Video from "../../UI/Video";
 
 const AppRouter = () => {
   return (
@@ -28,7 +29,9 @@ const AppRouter = () => {
       </Routes>
       <Grid />
       <PartnersGrid />
+      <Video />
       <NewsSlider />
+
       <Footer />
     </div>
   );
