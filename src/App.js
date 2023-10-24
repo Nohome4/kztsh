@@ -3,7 +3,7 @@ import "./App.css";
 import AppRouter from "./components/pages/AppRouter";
 import { BrowserRouter, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchItems } from "./http/allApi";
+import { fetchItems, fetchNews } from "./http/allApi";
 import ItemContext from "./utils/context";
 function App() {
   const ScrollToTop = () => {
@@ -14,6 +14,7 @@ function App() {
     }, [pathname]);
     return null;
   };
+  const [news, setNews] = useState([]);
   const [items, setItems] = useState([]);
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
@@ -24,21 +25,28 @@ function App() {
       setLoad(true);
       try {
         const data = await fetchItems();
+        const newsData = await fetchNews();
+
         if (data.error) {
           setError(data.error);
-          console.error(data.error);
         } else {
           const dataStr = JSON.stringify(data);
           if (dataStr !== localData) {
             localStorage.setItem("items", dataStr); // Save to localStorage if data changed.
           }
-          setItems(data); // Always update state, either it is from fetch or local storage.
+          setItems(data);
+        }
+        if (newsData.error) {
+          setError(data.error);
+        } else {
+          setNews(newsData);
+          console.log(newsData);
         }
       } catch (error) {
         setError(error.toString());
         console.error(error.toString());
         if (localData) {
-          setItems(JSON.parse(localData)); // pull items from local storage if there was an error and data is available
+          setItems(JSON.parse(localData));
         }
       } finally {
         setLoad(false);
@@ -47,7 +55,7 @@ function App() {
     fetchData();
   }, []);
 
-  const itemProps = { items, load, error };
+  const itemProps = { items, news, load, error };
   return (
     <ItemContext.Provider value={itemProps}>
       <BrowserRouter>
