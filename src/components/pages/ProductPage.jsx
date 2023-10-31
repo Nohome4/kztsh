@@ -19,7 +19,7 @@ const ProductPage = () => {
   });
 
   const product = items.find((product) => product.id === Number(productId));
-  console.log(product.categories);
+
   return (
     <div>
       <h2 className="header-h2">{product.name}</h2>

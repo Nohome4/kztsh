@@ -40,7 +40,6 @@ function App() {
           setError(data.error);
         } else {
           setNews(newsData);
-          console.log(newsData);
         }
       } catch (error) {
         setError(error.toString());
