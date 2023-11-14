@@ -28,9 +28,11 @@ const Video = () => {
           <iframe
             width="560"
             height="315"
-            src="https://www.youtube.com/embed/1ucJYqZfm6k?si=OHy7jvMeoPW6xw_p"
+            src={
+              process.env.REACT_APP_API_URL +
+              "ca92ba9c-980d-4366-a584-efc946c2d462.mp4"
+            }
             title="YouTube video player"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           ></iframe>

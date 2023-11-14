@@ -346,14 +346,20 @@
   opacity: 0.4;
   color: #888;
 }
-@media screen and (max-width: 1073px) {
+
+@media screen and (max-width: 1100px) {
   .icons-links {
-    justify-content: space-evenly;
+    justify-content: row;
+  }
+  .icons-link {
+    width: 30%;
+    margin-right: 100px;
   }
 }
-@media screen and (max-width: 1073px) {
-  .icons-links {
-    justify-content: space-between;
+@media screen and (max-width: 660px) {
+  .icons-link {
+    margin-left: 50px;
+    width: 100%;
   }
 }
 .product-main-list-link {
