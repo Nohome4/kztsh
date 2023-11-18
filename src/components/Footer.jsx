@@ -25,13 +25,13 @@ const Footer = () => {
         <ContactsNavbar className={"footer-info footer-info-adapt"} />
         <div className="links">
           <Link className="icon-link" to="https://t.me/kztsh_info">
-            <img src="./images/Telegram.svg" alt="telegram" />
+            <img src="./images/Telegram.svg" alt="tele" />
           </Link>
           <Link
             className="icon-link"
             to="https://www.instagram.com/kztshmolodezh/"
           >
-            <img src="./images/Instagram.svg" alt="instagram" />
+            <img src="./images/Instagram.svg" alt="inst" />
           </Link>
           <Link className="icon-link" to="mailto:kztsh@mail.ru">
             <img src="./images/Mail.ru.svg" alt="mail" />

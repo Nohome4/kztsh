@@ -38,6 +38,7 @@ const Galery = () => {
         setError(error.message);
       });
   }, [setError]);
+
   if (error) {
     return <ErrorMessage />;
   }
@@ -64,9 +65,7 @@ const Galery = () => {
 
             {selectedImageIndex !== null && (
               <Modal
-                images={galery.map(
-                  (el) => process.env.REACT_APP_API_URL + el.img
-                )}
+                images={galery.map((el) => el.img)}
                 selectedIndex={selectedImageIndex}
                 onClose={closeModal}
               />
