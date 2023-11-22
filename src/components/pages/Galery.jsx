@@ -21,7 +21,6 @@ const Galery = () => {
   const closeModal = () => {
     setSelectedImageIndex(null);
   };
-
   useEffect(() => {
     setLoad(true);
     fetchGalery()
@@ -38,7 +37,6 @@ const Galery = () => {
         setError(error.message);
       });
   }, [setError]);
-
   if (error) {
     return <ErrorMessage />;
   }
