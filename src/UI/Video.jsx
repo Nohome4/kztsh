@@ -35,6 +35,7 @@ const Video = () => {
             title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
+            autoPlay={false}
           ></iframe>
         </div>
       </div>
