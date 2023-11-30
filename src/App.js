@@ -3,7 +3,7 @@ import "./App.css";
 import AppRouter from "./components/pages/AppRouter";
 import { BrowserRouter, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchItems, fetchNews } from "./http/allApi";
+import { fetchItems, fetchNews, fetchVideo } from "./http/allApi";
 import ItemContext from "./utils/context";
 function App() {
   const ScrollToTop = () => {
@@ -18,7 +18,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
-
+  const [video, setVideo] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const localData = localStorage.getItem("items");
@@ -26,7 +26,7 @@ function App() {
       try {
         const data = await fetchItems();
         const newsData = await fetchNews();
-
+        const videoData = await fetchVideo(5);
         if (data.error) {
           setError(data.error);
         } else {
@@ -41,6 +41,11 @@ function App() {
         } else {
           setNews(newsData);
         }
+        if (videoData.error) {
+          setError(data.error);
+        } else {
+          setVideo(videoData);
+        }
       } catch (error) {
         setError(error.toString());
         console.error(error.toString());
@@ -54,7 +59,7 @@ function App() {
     fetchData();
   }, []);
 
-  const itemProps = { items, news, load, error };
+  const itemProps = { items, news, load, error, video };
   return (
     <ItemContext.Provider value={itemProps}>
       <BrowserRouter>

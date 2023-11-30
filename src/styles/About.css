@@ -115,3 +115,8 @@ p {
     height: 50%;
   }
 }
+@media screen and (max-width: 600px) {
+  .about-content-card img {
+    width: 100%;
+  }
+}

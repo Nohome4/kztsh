@@ -1,6 +1,9 @@
-import React from "react";
-
+import React, { useContext } from "react";
+import ItemContext from "../utils/context";
 const Video = () => {
+  const itemsProps = useContext(ItemContext);
+  const { video } = itemsProps;
+
   return (
     <>
       <div className="video">
@@ -28,12 +31,9 @@ const Video = () => {
           <iframe
             width="560"
             height="315"
-            src={
-              process.env.REACT_APP_API_URL +
-              "ca92ba9c-980d-4366-a584-efc946c2d462.mp4"
-            }
-            title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            src={process.env.REACT_APP_API_URL + video.url}
+            title="Kztsh-video"
+            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
             autoPlay={false}
           ></iframe>

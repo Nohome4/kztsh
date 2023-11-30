@@ -364,6 +364,15 @@ export const deleteTableNameCharacteristics = async (id) => {
   return data;
 };
 
+// video-api
+
+export const fetchVideo = async (id) => {
+  const { data } = await $host.get("api/video/" + id);
+  return data;
+};
+
+// token-api
+
 export const login = async (formData) => {
   const { data } = await $host.post("api/auth/login", formData);
   return data;

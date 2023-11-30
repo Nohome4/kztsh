@@ -36,7 +36,7 @@ const Galery = () => {
         setLoad(false);
         setError(error.message);
       });
-  }, [setError]);
+  }, []);
   if (error) {
     return <ErrorMessage />;
   }

@@ -88,3 +88,10 @@ a {
     display: none;
   }
 }
+.pdf-link {
+  display: flex;
+}
+.requisites-link-a {
+  margin-top: 40px;
+  margin-left: 10px;
+}

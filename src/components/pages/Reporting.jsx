@@ -42,7 +42,7 @@ const Reporting = () => {
 
   return (
     <div>
-      <h2>Отчетность</h2>
+      <h2 className="header-h2">Отчетность</h2>
       <MainReturnButton />
       <div className="reporting">
         <LeftMenu arr={ABOUT_ROUTES} />
