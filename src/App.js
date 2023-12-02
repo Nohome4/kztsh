@@ -19,6 +19,7 @@ function App() {
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
   const [video, setVideo] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const localData = localStorage.getItem("items");
@@ -26,7 +27,7 @@ function App() {
       try {
         const data = await fetchItems();
         const newsData = await fetchNews();
-        const videoData = await fetchVideo(5);
+        const videoData = await fetchVideo(1);
         if (data.error) {
           setError(data.error);
         } else {
@@ -48,7 +49,7 @@ function App() {
         }
       } catch (error) {
         setError(error.toString());
-        console.error(error.toString());
+
         if (localData) {
           setItems(JSON.parse(localData));
         }
