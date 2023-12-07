@@ -17,11 +17,16 @@ const NewsPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const cachedNewsData = localStorage.getItem("news");
+    if (cachedNewsData) {
+      return setLocalNews(
+        JSON.parse(cachedNewsData).find((el) => el.id === Number(newsId))
+      );
+    }
     setLoad(true);
     fetchOneNews(newsId)
       .then((data) => {
         setLoad(false);
-
         if (data.error) {
           setError(data.error);
         } else {

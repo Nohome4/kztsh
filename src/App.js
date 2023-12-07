@@ -23,6 +23,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       const localData = localStorage.getItem("items");
+      const newsLocalData = localStorage.getItem("news");
       setLoad(true);
       try {
         const data = await fetchItems();
@@ -40,6 +41,10 @@ function App() {
         if (newsData.error) {
           setError(data.error);
         } else {
+          const newsDataStr = JSON.stringify(newsData);
+          if (newsDataStr !== newsLocalData) {
+            localStorage.setItem("news", newsDataStr);
+          }
           setNews(newsData);
         }
         if (videoData.error) {
@@ -49,7 +54,6 @@ function App() {
         }
       } catch (error) {
         setError(error.toString());
-
         if (localData) {
           setItems(JSON.parse(localData));
         }

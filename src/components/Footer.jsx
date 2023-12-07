@@ -25,16 +25,16 @@ const Footer = () => {
         <ContactsNavbar className={"footer-info footer-info-adapt"} />
         <div className="links">
           <Link className="icon-link" to="https://t.me/kztsh_info">
-            <img src="./images/Telegram.svg" alt="tele" />
+            <img src="/images/Telegram.svg" alt="tele" />
           </Link>
           <Link
             className="icon-link"
             to="https://www.instagram.com/kztshmolodezh/"
           >
-            <img src="./images/Instagram.svg" alt="inst" />
+            <img src="/images/Instagram.svg" alt="inst" />
           </Link>
           <Link className="icon-link" to="mailto:kztsh@mail.ru">
-            <img src="./images/Mail.ru.svg" alt="mail" />
+            <img src="/images/Mail.ru.svg" alt="mail" />
           </Link>
         </div>
         {/* <div className="map">
@@ -49,7 +49,7 @@ const Footer = () => {
       </div>
       <div className="footer-year">
         <hr />
-        <p>
+        <p className="footer-year-p">
           ОАО КЗТШ © 2008-2023 <br></br>
           <Link className="footer-link">
             Условия использования материалов сайта

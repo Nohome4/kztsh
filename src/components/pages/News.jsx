@@ -14,6 +14,10 @@ const News = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    const cachedNewsData = localStorage.getItem("news");
+    if (cachedNewsData) {
+      return setNews(JSON.parse(cachedNewsData));
+    }
     setLoad(true);
     fetchNews()
       .then((data) => {

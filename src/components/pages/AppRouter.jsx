@@ -31,7 +31,6 @@ const AppRouter = () => {
       <PartnersGrid />
       <Video />
       <NewsSlider />
-
       <Footer />
     </div>
   );

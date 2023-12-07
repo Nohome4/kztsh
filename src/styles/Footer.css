@@ -139,6 +139,9 @@ a {
   background-color: none;
   opacity: 1.6;
 }
+.footer-year-p {
+  margin-top: 10px;
+}
 @media screen and (max-width: 1020px) {
   .footer-contacts p {
     font-size: 0.8em;
