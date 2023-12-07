@@ -1,9 +1,48 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ItemContext from "../utils/context";
 const Video = () => {
   const itemsProps = useContext(ItemContext);
   const { video } = itemsProps;
+  const [autoplay, setAutoplay] = useState(false);
 
+  useEffect(() => {
+    const isPageRefreshed = performance.navigation.type === 1;
+    if (isPageRefreshed) {
+      setAutoplay(false);
+    }
+    const handleFullScreenChange = () => {
+      const isInFullScreen =
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement;
+
+      if (!isInFullScreen) {
+        document.body.style.overflow = "auto";
+      }
+    };
+
+    document.addEventListener("fullscreenchange", handleFullScreenChange);
+    document.addEventListener("webkitfullscreenchange", handleFullScreenChange);
+    document.addEventListener("mozfullscreenchange", handleFullScreenChange);
+    document.addEventListener("MSFullscreenChange", handleFullScreenChange);
+
+    return () => {
+      document.removeEventListener("fullscreenchange", handleFullScreenChange);
+      document.removeEventListener(
+        "webkitfullscreenchange",
+        handleFullScreenChange
+      );
+      document.removeEventListener(
+        "mozfullscreenchange",
+        handleFullScreenChange
+      );
+      document.removeEventListener(
+        "MSFullscreenChange",
+        handleFullScreenChange
+      );
+    };
+  }, []);
   return (
     <>
       <div className="video">
@@ -35,7 +74,7 @@ const Video = () => {
             title="Kztsh-video"
             allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-            autoPlay={false}
+            autoPlay={autoplay}
           ></iframe>
         </div>
       </div>

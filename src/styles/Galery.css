@@ -14,12 +14,43 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 2fr));
   gap: 10px;
 }
-
+.galery-description p {
+  font-weight: 700;
+  font-size: 16px;
+  font-weight: 100;
+  opacity: 0.8;
+  margin-top: 20px;
+}
+.galery-description h1 {
+  font-family: "Montserrat", Arial, sans-serif;
+  opacity: 0.8;
+}
 .image-gallery img {
   width: 100%;
   height: auto;
   cursor: pointer;
   max-height: 200px;
+}
+
+.galery-panel {
+  width: 100%;
+  height: 70px;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  border: 1px solid rgb(206, 206, 206);
+  border-radius: 4px;
+  display: flex;
+}
+.galery-panel button {
+  color: black;
+  background-color: white;
+  font-size: 16px;
+  opacity: 0.8;
+}
+.galery-panel .active {
+  color: rgb(12, 101, 235);
+  font-weight: 700;
+  opacity: 1;
 }
 @media screen and (max-width: 1200px) {
   .galery-content {
