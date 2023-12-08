@@ -143,4 +143,7 @@
   .cafe-slider-wrap-img {
     width: 100%;
   }
+  .cafe-slider-img {
+    height: auto;
+  }
 }

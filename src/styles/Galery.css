@@ -63,6 +63,13 @@
   }
 }
 @media screen and (max-width: 600px) {
+  .galery {
+    width: 100%;
+    margin-left: -10px;
+  }
+  .galery-description h1 {
+    display: none;
+  }
   .galery-panel {
     justify-content: space-evenly;
     padding: 2px;
@@ -74,11 +81,17 @@
     opacity: 0.8;
     width: 25%;
     margin-right: 25px;
+    width: 20%;
+    text-align: center;
+    padding: 0 !important;
   }
   .galery-panel .active {
     color: rgb(12, 101, 235);
     font-weight: 700;
     opacity: 1;
+  }
+  .image-gallery img {
+    height: auto;
   }
 }
 .slider-img {
