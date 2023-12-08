@@ -133,3 +133,9 @@
     height: 230px;
   }
 }
+@media screen and (max-width: 786px) {
+  .cafe-slider {
+    margin-bottom: 20px;
+    margin-top: 10px;
+  }
+}
