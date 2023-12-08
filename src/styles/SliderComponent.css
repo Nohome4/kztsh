@@ -87,3 +87,11 @@ button.slick-disabled {
 .slider-wrap-cafe {
   margin: 0 10px;
 }
+
+@media screen and (max-width: 600px) {
+  .modal-content {
+    margin-top: 250px;
+    max-width: 98%;
+    max-height: 100%;
+  }
+}
