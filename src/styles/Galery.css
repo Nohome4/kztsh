@@ -65,7 +65,13 @@
 @media screen and (max-width: 600px) {
   .galery {
     width: 100%;
-    margin-left: -10px;
+    margin: 0;
+    padding: 5px;
+  }
+  .galery-content {
+    width: 100%;
+    padding: 5px;
+    margin: 0;
   }
   .galery-description h1 {
     display: none;
