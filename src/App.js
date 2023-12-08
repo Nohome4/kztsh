@@ -3,7 +3,7 @@ import "./App.css";
 import AppRouter from "./components/pages/AppRouter";
 import { BrowserRouter, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { fetchItems, fetchNews, fetchVideo } from "./http/allApi";
+import { fetchGalery, fetchItems, fetchNews, fetchVideo } from "./http/allApi";
 import ItemContext from "./utils/context";
 function App() {
   const ScrollToTop = () => {
@@ -19,16 +19,18 @@ function App() {
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
   const [video, setVideo] = useState([]);
-
+  const [galery, setGalery] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const localData = localStorage.getItem("items");
       const newsLocalData = localStorage.getItem("news");
+      const galeryLocalData = localStorage.getItem("galery");
       setLoad(true);
       try {
         const data = await fetchItems();
         const newsData = await fetchNews();
         const videoData = await fetchVideo(1);
+        const galeryData = await fetchGalery();
         if (data.error) {
           setError(data.error);
         } else {
@@ -52,6 +54,15 @@ function App() {
         } else {
           setVideo(videoData);
         }
+        if (galeryData.error) {
+          setError(data.error);
+        } else {
+          const galeryDataStr = JSON.stringify(galeryData);
+          if (galeryDataStr !== galeryLocalData) {
+            localStorage.setItem("galery", galeryDataStr);
+          }
+          setGalery(galeryData);
+        }
       } catch (error) {
         setError(error.toString());
         if (localData) {
@@ -64,7 +75,7 @@ function App() {
     fetchData();
   }, []);
 
-  const itemProps = { items, news, load, error, video };
+  const itemProps = { items, news, load, error, video, galery };
   return (
     <ItemContext.Provider value={itemProps}>
       <BrowserRouter>

@@ -72,9 +72,10 @@ const Video = () => {
             height="315"
             src={process.env.REACT_APP_API_URL + video.url}
             title="Kztsh-video"
-            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
             autoPlay={autoplay}
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+            muted
+            allowFullScreen
           ></iframe>
         </div>
       </div>

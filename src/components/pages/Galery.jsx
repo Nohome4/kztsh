@@ -8,6 +8,7 @@ import { fetchGalery } from "../../http/allApi";
 import Loader from "../../UI/Loader";
 import ErrorMessage from "../../UI/Error";
 import GaleryArray from "../../UI/GaleryArray";
+// import SliderComponent from "../../UI/SliderComponent";
 
 const Galery = () => {
   const [galery, setGalery] = useState([]);
@@ -120,7 +121,7 @@ const Galery = () => {
                   onClick={() => handleButtonClick(3)}
                   className={holidaysActive ? "active" : ""}
                 >
-                  Праздники
+                  Мероприятия
                 </button>
               </div>
             </div>

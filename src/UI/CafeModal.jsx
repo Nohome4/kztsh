@@ -1,7 +1,7 @@
 import React from "react";
 import Slider from "react-slick";
 
-const Modal = ({ images, selectedIndex, onClose }) => {
+const CafeModal = ({ images, selectedIndex, onClose }) => {
   const settings = {
     dots: false,
     infinite: true,
@@ -16,13 +16,12 @@ const Modal = ({ images, selectedIndex, onClose }) => {
       <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <Slider className="slider-wrap" {...settings}>
           {images.map((el) => (
-            <div key={el.id}>
-              <img
-                className="slider-img"
-                src={process.env.REACT_APP_API_URL + el}
-                alt="category"
-              />
-            </div>
+            <img
+              className="slider-img"
+              key={el.id}
+              src={process.env.REACT_APP_API_URL + el.img}
+              alt="el.name"
+            />
           ))}
         </Slider>
         <span className="close" onClick={onClose}>
@@ -33,4 +32,4 @@ const Modal = ({ images, selectedIndex, onClose }) => {
   );
 };
 
-export default Modal;
+export default CafeModal;
