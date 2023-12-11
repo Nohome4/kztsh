@@ -47,13 +47,15 @@ const Video = () => {
     <>
       <div className="video">
         <div className="video-description">
-          <h2>Наш девиз</h2>
+          <h1>Наш девиз:</h1>
           <h5 className="video-p">
             "Обеспечение высокого качества продукции, охраны труда, сохранения
             здоровья работников – залог успешного функционирования и постоянного
             развития организации."
           </h5>
-          <h2>Основная цель деятельности:</h2>
+          <h1 className="video-description-second-h1">
+            Основная цель деятельности:
+          </h1>
           <h5>
             - обеспечение успеха организации и роста благосостояния всех
             работников на основе производства и поставки потребителям
@@ -67,7 +69,16 @@ const Video = () => {
           </h5>
         </div>
         <div className="video-wrapper">
-          <iframe
+          <video
+            controls
+            poster="/images/prew.png"
+            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+            autoPlay={autoplay}
+            allowFullScreen
+            muted
+            src={process.env.REACT_APP_API_URL + video.url}
+          ></video>
+          {/* <iframe
             width="560"
             height="315"
             src={process.env.REACT_APP_API_URL + video.url}
@@ -76,7 +87,8 @@ const Video = () => {
             sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
             muted
             allowFullScreen
-          ></iframe>
+            poster="/images/hostel.jpg"
+          ></iframe> */}
         </div>
       </div>
       <hr className="grid-hr" />
