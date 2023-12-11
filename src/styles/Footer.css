@@ -21,6 +21,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   margin: 30px;
+  margin-bottom: 70px;
 }
 .footer-contacts {
   display: flex;
@@ -142,6 +143,7 @@ a {
 .footer-year-p {
   margin-top: 10px;
 }
+
 @media screen and (max-width: 1020px) {
   .footer-contacts p {
     font-size: 0.8em;

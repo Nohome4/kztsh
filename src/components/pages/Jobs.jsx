@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/Jobs.css";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
-import { ABOUT_ROUTES, jobs } from "../../utils/consts";
+import { ABOUT_ROUTES, jobs, jobsList } from "../../utils/consts";
 import ContentField from "../../UI/ContentField.jsx";
 const Jobs = () => {
   return (
@@ -36,6 +36,14 @@ const Jobs = () => {
             </p>
           </div>
           <ContentField params={jobs} />
+          <div className="jobs-list">
+            <h3>Мы предлагаем:</h3>
+            <ol>
+              {jobsList.map((el, index) => (
+                <li key={index}>{el}</li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </div>

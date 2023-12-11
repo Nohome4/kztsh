@@ -57,6 +57,10 @@
   transition: background-color 0.5s ease;
   overflow: hidden;
 }
+.shadow img {
+  width: 100%;
+  opacity: 1;
+}
 
 .shadow:hover > * {
   transform: scale(1.1); /* Увеличиваем содержимое при наведении */
@@ -88,7 +92,6 @@
 
 .partners-grid-link {
   color: white;
-  opacity: 0.8;
 }
 .partners-grid-link:hover {
   color: white;
@@ -101,4 +104,19 @@
   font-size: 20px;
   margin-bottom: 20px;
   text-shadow: #111;
+}
+.belarus {
+  max-width: 80px;
+}
+.volat {
+  max-width: 150px;
+  margin-bottom: 15px;
+}
+.moaz {
+  width: 70% !important;
+  margin-left: 30px;
+  margin-bottom: 10px;
+}
+.belaz {
+  margin-bottom: 15px;
 }

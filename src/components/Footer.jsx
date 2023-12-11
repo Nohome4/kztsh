@@ -17,9 +17,9 @@ const Footer = () => {
             </Link>
           </p>
           <p>Жодино, ул. Кузнечная, 26</p>
-          <Link to={"/products"}>
+          {/* <Link to={"/products"}>
             <button>Каталог продукции</button>
-          </Link>
+          </Link> */}
         </div>
         <InfoNavbar className={"footer-info"} />
         <ContactsNavbar className={"footer-info footer-info-adapt"} />
@@ -37,15 +37,6 @@ const Footer = () => {
             <img src="/images/Mail.ru.svg" alt="mail" />
           </Link>
         </div>
-        {/* <div className="map">
-          <iframe
-            className="map"
-            title="iframe"
-            src="https://yandex.ru/map-widget/v1/?um=constructor%3A23e3a841babf02adb4d561e6ff4a10f7f4140ed7f6403ed700a4e9c3e011e882&amp;source=constructor"
-            width="392"
-            height="240"
-          ></iframe>
-        </div> */}
       </div>
       <div className="footer-year">
         <hr />

@@ -59,7 +59,7 @@ const ProductPage = () => {
 
   return (
     <div>
-      <h2 className="header-h2">{product.name}</h2>
+      <h2 className="header-h2">{product.title}</h2>
       <MainReturnButton />
       <div className="product-page">
         <LeftMenu arr={itemsLeftMenu} />
