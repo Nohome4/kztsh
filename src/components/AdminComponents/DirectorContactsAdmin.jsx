@@ -188,9 +188,9 @@ const DirectorContactsAdmin = () => {
           </tbody>
         </table>
       </div>
-      <button onClick={() => addAllDirectorsContacts(directorContactsArr)}>
+      {/* <button onClick={() => addAllDirectorsContacts(directorContactsArr)}>
         Добавить все данные с фронта
-      </button>
+      </button> */}
     </div>
   );
 };

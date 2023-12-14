@@ -196,9 +196,9 @@ const MarketingContactsAdmin = () => {
           </tbody>
         </table>
       </div>
-      <button onClick={() => addAllMarketingContacts(marketingContactsArr)}>
+      {/* <button onClick={() => addAllMarketingContacts(marketingContactsArr)}>
         Добавить данные с фронта
-      </button>
+      </button> */}
     </div>
   );
 };
