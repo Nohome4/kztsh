@@ -17,9 +17,9 @@ const Footer = () => {
             </Link>
           </p>
           <p>Жодино, ул. Кузнечная, 26</p>
-          {/* <Link to={"/products"}>
+          <Link className="products-button" to={"/products"}>
             <button>Каталог продукции</button>
-          </Link> */}
+          </Link>
         </div>
         <InfoNavbar className={"footer-info"} />
         <ContactsNavbar className={"footer-info footer-info-adapt"} />

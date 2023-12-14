@@ -78,17 +78,6 @@ const Video = () => {
             muted
             src={process.env.REACT_APP_API_URL + video.url}
           ></video>
-          {/* <iframe
-            width="560"
-            height="315"
-            src={process.env.REACT_APP_API_URL + video.url}
-            title="Kztsh-video"
-            autoPlay={autoplay}
-            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-            muted
-            allowFullScreen
-            poster="/images/hostel.jpg"
-          ></iframe> */}
         </div>
       </div>
       <hr className="grid-hr" />
