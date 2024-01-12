@@ -11,8 +11,8 @@
   margin-bottom: 20px;
 }
 .director-photo {
-  width: 50%;
-  box-sizing: border-box;
+  width: 30%;
+
   position: relative;
   text-align: center;
   margin-bottom: 20px;
@@ -23,6 +23,13 @@
 .directorPhotoContacts img {
   margin: auto;
   height: 400px;
+  max-width: 280px;
+}
+
+@media screen and (max-width: 970px) {
+  .director-photo {
+    width: 50%;
+  }
 }
 @media screen and (max-width: 650px) {
   .director-photo {

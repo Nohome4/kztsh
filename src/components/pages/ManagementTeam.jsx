@@ -20,7 +20,7 @@ const ManagementTeam = () => {
         if (data.error) {
           setError(data.error);
         } else {
-          setDirectorContacts(data);
+          setDirectorContacts(data.sort((a, b) => a.id - b.id));
         }
       })
       .catch((error) => {
