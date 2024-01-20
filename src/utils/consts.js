@@ -1,5 +1,5 @@
 export const MAIN_ROUTE = "/";
-export const ADMIN_ROUTE = "/admin";
+export const ADMIN_ROUTE = "/kztshadmin";
 export const ABOUT_ROUTE = "/about";
 export const PRODUCTS_ROUTE = "/products";
 export const SERVISES_ROUTE = "/servises";
