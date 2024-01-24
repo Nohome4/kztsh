@@ -45,7 +45,7 @@ const ProductPage = () => {
     name: el.title,
     path: `/products/${el.id}`,
   }));
-  console.log(itemsLeftMenu);
+
   const product = localItems.find(
     (product) => product.id === Number(productId)
   );

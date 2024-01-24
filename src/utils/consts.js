@@ -181,7 +181,7 @@ export const directorContacts = [
   },
 ];
 
-export const directorContactsArr = new Array(...directorContacts);
+// export const directorContactsArr = new Array(...directorContacts);
 
 export const marketingContacts = [
   {
@@ -233,7 +233,7 @@ export const marketingContacts = [
     phone: "+375 1775 24422",
   },
 ];
-export const marketingContactsArr = new Array(...marketingContacts);
+// export const marketingContactsArr = new Array(...marketingContacts);
 
 export const directorPhotoContacts = [
   {
@@ -461,15 +461,15 @@ export const distribuion = [
       "Сибирский и Дальневосточный Федеральные округа Российской Федерации.",
   },
   {
-    name: "ООО «Солид Римс»",
+    name: "ООО «Солид-Римс 67»",
     country:
-      "Российская Федерация 214000 г. Смоленск, пр-т Гагарина, дом 10/2, помещение 42/16,",
-    mail: "info@solid-rims.com",
+      "Российская Федерация 214000 г. Смоленск, ул.Николаева, д. 85, пом. 3, офис 5",
+    mail: "info@solid-rims67.com",
     phone: "+7(919)041-00-37",
     fax: "+375 29 670-50-67",
     website: "https://solid-rims.com/",
     region:
-      "Северо-Западный, Центральный, Уральский Федеральные округа и Приморский край Российской Федерации.",
+      "Северо-Западный, Центральный, Уральский Федеральные округа и Приморский край РФ, Республика Казахстан, страны ЕС.",
   },
   {
     name: "ООО «СоюзМашин»",

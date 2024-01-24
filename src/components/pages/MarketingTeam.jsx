@@ -20,7 +20,7 @@ const MarketingTeam = () => {
       if (data.error) {
         setError(data.error);
       } else {
-        setMarketingContacts(data);
+        setMarketingContacts(data.sort((a, b) => a.id - b.id));
       }
     });
   }, []);
