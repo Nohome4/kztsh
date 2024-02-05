@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/PriceList.css";
 import { PRODUCTS_ROUTES } from "../../utils/consts";
 import { pricesLinks } from "../../store/PDFLinks";
+import { titleName } from "../../store/routes";
 
 const PriceList = () => {
+  useEffect(() => {
+    document.title = "Прайс-листы" + titleName;
+  });
   return (
     <div>
       <h2 className="header-h2">Прайс-листы</h2>

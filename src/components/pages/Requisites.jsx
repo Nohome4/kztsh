@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LeftMenu from "../../UI/LeftMenu";
 import { ABOUT_ROUTES, requisites } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
 import "../../styles/Requisites.css";
+import { titleName } from "../../store/routes";
 
 const Requisites = () => {
+  useEffect(() => {
+    document.title = "Реквизиты" + titleName;
+  });
   return (
     <div>
       <h2 className="header-h2">Реквизиты</h2>

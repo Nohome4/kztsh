@@ -8,6 +8,7 @@ import { fetchGalery } from "../../http/allApi";
 import Loader from "../../UI/Loader";
 import ErrorMessage from "../../UI/Error";
 import GaleryArray from "../../UI/GaleryArray";
+import { titleName } from "../../store/routes";
 // import SliderComponent from "../../UI/SliderComponent";
 
 const Galery = () => {
@@ -49,6 +50,7 @@ const Galery = () => {
     setholidaysIndex(null);
   };
   useEffect(() => {
+    document.title = "Галерея" + titleName;
     setLoad(true);
     fetchGalery()
       .then((data) => {

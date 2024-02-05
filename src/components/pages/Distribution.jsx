@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/Distribution.css";
 import { INFO_ROUTES, distribuion } from "../../utils/consts";
+import { titleName } from "../../store/routes";
 const Distribution = () => {
+  useEffect(() => {
+    document.title = "Товаропроводящая сеть" + titleName;
+  }, []);
   return (
     <div>
       <h2 className="header-h2">Товаропроводящая сеть</h2>

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/ProductsList.css";
@@ -6,7 +6,11 @@ import { Link } from "react-router-dom";
 import ItemContext from "../../utils/context";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
+import { titleName } from "../../store/routes";
 const ProductsList = () => {
+  useEffect(() => {
+    document.title = "Каталог продукции" + titleName;
+  });
   const itemsProps = useContext(ItemContext);
   const { items, error, load } = itemsProps;
 

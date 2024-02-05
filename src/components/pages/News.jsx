@@ -7,6 +7,7 @@ import { fetchNews } from "../../http/allApi";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
 import "../../styles/News.css";
+import { titleName } from "../../store/routes";
 
 const News = () => {
   const [news, setNews] = useState([]);
@@ -14,6 +15,7 @@ const News = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Новости" + titleName;
     const cachedNewsData = localStorage.getItem("news");
     if (cachedNewsData) {
       return setNews(JSON.parse(cachedNewsData));

@@ -14,6 +14,7 @@ const Cafe = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = `Кафе "Северное" - ОАО "Кузнечный завод тяжелых штамповок"`;
     const cachedGaleryData = localStorage.getItem("galery");
     if (cachedGaleryData) {
       return setGalery(JSON.parse(cachedGaleryData));

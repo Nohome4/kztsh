@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/AntiCorruption.css";
 import { INFO_ROUTES } from "../../utils/consts";
 import { anticorruptionLinks } from "../../store/PDFLinks";
+import { titleName } from "../../store/routes";
 const AntiCorruption = () => {
+  useEffect(() => {
+    document.title = "Противодействие коррупции" + titleName;
+  }, []);
   return (
     <div>
       <h2 className="header-h2">Противодействие коррупции</h2>

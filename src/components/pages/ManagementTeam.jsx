@@ -7,12 +7,14 @@ import { fetchDirectorContacts } from "../../http/allApi";
 import "../../styles/Management.css";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
+import { titleName } from "../../store/routes";
 const ManagementTeam = () => {
   const [directorContacts, setDirectorContacts] = useState([]);
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Команда управления" + titleName;
     setLoad(true);
     fetchDirectorContacts()
       .then((data) => {

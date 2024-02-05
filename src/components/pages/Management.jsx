@@ -7,12 +7,14 @@ import { fetchDirectorPhotoContacts } from "../../http/allApi";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
 import "../../styles/Management.css";
+import { titleName } from "../../store/routes";
 const Management = () => {
   const [directorPhotoContacts, setDirectorPhotoContacts] = useState([]);
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Руководство" + titleName;
     setLoad(true);
     fetchDirectorPhotoContacts()
       .then((data) => {

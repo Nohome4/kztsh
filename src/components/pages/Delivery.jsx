@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/Delivery.css";
 import { INFO_ROUTES } from "../../utils/consts";
+import { titleName } from "../../store/routes";
 const Delivery = () => {
+  useEffect(() => {
+    document.title = "Доставка" + titleName;
+  }, []);
   return (
     <div>
       <h2 className="header-h2">Доставка</h2>

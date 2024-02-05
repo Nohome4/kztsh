@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import LeftMenu from "../../UI/LeftMenu";
 import { ABOUT_ROUTES } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
 import "../../styles/Documents.css";
+import { titleName } from "../../store/routes";
 const Documents = () => {
+  useEffect(() => {
+    document.title = "Документы" + titleName;
+  }, []);
   return (
     <div>
       <h2 className="header-h2">Документы</h2>

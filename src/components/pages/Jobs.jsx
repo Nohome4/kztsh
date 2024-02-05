@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/Jobs.css";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import { ABOUT_ROUTES, jobs, jobsList } from "../../utils/consts";
 import ContentField from "../../UI/ContentField.jsx";
+import { titleName } from "../../store/routes.js";
 const Jobs = () => {
+  useEffect(() => {
+    document.title = "Вакансии" + titleName;
+  }, []);
   return (
     <div>
       <h2 className="header-h2">Вакансии</h2>

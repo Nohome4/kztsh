@@ -1,10 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { PRODUCTS_ROUTES } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/Contacts.css";
 import { Link } from "react-router-dom";
+import { titleName } from "../../store/routes";
 const Shop = () => {
+  useEffect(() => {
+    document.title = "Магазин" + titleName;
+  });
   return (
     <div className="contacts">
       <h2 className="header-h2">Магазин</h2>

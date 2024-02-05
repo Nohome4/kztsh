@@ -6,12 +6,14 @@ import "../../styles/Hostel.css";
 import { fetchGalery } from "../../http/allApi";
 import ErrorMessage from "../../UI/Error";
 import CafeSlider from "../../UI/CafeSlider";
+import { titleName } from "../../store/routes";
 const Hostel = () => {
   const [galery, setGalery] = useState([]);
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Общежитие" + titleName;
     const cachedGaleryData = localStorage.getItem("galery");
     if (cachedGaleryData) {
       return setGalery(JSON.parse(cachedGaleryData));

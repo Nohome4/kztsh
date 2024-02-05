@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/About.css";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import { ABOUT_ROUTES } from "../../utils/consts";
+import { titleName } from "../../store/routes";
 const About = () => {
+  useEffect(() => {
+    document.title = "О заводе" + titleName;
+  }, []);
   return (
     <div className="about">
       <h2 className="header-h2">О заводе</h2>

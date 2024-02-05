@@ -30,6 +30,8 @@ import {
   MAIN_ROUTE,
 } from "../utils/consts";
 
+export const titleName = ` - ОАО "Кузнечный завод тяжелых штамповок"`;
+
 export const userRoutes = [
   {
     path: MAIN_ROUTE,

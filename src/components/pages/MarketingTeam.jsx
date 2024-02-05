@@ -7,6 +7,7 @@ import "../../styles/Management.css";
 import { fetchMarketingContacts } from "../../http/allApi";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
+import { titleName } from "../../store/routes";
 
 const MarketingTeam = () => {
   const [marketingContacts, setMarketingContacts] = useState([]);
@@ -14,6 +15,7 @@ const MarketingTeam = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Отдел маркетинга" + titleName;
     setLoad(true);
     fetchMarketingContacts().then((data) => {
       setLoad(false);

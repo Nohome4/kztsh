@@ -7,6 +7,7 @@ import "../../styles/Category.css";
 import IconsLinks from "../../UI/IconsLinks";
 import ErrorMessage from "../../UI/Error";
 import { fetchItems } from "../../http/allApi";
+import { titleName } from "../../store/routes";
 
 const Category = () => {
   const { productId, categoryId } = useParams();
@@ -16,6 +17,7 @@ const Category = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
+    document.title = "Продукция" + titleName;
     const cachedCategoryData = localStorage.getItem("items");
     if (cachedCategoryData) {
       try {
@@ -52,6 +54,7 @@ const Category = () => {
   });
 
   const categoryObj = localCategory.find((el) => el.id === Number(productId));
+
   const item = categoryObj?.categories.find(
     (item) => item.id === Number(categoryId)
   );

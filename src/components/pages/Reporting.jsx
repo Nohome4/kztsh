@@ -7,6 +7,7 @@ import ReportingDropdown from "../../UI/ReportingDropdown";
 import { fetchReporting } from "../../http/allApi";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
+import { titleName } from "../../store/routes";
 
 const Reporting = () => {
   const [reporting, setReporting] = useState([]);
@@ -14,6 +15,7 @@ const Reporting = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Отчетность" + titleName;
     const localData = localStorage.getItem("reporting");
     if (localData) {
       setReporting(JSON.parse(localData));

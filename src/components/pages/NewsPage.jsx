@@ -9,6 +9,7 @@ import { useState } from "react";
 import { fetchOneNews } from "../../http/allApi";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
+import { titleName } from "../../store/routes";
 
 const NewsPage = () => {
   const { newsId } = useParams();
@@ -17,6 +18,7 @@ const NewsPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Новости" + titleName;
     const cachedNewsData = localStorage.getItem("news");
     if (cachedNewsData) {
       return setLocalNews(
@@ -38,9 +40,11 @@ const NewsPage = () => {
         setError(error.message);
       });
   }, [newsId]);
+
   if (error) {
     return <ErrorMessage />;
   }
+
   return (
     <div>
       <h2 className="header-h2">Новости</h2>

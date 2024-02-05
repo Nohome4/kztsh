@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainReturnButton from "../../UI/MainReturnButton";
 import LeftMenu from "../../UI/LeftMenu";
 import "../../styles/Appeals.css";
 import { INFO_ROUTES } from "../../utils/consts";
+import { titleName } from "../../store/routes";
 const Appeals = () => {
+  useEffect(() => {
+    document.title = "Обращения граждан" + titleName;
+  }, []);
+
   return (
     <div>
       <h2 className="header-h2">Обращения граждан</h2>

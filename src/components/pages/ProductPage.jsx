@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { fetchItems } from "../../http/allApi";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
+import { titleName } from "../../store/routes";
 
 const ProductPage = () => {
   const { productId } = useParams();
@@ -15,6 +16,7 @@ const ProductPage = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    document.title = "Продукция" + titleName;
     const cachedItemsData = localStorage.getItem("items");
     if (cachedItemsData) {
       setLocalItems(JSON.parse(cachedItemsData));
@@ -49,6 +51,7 @@ const ProductPage = () => {
   const product = localItems.find(
     (product) => product.id === Number(productId)
   );
+
   if (!product) {
     return <ErrorMessage message="Продукт не найден." />;
   }
