@@ -11,6 +11,7 @@ import NewsPage from "./NewsPage";
 import NewsSlider from "../../UI/NewsSlider";
 import Video from "../../UI/Video";
 import DropHeader from "../DropHeader";
+import Main from "./Main";
 
 const AppRouter = () => {
   return (
@@ -19,6 +20,7 @@ const AppRouter = () => {
       <DropHeader />
       <ButtonUp />
       <Routes>
+        <Route path="*" element={<Main />} />
         {adminRoutes.map(({ path, Component }) => (
           <Route key={path} path={path} element={<Component />} exact />
         ))}
