@@ -10,11 +10,13 @@ import PartnersGrid from "../../UI/PartnersGrid";
 import NewsPage from "./NewsPage";
 import NewsSlider from "../../UI/NewsSlider";
 import Video from "../../UI/Video";
+import DropHeader from "../DropHeader";
 
 const AppRouter = () => {
   return (
     <div className="wrapper">
       <Header />
+      <DropHeader />
       <ButtonUp />
       <Routes>
         {adminRoutes.map(({ path, Component }) => (

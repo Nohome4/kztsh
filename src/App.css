@@ -42,7 +42,7 @@
 
 /* react-burger-menu */
 .header {
-  position: sticky;
+  position: relative;
   top: 0;
   display: flex;
   align-items: center;
@@ -59,7 +59,17 @@
   -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
   box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
 }
-
+.header_drop {
+  position: fixed;
+  top: -100px;
+  left: 0;
+  width: 100%;
+  transition: top 0.3s ease-in-out;
+  z-index: 1000;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+}
 .header-menu-btn {
   margin-left: 30px;
 }
