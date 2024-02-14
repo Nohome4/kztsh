@@ -19,12 +19,12 @@ const NewsPage = () => {
 
   useEffect(() => {
     document.title = "Новости" + titleName;
-    const cachedNewsData = localStorage.getItem("news");
-    if (cachedNewsData) {
-      return setLocalNews(
-        JSON.parse(cachedNewsData).find((el) => el.id === Number(newsId))
-      );
-    }
+    // const cachedNewsData = localStorage.getItem("news");
+    // if (cachedNewsData) {
+    //   return setLocalNews(
+    //     JSON.parse(cachedNewsData).find((el) => el.id === Number(newsId))
+    //   );
+    // }
     setLoad(true);
     fetchOneNews(newsId)
       .then((data) => {

@@ -16,10 +16,10 @@ const News = () => {
 
   useEffect(() => {
     document.title = "Новости" + titleName;
-    const cachedNewsData = localStorage.getItem("news");
-    if (cachedNewsData) {
-      return setNews(JSON.parse(cachedNewsData));
-    }
+    // const cachedNewsData = localStorage.getItem("news");
+    // if (cachedNewsData) {
+    //   return setNews(JSON.parse(cachedNewsData).reverse());
+    // }
     setLoad(true);
     fetchNews()
       .then((data) => {
@@ -27,7 +27,7 @@ const News = () => {
         if (data.error) {
           setError(data.error);
         } else {
-          setNews(data);
+          setNews(data.reverse());
         }
       })
       .catch((error) => {
@@ -35,6 +35,7 @@ const News = () => {
         setError(error.message);
       });
   }, []);
+
   if (error) {
     return <ErrorMessage />;
   }
@@ -57,7 +58,9 @@ const News = () => {
                   src={process.env.REACT_APP_API_URL + el.img}
                   alt={el.name}
                 />
-                <p>{el.smallDescription}</p>
+                <div className="news-p">
+                  <p>{el.smallDescription}</p>
+                </div>
               </div>
             ))}
           </div>
