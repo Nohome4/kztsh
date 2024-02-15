@@ -41,7 +41,7 @@ const Footer = () => {
       <div className="footer-year">
         <hr />
         <p className="footer-year-p">
-          ОАО КЗТШ © 2008-2023 <br></br>
+          ОАО КЗТШ © 2008-2024 <br></br>
           <Link className="footer-link">
             Условия использования материалов сайта
           </Link>
