@@ -74,7 +74,7 @@ function App() {
     };
     fetchData();
   }, []);
-
+  //
   const itemProps = { items, news, load, error, video, galery };
   return (
     <ItemContext.Provider value={itemProps}>
