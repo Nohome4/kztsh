@@ -237,8 +237,8 @@ export const anticorruptionLinks = [
     id: "5",
   },
   {
-    name: "План работы комиссии на 2023 год",
-    src: "/pdf/pdf-anticorruption/План работы комиссии на 2023 год.pdf",
+    name: "План работы комиссии на 2024 год",
+    src: "/pdf/pdf-anticorruption/План работы комиссии на 2024 год.pdf",
     id: "6",
   },
   {

@@ -61,7 +61,9 @@ const NewsPage = () => {
                 src={process.env.REACT_APP_API_URL + localNews.img}
                 alt={localNews.name}
               />
-              <p>{localNews.description}</p>
+              {localNews.description.split("/n").map((text, index) => (
+                <p key={index}>{text}</p>
+              ))}
             </div>
           )
         )}
