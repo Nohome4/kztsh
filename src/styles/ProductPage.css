@@ -43,13 +43,13 @@
   font-family: "Roboto", Arial, sans-serif;
 }
 .product-page-card-characteristics-wrapper {
-  flex-direction: row;
-  align-content: flex-end;
   opacity: 0.7;
+  margin-top: 15px;
 }
 .product-page-card-characteristics {
-  margin: 0;
+  margin-top: 10px;
   margin-bottom: 5px;
+  width: 100%;
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 13px;
 }
