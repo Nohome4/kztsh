@@ -186,14 +186,14 @@ export const directorContacts = [
 export const marketingContacts = [
   {
     job: "Начальник отдела",
-    name: "Иванов Евгений Анатольевич",
+    name: "Якимович Дмитрий Николаевич",
     internalPhone: "629",
     phone: "+375 1775 67922",
   },
   {
     job: "Зам. начальника отдела по маркетингу и сбыту готовой продукции",
     name: "Крутько Владислав Сергеевич",
-    internalPhone: "629",
+    internalPhone: "422",
     phone: "+375 1775 67922",
   },
   {

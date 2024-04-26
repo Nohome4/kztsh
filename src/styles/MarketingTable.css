@@ -1,6 +1,6 @@
-.contacts-table {
+.contacts-table-marketing {
+  margin-top: -20px;
   width: 100%;
-  margin-bottom: 20px;
   border: 5px solid #fff;
   border-top: 5px solid #fff;
   border-bottom: 3px solid #fff;
@@ -10,7 +10,7 @@
   background: #fff !important;
   text-align: center;
 }
-.contacts-table th {
+.contacts-table-marketing th {
   font-weight: bold;
   padding: 7px;
   background: #3695d9c8;
@@ -21,31 +21,38 @@
   border-bottom: 2px solid #3695d9;
   color: white;
 }
-.contacts-table td {
+.contacts-table-marketing td {
   padding: 7px;
   border: none;
   border-top: 3px solid #fff;
   border-bottom: 3px solid #fff;
   font-size: 15px;
 }
-.contacts-table tbody tr:nth-child(even) {
+.contacts-table-marketing tbody tr:nth-child(even) {
   background: #f8f8f8 !important;
 }
-@media screen and (max-width: 485px) {
-  .contacts-table th {
-    font-size: 12px;
+@media screen and (max-width: 649px) {
+  .contacts-table-marketing td {
+    font-size: 9px;
+    padding: 7px 2px;
   }
 }
 @media screen and (max-width: 485px) {
-  .contacts-table {
+  .contacts-table-marketing th {
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 485px) {
+  .contacts-table-marketing {
     margin-left: -5px;
   }
-  .contacts-table td {
-    font-size: 12px;
+  .contacts-table-marketing td {
+    font-size: 8px;
+    padding: 7px 2px;
   }
 }
 @media screen and (max-width: 390px) {
-  .contacts-table {
+  .contacts-table-marketing {
     margin-left: -10px;
   }
 }

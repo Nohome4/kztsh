@@ -55,7 +55,7 @@ const PartnersGrid = () => {
         </div>
         <div className="partners-child-grid partners-grid-5">
           <div className="shadow">
-            <Link className="partners-grid-link" to="http://www.moaz.ru/">
+            <Link className="partners-grid-link" to="https://moaz.by/">
               <img
                 className="moaz"
                 src="/images/partners-images/moaz.png"

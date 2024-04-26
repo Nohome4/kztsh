@@ -33,7 +33,7 @@ const Grid = () => {
         <div className="child-grid grid-5">
           <Link className="grid-link" to="/distribution">
             <h5>Товаропроводящая сеть</h5>
-            <h4>Сеть наших дистрибьютеров</h4>
+            <h4>Наши дилеры</h4>
           </Link>
         </div>
         <div className="child-grid grid-6">

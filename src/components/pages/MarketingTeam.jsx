@@ -2,13 +2,12 @@ import { useState, useEffect } from "react";
 import LeftMenu from "../../UI/LeftMenu";
 import { CONTACTS_ROUTES } from "../../utils/consts";
 import MainReturnButton from "../../UI/MainReturnButton";
-import ContactsTable from "../ContactsTable";
-import "../../styles/Management.css";
 import { fetchMarketingContacts } from "../../http/allApi";
 import ErrorMessage from "../../UI/Error";
 import Loader from "../../UI/Loader";
 import { titleName } from "../../store/routes";
-
+import MarketingTable from "../../UI/MarketingTable";
+import "../../styles/Management.css";
 const MarketingTeam = () => {
   const [marketingContacts, setMarketingContacts] = useState([]);
   const [load, setLoad] = useState(false);
@@ -41,7 +40,7 @@ const MarketingTeam = () => {
           <Loader />
         ) : (
           <div className="management-content">
-            <ContactsTable contactsList={marketingContacts} />
+            <MarketingTable contactsList={marketingContacts} />
           </div>
         )}
       </div>
