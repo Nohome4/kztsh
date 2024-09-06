@@ -25,11 +25,11 @@ const Shop = () => {
             <h3>Телефон</h3>
             <p>8-(01775)2-44-77</p>
             <h3>Режим работы</h3>
-            <p>с 6-45 до 15-00</p>
+            <p>с 7-30 до 16-00</p>
             <h3>Обед</h3>
             <p>с 12-30 до 13-00</p>
             <h3>Выходной</h3>
-            <p>суббота, воскресение</p>
+            <p>суббота, воскресенье</p>
             <div className="contacts-links">
               <Link className="contacts-icon-link" to="https://t.me/kztsh_info">
                 <img src="./images/Telegram.svg" alt="telegram" />
