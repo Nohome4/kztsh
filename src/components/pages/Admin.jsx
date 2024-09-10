@@ -8,6 +8,7 @@ import ReportingAdmin from "../AdminComponents/ReportingAdmin";
 import ItemsAdmin from "../AdminComponents/ItemsAdmin";
 import Login from "../AdminComponents/Login";
 import { checkToken } from "../../http/allApi";
+import VideoUpload from "../../UI/VideoUpload";
 
 const Admin = () => {
   const [newsOpen, setNewsOpen] = useState(false);
@@ -90,6 +91,7 @@ const Admin = () => {
             Редактировать продукцию
           </button>
           {items && <ItemsAdmin />}
+          <VideoUpload />
           <button onClick={() => removeToken()}>Выйти со страницы</button>
         </div>
       )}

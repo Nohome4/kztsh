@@ -1,9 +1,29 @@
 import React, { useContext, useEffect, useState } from "react";
 import ItemContext from "../utils/context";
+import { fetchVideo } from "../http/allApi";
+import VideoUpload from "./VideoUpload";
 const Video = () => {
   const itemsProps = useContext(ItemContext);
-  const { video } = itemsProps;
+  const { video1 } = itemsProps;
   const [autoplay, setAutoplay] = useState(false);
+  const [video2, setVideo2] = useState(null);
+
+  const getSecondVideo = async () => {
+    try {
+      const data = await fetchVideo(2);
+      if (data?.error) {
+        console.log(data?.error);
+      } else {
+        setVideo2(data);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  useEffect(() => {
+    getSecondVideo();
+  }, []);
 
   useEffect(() => {
     const isPageRefreshed = performance.navigation.type === 1;
@@ -68,19 +88,34 @@ const Video = () => {
             осуществимо с учетом характера деятельности организации.
           </h5>
         </div>
-        <div className="video-wrapper">
-          <video
-            controls
-            poster="/images/prew.png"
-            sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
-            autoPlay={autoplay}
-            allowFullScreen
-            muted
-            src={process.env.REACT_APP_API_URL + video.url}
-          ></video>
+        <div className="videos">
+          <div className="video-wrapper">
+            <video
+              controls
+              poster="/images/prew.png"
+              sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+              autoPlay={autoplay}
+              allowFullScreen
+              muted
+              src={process.env.REACT_APP_API_URL + video1.url}
+            ></video>
+          </div>
+          {video2 && (
+            <div className="video-wrapper">
+              <video
+                controls
+                src={process.env.REACT_APP_API_URL + video2.url}
+                sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+                autoPlay={autoplay}
+                allowFullScreen
+                muted
+              ></video>
+            </div>
+          )}
         </div>
       </div>
       <hr className="grid-hr" />
+      <VideoUpload />
     </>
   );
 };

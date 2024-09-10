@@ -492,7 +492,7 @@
 .video h1 {
   opacity: 0.8;
   margin-left: 50px;
-  font-size: 26px;
+  font-size: 40px;
 }
 .video-description {
   width: 55%;
@@ -505,14 +505,22 @@
   margin: 0;
   margin-top: 10px;
   margin-left: 50px;
-  font-size: 16px;
+  font-size: 20px;
   margin-bottom: 20px;
   font-style: italic;
 }
+.videos {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .video-wrapper {
+  margin-top: 20px;
+  display: flex;
   text-align: center;
   margin-right: 30px;
-  width: 35%;
+  width: 50%;
 }
 .video-wrapper video {
   width: 100%;
@@ -536,8 +544,14 @@
   .video h5 {
     margin-left: 0;
   }
+  .videos {
+    width: 100%;
+    align-items: center;
+  }
+
   .video-wrapper {
     margin: 0;
+    margin-bottom: 20px;
     width: 70%;
   }
 }

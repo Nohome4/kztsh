@@ -18,7 +18,7 @@ function App() {
   const [items, setItems] = useState([]);
   const [load, setLoad] = useState(false);
   const [error, setError] = useState(null);
-  const [video, setVideo] = useState([]);
+  const [video1, setVideo1] = useState([]);
   const [galery, setGalery] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -29,7 +29,7 @@ function App() {
       try {
         const data = await fetchItems();
         const newsData = await fetchNews();
-        const videoData = await fetchVideo(1);
+        const video1Data = await fetchVideo(1);
         const galeryData = await fetchGalery();
         if (data.error) {
           setError(data.error);
@@ -49,10 +49,10 @@ function App() {
           }
           setNews(newsData);
         }
-        if (videoData.error) {
+        if (video1Data.error) {
           setError(data.error);
         } else {
-          setVideo(videoData);
+          setVideo1(video1Data);
         }
         if (galeryData.error) {
           setError(data.error);
@@ -75,7 +75,7 @@ function App() {
     fetchData();
   }, []);
   //
-  const itemProps = { items, news, load, error, video, galery };
+  const itemProps = { items, news, load, error, video1, galery };
   return (
     <ItemContext.Provider value={itemProps}>
       <BrowserRouter>
