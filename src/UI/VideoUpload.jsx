@@ -23,7 +23,8 @@ const VideoUpload = () => {
     setSuccess(null);
 
     const formData = new FormData();
-    formData.append("video", file);
+    formData.append("url", file);
+    formData.append("name", "promo2");
 
     try {
       const data = await addVideo(formData);
