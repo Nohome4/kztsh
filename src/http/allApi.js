@@ -371,6 +371,15 @@ export const fetchVideo = async (id) => {
   return data;
 };
 
+export const addVideo = async (formData) => {
+  const { data } = await $host.post("api/video/", formData, {
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+    },
+  });
+  return data;
+};
+
 // token-api
 
 export const login = async (formData) => {
