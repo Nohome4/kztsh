@@ -25,7 +25,14 @@ const Documents = () => {
             src="../../images/documents-images/sertificat_2021_eng.jpg"
             alt="documents-img"
           />
-
+          {/* Картинка нового дока */}
+          <img
+            style={{ width: "70%" }}
+            className="big-img"
+            src="../../images/documents-images/anticorruption.jpg"
+            alt="documents-img"
+          />
+          {/* Картинка нового дока */}
           <h3 className="documents-h3">Нормативные документы:</h3>
           <div className="documents-a">
             <a
