@@ -272,12 +272,12 @@ export const jobs = [
   {
     name: "Кузнец-штамповщик",
     description: "Возможно обучение",
-    salary: "1600",
+    salary: "2200",
   },
   {
-    name: "Резчик на пилах ножовках и станках",
-    description: "Возможно обучение",
-    salary: "1600",
+    name: "Оператор станков с ПУ",
+    description: "",
+    salary: "1900",
   },
   {
     name: "Слесарь-инструментальщик",
@@ -287,45 +287,50 @@ export const jobs = [
   {
     name: "Токарь",
     description: "Возможно обучение",
+    salary: "2000",
+  },
+  {
+    name: "Фрезеровщик",
+    description: "Возможно обучение",
+    salary: "2000",
+  },
+  {
+    name: "Слесарь-ремонтник",
+    description: "Возможно обучение",
+    salary: "1800",
+  },
+  {
+    name: "Слесарь МСР",
+    description: "Возможно обучение",
+    salary: "2200",
+  },
+  {
+    name: "Электромонтер по ремонту эл. оборудования",
+    description: "",
+    salary: "1800",
+  },
+  {
+    name: "Продавец",
+    description: "",
+    salary: "1400",
+  },
+  {
+    name: "Слесарь-сантехник",
+    description: "",
+    salary: "1600",
+  },
+  {
+    name: "Инженер-электроник",
+    description: "",
+    salary: "1700",
+  },
+  {
+    name: "Инженер по информационной безопасности",
+    description: "",
     salary: "1500",
   },
   {
-    name: "Электрогазосварщик",
-    description: "",
-    salary: "1500",
-  },
-  {
-    name: "Электромонтёр по ремонту и обслуживанию оборудования",
-    description: "",
-    salary: " 1500",
-  },
-  {
-    name: "Каменщик",
-    description: "",
-    salary: "1300",
-  },
-  {
-    name: "Бетонщик",
-    description: "",
-    salary: "1300",
-  },
-  {
-    name: "Кровельщик",
-    description: "",
-    salary: "1300",
-  },
-  {
-    name: "Машинист крана",
-    description: "Возможно обучение",
-    salary: "1300",
-  },
-  {
-    name: "Водитель автомобиля (водитель на автовышку)",
-    description: "Возможно обучение",
-    salary: "1100",
-  },
-  {
-    name: "Маляр",
+    name: "Системный администратор",
     description: "",
     salary: "1500",
   },

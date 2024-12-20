@@ -115,7 +115,6 @@ const Video = () => {
         </div>
       </div>
       <hr className="grid-hr" />
-      <VideoUpload />
     </>
   );
 };
